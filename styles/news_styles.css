@@ -1,0 +1,118 @@
+.blog {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+}
+
+.blog-content {
+    width: 90%;
+    min-height: 0;
+    padding: 0;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+    position: relative;
+}
+
+.blog-content h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin: 25px;
+    position: relative;
+}
+
+.blog-content h2::before {
+    width: 15px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    top: calc(50% - 5px);
+    left: -35px;
+}
+
+.blog-content h2::after {
+    width: 15px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    top: calc(50% - 5px);
+    right: -35px;
+}
+
+.posts {
+    max-width: 1200px;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.post-container {
+    width: 320px;
+    height: 500px;
+    margin: 25px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    transition: all .3s ease;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.post-txt {
+    width: 100%;
+    height: 350px;
+    padding: 15px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #fff;
+    position: relative;
+}
+
+.post-txt span {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: grey;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1300px){
+    .posts {
+        max-width: 800px;
+    }
+  }
+
+  @media screen and (max-width: 900px){
+    .posts {
+        max-width: 600px;
+        margin: 0;
+        padding: 0;
+    }
+    .post-container {
+        margin: 0;
+        margin-bottom: 45px;
+    }
+  }

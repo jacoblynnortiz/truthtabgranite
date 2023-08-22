@@ -1,0 +1,113 @@
+.our-staff {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+}
+
+.our-staff-content {
+    width: 90%;
+    min-height: 0;
+    padding: 0;
+    padding-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid white;
+    position: relative;
+}
+
+.ourstaff-header {
+    font-size: 2.5rem;
+    color: white;
+    margin: 25px;
+    position: relative;
+}
+
+.ourstaff-header::before {
+    width: 15px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    top: calc(50% - 5px);
+    left: -35px;
+}
+
+.ourstaff-header::after {
+    width: 15px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    top: calc(50% - 5px);
+    right: -35px;
+}
+
+.staff-members-container {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.staff-members {
+    width: 100%;
+    max-width: 1475px;
+    min-height: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 45px 15px;
+    padding-bottom: 15px;
+}
+
+.staff-member {
+    width: 100%;
+    max-width: 450px;
+    min-height: 300px;
+    margin: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.staff-member img {
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.staff-member h2, .staff-member h3 {
+    text-align: center;
+    padding: 2.5px 15px;
+    font-size: 1.5rem;
+}
+
+.staff-member h3 {
+    font-weight: lighter;
+    font-size: 1.3rem;
+    padding-bottom: 15px;
+}
+
+@media screen and (max-width: 1675px){
+    .staff-members {
+        max-width: 1000px;
+    }
+  }
+  @media screen and (max-width: 1140px){
+    .staff-members {
+        max-width: 500px;
+    }
+  }

@@ -132,20 +132,19 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/createBlogPosts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
-    <script>
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function () {
-        OneSignal.init({
-          appId: "de722c59-273c-4f58-b0f7-dda171d0a6bc",
-          safari_web_id: "web.onesignal.auto.378d36e2-d61e-4d1d-83ad-a561308305e8",
-          notifyButton: {
-            enable: true,
-          },
-          subdomainName: "truthtabgranit",
-        });
-      });
-    </script>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(function(OneSignal) {
+    OneSignal.init({
+      appId: "de722c59-273c-4f58-b0f7-dda171d0a6bc",
+      safari_web_id: "web.onesignal.auto.378d36e2-d61e-4d1d-83ad-a561308305e8",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
 </body>
 
 </html>

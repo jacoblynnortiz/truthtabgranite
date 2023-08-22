@@ -1,0 +1,151 @@
+<!-- Designed and Developed by Jacob Ortiz | Ortiz Design & Development -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name="description" content="This is the offcial website Truth Tabernacle of Granite City website.">
+  <meta name="keywords" content="penticostal, apostolic, holy ghost, Truth, Tabernacle, Truth Tabernacle, Granite City">
+  <meta name="author" content="John Wilson III">
+  <title>Truth Tabernacle of Granite City</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="icon" href="images/icon.png">
+  <link rel='stylesheet' type='text/css' href='styles/global_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/nav_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/home_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/news_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/footer_styles.css'>
+</head>
+
+<body style="background-color: #333;">
+  <!-- navigation menu -->
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-menu">
+      <div class="content">
+        <div class="logo"><a href="index.html"><img src="images/logo-modern-transparent.png"> Truth Tabernacle</a></div>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="javascript:void(0)" class="desktop-link">About Us</a>
+            <input type="checkbox" id="show-about">
+            <label for="show-about">About Us</label>
+            <ul>
+              <li><a href="about_pages/about_truthtabgranite.html">About Truth Tabernacle</a></li>
+              <li><a href="about_pages/welcome.html">Pastor's Welcome</a></li>
+              <li><a href="about_pages/pastors_bio.html">Pastor's Bio</a></li>
+            </ul>
+          </li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="news.html">News</a></li>
+          <li>
+            <a href="javascript:void(0)" class="desktop-link">Podcasts</a>
+            <input type="checkbox" id="show-podcasts">
+            <label for="show-podcasts">Podcasts</label>
+            <ul>
+              <li><a href="https://open.spotify.com/show/1bpj3ijzEU2YDiHfupa9HI?si=9050f4a0e8b04830">Revealed Radio
+                  Network</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100076264966127">Revealed Biblical Network</a></li>
+            </ul>
+          </li>
+          <li><a href="online_courses.html">Online Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html" data-cell="Login"><i class="fa-regular fa-user"></i></a></li>
+        </ul>
+      </div>
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+    </nav>
+  </div>
+  <div class="home">
+    <!-- home hero -->
+    <div class="center slider">
+      <div class="lang-switcher">
+        <a title="Translate to Spanish" href="es/index-es.html"><img src="images/spanish-icon.jpg"></a>
+      </div>
+      <img src="images/logo-modern-transparent.png">
+      <h2>“The House Truth Builds”</h2>
+    </div>
+    <div class="service-times">
+      <!-- TO BE ADDED LATER <h3>Sunday Breakfast 9-10am & Sunday School 9:40am</h3> -->
+      <h1>Sunday 10:30am & 6:30pm | Wednesday 7pm</h1>
+      <h3>Prayer 30 minutes before</h3>
+    </div>
+    <div class="latest-sermon-container">
+      <h2 style="margin: 25px; color: #3c7cb9; text-align: center;">Watch this week's sermons</h2>
+      <div class="latest-sermon" id="latestSermon"></div>
+    </div>
+    <div class="home-news">
+      <h2 style="margin: 25px; color: #fff; text-align: center;">News</h2>
+      <div style="border: none;" class="blog-content">
+        <div class="posts" id="posts"></div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div class="footer-container" style="margin-top: 0;">
+      <div class="footer">
+        <div class="big-footer">
+          <div class="logo">
+            <a href="index.html">
+              <img src="images/logo-modern-transparent.png">
+            </a>
+          </div>
+          <div class="big-footer-container">
+            <div class="page-links">
+              <h2>About Us</h2>
+              <div class="page-links-a">
+                <a href="about_pages/about_truthtabgranite.html">About Truth Tabernacle</a>
+                <a href="about_pages/welcome.html">Pastor's Welcome</a>
+                <a href="about_pages/pastors_bio.html">Pastor's Bio</a>
+              </div>
+            </div>
+            <div class="page-links">
+              <h2>Suggestions</h2>
+              <div class="page-links-a">
+                <a href="sermons.html">Sermons</a>
+                <a href="news.html">News</a>
+                <a href="online_courses.html">Online Courses</a>
+                <a href="contact.html">Contact</a>
+              </div>
+            </div>
+            <div class="social-links">
+              <h2>Social Media</h2>
+              <p>Follow us on social media to find out the latest updates on our progress.</p>
+              <div class="social-links-a">
+                <a href="https://www.facebook.com/TruthTabGranite/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/truthtabgranite/"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="little-footer">
+          <h3>Copyright © 2023, Truth Tabernacle | All Rights Reserved.</h3>
+          <select id="lang">
+            <option value="index.html">English</option>
+            <option value="es/index-es.html">Español</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/createBlogPosts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function () {
+        OneSignal.init({
+          appId: "de722c59-273c-4f58-b0f7-dda171d0a6bc",
+          safari_web_id: "web.onesignal.auto.378d36e2-d61e-4d1d-83ad-a561308305e8",
+          notifyButton: {
+            enable: true,
+          },
+          subdomainName: "truthtabgranit",
+        });
+      });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truth Tabernacle | Online Courses</title>
+  <link rel="icon" href="images/icon.png">
+  <link rel='stylesheet' type='text/css' href='styles/global_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/nav_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/online_courses_all_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/footer_styles.css'>
+</head>
+
+<body style="background-color: #333;">
+  <div class="auth-container" id="authContainer" style="background: url(images/admin-login-banner.jpg); background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+    <a class="backup" href="online_courses.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="login-container-max">
+      <div class="login-panel">
+        <h2>Authentication needed</h2>
+        <input type="text" id="authCodeBox" placeholder="Auth Code...">
+        <p id="errorAuth"></p>
+        <button id="auth">Authenticate</button>
+      </div>
+    </div>
+    <a class="authRequest" href="mailto:info@truthtabgranite.com?subject=Authentication code request">Request Auth
+      Code</a>
+  </div>
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-menu">
+      <div class="content">
+        <div class="logo"><a href="index.html"><img src="images/logo-modern-transparent.png"> Truth Tabernacle</a></div>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="javascript:void(0)" class="desktop-link">About Us</a>
+            <input type="checkbox" id="show-about">
+            <label for="show-about">About Us</label>
+            <ul>
+              <li><a href="about_pages/about_truthtabgranite.html">About Truth Tabernacle</a></li>
+              <li><a href="about_pages/welcome.html">Pastor's Welcome</a></li>
+              <li><a href="about_pages/pastors_bio.html">Pastor's Bio</a></li>
+            </ul>
+          </li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="news.html">News</a></li>
+          <li>
+            <a href="javascript:void(0)" class="desktop-link">Podcasts</a>
+            <input type="checkbox" id="show-podcasts">
+            <label for="show-podcasts">Podcasts</label>
+            <ul>
+              <li><a href="https://open.spotify.com/show/1bpj3ijzEU2YDiHfupa9HI?si=9050f4a0e8b04830">Revealed Radio
+                  Network</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100076264966127">Revealed Biblical Network</a></li>
+            </ul>
+          </li>
+          <li><a href="online_courses.html">Online Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+    </nav>
+  </div>
+  <div class="online-courses-header">
+    <h2>Online Courses</h2>
+  </div>
+  <div class="bible_series_container">
+    <a id="seriesBtn1" href="#">
+      <div class="bible_series"
+        style="background-image: url('https://as1.ftcdn.net/v2/jpg/02/97/83/48/1000_F_297834865_LLGRjFLu0q4ueE1VI6CjaCTkJbI7VEch.jpg');">
+        <h2>Stones Fitly Framed Together</h2>
+      </div>
+    </a>
+    <a id="seriesBtn0" href="#">
+      <div class="bible_series"
+        style="background-image: url('https://www.psephizo.com/wp-content/uploads/2018/11/Four-Horsemen-of-the-Apocalypse.jpg');">
+        <h2>The Apokalupsis On Patmos</h2>
+      </div>
+    </a>
+    <a id="seriesBtn2" href="#" onclick="generateAuthScreen();">
+      <div class="bible_series"
+        style="background-image: url('https://www.spirituallyunequalmarriage.com/.a/6a00d83451ee9f69e202b68533851d200d-pi');">
+        <h2>Biblical & Spiritual Leadership Formation</h2>
+      </div>
+    </a>
+  </div>
+  <!-- footer -->
+  <div class="footer-container">
+    <div class="footer">
+      <div class="big-footer">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/logo-modern-transparent.png">
+          </a>
+        </div>
+        <div class="big-footer-container">
+          <div class="page-links">
+            <h2>About Us</h2>
+            <div class="page-links-a">
+              <a href="about_pages/about_truthtabgranite.html">About Truth Tabernacle</a>
+              <a href="about_pages/welcome.html">Pastor's Welcome</a>
+              <a href="about_pages/pastors_bio.html">Pastor's Bio</a>
+            </div>
+          </div>
+          <div class="page-links">
+            <h2>Suggestions</h2>
+            <div class="page-links-a">
+              <a href="sermons.html">Sermons</a>
+              <a href="news.html">News</a>
+              <a href="online_courses.html">Online Courses</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+          <div class="social-links">
+            <h2>Social Media</h2>
+            <p>Follow us on social media to find out the latest updates on our progress.</p>
+            <div class="social-links-a">
+              <a href="https://www.facebook.com/TruthTabGranite/"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/truthtabgranite/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="little-footer">
+        <h3>Copyright © 2023, Truth Tabernacle | All Rights Reserved.</h3>
+        <select id="lang">
+          <option value="index.html">English</option>
+          <option value="es/index-es.html">Español</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  <script src="scripts/onlineCourse-all.js"></script>
+</body>
+
+</html>

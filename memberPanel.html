@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Panel (BETA)</title>
+    <link rel="icon" href="images/member_icon.png">
+    <link rel='stylesheet' type='text/css' href='styles/member-panel.css'>
+    <link rel='stylesheet' type='text/css' href='styles/admin_side_nav.css'>
+    <link rel='stylesheet' type='text/css' href='styles/global_styles.css'>
+</head>
+
+<body>
+    <div class="welcome-back">
+        <h2>Welcome back, <span id="welcomeUser">undefined user</span></h2>
+    </div>
+    <!-- navigation menu -->
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-menu" checked>
+            <div class="content">
+                <div class="logo"><a href="memberPanel.html"><img src="images/member_icon.png"
+                            style="margin-right: 10px;">Member Panel<span>BETA</span></a></div>
+                <ul class="links">
+                    <div class="side-nav">
+                        <a title="Logout" class="logout" href="login.html"><i
+                                class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i></a>
+                        <img id="profilePicture" src="#">
+                        <h2 id="name">name undefined</h2>
+                        <h2 id="username">.username_undefined</h2>
+                    </div>
+                </ul>
+            </div>
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+        </nav>
+    </div>
+    <div id="memberPanel" class="member-panel">
+        <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
+            <h2>Note from development team:</h2>
+            <p>Hello! the Members Panel feature is currently still in beta development and will be getting updated
+                often.</p>
+        </div>
+        <div class="schedule-container">
+            <h2>Monthly Usher & Door Greeting Schedule:</h2>
+            <div class="help-info-schedule"><span></span>
+                <p>- indicates todays or next services schedule</p>
+            </div>
+            <table id="scheduleDB"></table>
+            <a href="images/usherdoorguide.pdf" class="ushersdoorguide">Ushers and Door Greeting Guide</a>
+        </div>
+        <div class="schedule-container">
+            <h2>Monthly Cleaning Schedule:</h2>
+            <div class="help-info-schedule"><span></span>
+                <p>- indicates todays or next cleaning schedule</p>
+            </div>
+            <table id="cleaningScheduleDB"></table>
+            <a href="images/cleaningCalender.jpg" class="ushersdoorguide">Cleaning Schedule Calender</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="scripts/memberPanel/memberPanel.js"></script>
+    <script src="scripts/memberPanel/doorSchedule.js"></script>
+    <script src="scripts/memberPanel/cleaningSchedule.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+        window.OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "63fc2e18-d970-4a5e-9391-324f1c2fbe94",
+                safari_web_id: "web.onesignal.auto.009a4322-838f-4341-bf26-c81fd75aa063",
+                notifyButton: {
+                    enable: true,
+                },
+                subdomainName: "truthtabmember",
+            });
+        });
+    </script>
+</body>
+
+</html>

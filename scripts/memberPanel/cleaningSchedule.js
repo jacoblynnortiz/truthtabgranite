@@ -94,9 +94,9 @@ $.getJSON('https://sheetdb.io/api/v1/ybpphomtih2ho', function (door_schedule) {
         slot2V.innerText = door_schedule[i].name2;
         slot3V.innerText = door_schedule[i].name3;
 
-        slot1V.setAttribute("data-cell", "Door #1");
-        slot2V.setAttribute("data-cell", "Door #2");
-        slot3V.setAttribute("data-cell", "Door #3");
+        slot1V.setAttribute("data-cell", "Slot #1");
+        slot2V.setAttribute("data-cell", "Slot #2");
+        slot3V.setAttribute("data-cell", "Slot #3");
 
         tableRow.appendChild(cleaningDateV);
         tableRow.appendChild(slot1V);

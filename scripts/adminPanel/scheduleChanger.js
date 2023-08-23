@@ -52,16 +52,20 @@ function doorScheduleForm() {
 
 requestDoorDelete.addEventListener('click', function () {
     deleteDoorConfirmation.classList.add("animateConfirmation");
+    deleteDoorConfirmation.classList.remove("animateUnConfirmation");
 });
 
 requestCleaningDelete.addEventListener('click', function () {
     deleteCleaningConfirmation.classList.add("animateConfirmation");
+    deleteCleaningConfirmation.classList.remove("animateUnConfirmation");
 });
 
 cancelDoorScheduleDelete.addEventListener('click', function () {
+    deleteDoorConfirmation.classList.add("animateUnConfirmation");
     deleteDoorConfirmation.classList.remove("animateConfirmation");
 });
 
 cancelCleaningScheduleDelete.addEventListener('click', function () {
+    deleteCleaningConfirmation.classList.add("animateUnConfirmation");
     deleteCleaningConfirmation.classList.remove("animateConfirmation");
 });

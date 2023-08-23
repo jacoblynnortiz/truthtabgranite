@@ -15,6 +15,26 @@
     <div class="welcome-back">
         <h2>Welcome back, <span id="welcomeUser">undefined user</span></h2>
     </div>
+    <div id="deleteDoorConfirmation">
+        <h2>Are you sure you want to delete all door & usher schedules?</h2>
+        <div class="confirmation-buttons">
+            <button id="cancelDoorScheduleDelete">Cancel</i></button>
+                <form style="width: 100%" action="https://sheetdb.io/api/v1/baknlx9pgocds/all" method="Delete"
+                    id="sheetdb-form-4">
+                    <button id="deleteDoorConfirm" name="Post">Confirm</i></button>
+                </form>
+        </div>
+    </div>
+    <div id="deleteCleaningConfirmation">
+        <h2>Are you sure you want to delete all cleaning schedules?</h2>
+        <div class="confirmation-buttons">
+            <button id="cancelCleaningScheduleDelete">Cancel</i></button>
+            <form style="width: 100%" action="https://sheetdb.io/api/v1/ybpphomtih2ho/all" method="Delete"
+                id="sheetdb-form-6">
+                <button id="deleteCleaningConfirm" name="Post">Confirm</i></button>
+            </form>
+        </div>
+    </div>
     <!-- navigation menu -->
     <div class="wrapper">
         <nav>
@@ -38,7 +58,8 @@
     <div id="adminPanel" class="admin-panel">
         <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
             <h2>Note from development team:</h2>
-            <p>The CLeaning Schedule Changer feature is now getting worked on, if you have any questions please feel free to contact me on messenger or (314) 330-9388.</p>
+            <p>The Door/Usher and Cleaning Schedule changer delete buttons have been re proggramed to ask for confirmation just in case you clicked by accident, if you have any questions please feel
+                free to contact me on messenger or (314) 330-9388.</p>
         </div>
         <div class="add-post-row">
             <div class="add-post-container">
@@ -100,34 +121,26 @@
                             <input name="Post" type="submit" value="Create Schedule">
                         </form>
                         <div class="delete-all">
-                            <h3>Delete existing schedule</h3>
-                            <form style="width: 45px" action="https://sheetdb.io/api/v1/baknlx9pgocds/all" method="Delete"
-                                id="sheetdb-form-4">
-                                <button name="Post"><i class="fa-solid fa-trash"></i></button>
-                            </form>
+                            <button id="requestDoorDelete"><i class="fa-solid fa-trash"></i></button>
                         </div>
-                </div>
-                <div class="change-schedule" id="cleaningSchedule">
-                    <form action="https://sheetdb.io/api/v1/ybpphomtih2ho" method="delete" id="sheetdb-form-5">
-                        <h2>Create Schedule</h2>
-                        <div class="schedule-row1">
-                            <input type="text" name="data[date]" required placeholder="Date">
-                            <input type="text" name="data[name1]" required placeholder="Slot #1">
-                        </div>
-                        <div class="schedule-row2">
-                            <input type="text" name="data[name2]" placeholder="Slot #2">
-                            <input type="text" name="data[name3]" placeholder="Slot #3">
-                        </div>
-                        <input name="Post" type="submit" value="Create Schedule">
-                    </form>
-                    <div class="delete-all">
-                        <h3>Delete existing schedule</h3>
-                        <form style="width: 45px" action="https://sheetdb.io/api/v1/ybpphomtih2ho/all" method="Delete"
-                            id="sheetdb-form-6">
-                            <button name="Post"><i class="fa-solid fa-trash"></i></button>
-                        </form>
                     </div>
-            </div>
+                    <div class="change-schedule" id="cleaningSchedule">
+                        <form action="https://sheetdb.io/api/v1/ybpphomtih2ho" method="delete" id="sheetdb-form-5">
+                            <h2>Create Schedule</h2>
+                            <div class="schedule-row1">
+                                <input type="text" name="data[date]" required placeholder="Date">
+                                <input type="text" name="data[name1]" required placeholder="Slot #1">
+                            </div>
+                            <div class="schedule-row2">
+                                <input type="text" name="data[name2]" placeholder="Slot #2">
+                                <input type="text" name="data[name3]" placeholder="Slot #3">
+                            </div>
+                            <input name="Post" type="submit" value="Create Schedule">
+                        </form>
+                        <div class="delete-all">
+                            <button id="requestCleaningDelete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,6 +6,15 @@ let cleanTab = document.getElementById('cleanTab');
 let doorSchedule = document.getElementById('doorSchedule');
 let cleaningSchedule = document.getElementById('cleaningSchedule');
 
+let requestDoorDelete = document.getElementById('requestDoorDelete');
+let requestCleaningDelete = document.getElementById('requestCleaningDelete');
+
+let deleteDoorConfirmation = document.getElementById('deleteDoorConfirmation');
+let deleteCleaningConfirmation = document.getElementById('deleteCleaningConfirmation');
+
+let cancelDoorScheduleDelete = document.getElementById('cancelDoorScheduleDelete');
+let cancelCleaningScheduleDelete = document.getElementById('cancelCleaningScheduleDelete');
+
 doorScheduleForm();
 
 doorTab.addEventListener('click', function doorScheduleForm() {
@@ -38,3 +47,21 @@ function doorScheduleForm() {
     doorTab.style.color = '#000';
     cleanTab.style.color = 'grey';
 }
+
+// checks for deletion request
+
+requestDoorDelete.addEventListener('click', function () {
+    deleteDoorConfirmation.classList.add("animateConfirmation");
+});
+
+requestCleaningDelete.addEventListener('click', function () {
+    deleteCleaningConfirmation.classList.add("animateConfirmation");
+});
+
+cancelDoorScheduleDelete.addEventListener('click', function () {
+    deleteDoorConfirmation.classList.remove("animateConfirmation");
+});
+
+cancelCleaningScheduleDelete.addEventListener('click', function () {
+    deleteCleaningConfirmation.classList.remove("animateConfirmation");
+});

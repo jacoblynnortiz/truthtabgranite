@@ -135,7 +135,7 @@
   border-bottom-left-radius: 40%;
   border-bottom-right-radius: 40%;
   box-shadow: 0px 5px 8px rgba(0, 0, 0, .3);
-  animation: animate 40s infinite;
+  animation: animate 150s infinite;
   position: relative;
 }
 
@@ -223,7 +223,7 @@
   }
 
   53.36% {
-    background: url("../images/home_hero_fader/bg510.jpg");
+    background: url("../images/home_hero_fader/bg10.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

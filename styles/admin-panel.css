@@ -151,7 +151,7 @@
 }
 
 .animateUnConfirmation {
-    animation: cancelPop 2s forwards;
+    animation: UnconfirmPop 2s forwards;
 }
 
 .confirmation-buttons {
@@ -171,7 +171,7 @@
     }
 }
 
-@keyframes cancelPop {
+@keyframes UnconfirmPop {
     0% {
         top: 15px
     }

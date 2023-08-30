@@ -201,3 +201,32 @@ nav .content .links{
     font-size: 20px;
   }
 }
+
+.nav-btns {
+  padding-top: 35px;
+  width: 100%;
+  min-height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.nav-btns button {
+  width: calc(100% - 15px);
+  height: 70px;
+  border-top-right-radius: 33px;
+  border-bottom-right-radius: 33px;
+  font-size: 1.4rem;
+  text-align: left;
+  padding-left: 15px;
+  border: none;
+  margin-bottom: 3px;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.nav-btns button:hover {
+  background-color: #3c7cb960;
+}

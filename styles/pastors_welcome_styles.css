@@ -63,3 +63,26 @@
     max-height: calc(1080px / 2);
     border-radius: 8px;
 }
+
+@media screen and (max-width: 600px){
+    .welcome-content iframe {
+        width: 100%;
+        height: 175px;
+        max-width: 350px;
+        max-height: calc(1080px / 8);
+        border-radius: 8px;
+    }
+    .welcome-content {
+        padding: 25px 0;
+    }
+  }
+
+  @media screen and (max-width: 900px){
+    .welcome-content iframe {
+        width: 100%;
+        height: calc(1080px / 3);
+        max-width: calc(1920px / 2);
+        max-height: calc(1080px / 3);
+        border-radius: 8px;
+    }
+  }

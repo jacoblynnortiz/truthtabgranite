@@ -29,6 +29,10 @@
                         <img id="profilePicture" src="#">
                         <h2 id="name">name undefined</h2>
                         <h2 id="username">.username_undefined</h2>
+                        <div class="nav-btns">
+                            <button id="doorScheduleContainerToggle">Door & Usher</button>
+                            <button id="cleaningScheduleContainerToggle">Cleaning</button>
+                        </div>
                     </div>
                 </ul>
             </div>
@@ -38,18 +42,18 @@
     <div id="memberPanel" class="member-panel">
         <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
             <h2>Note from development team:</h2>
-            <p>Hello! the Members Panel feature is currently still in beta development and will be getting updated
-                often.</p>
+            <p>Hello! the Members Panel feature is now in beta development and to toggle between the door & usher and cleaning schedule simplly open the menu and click the tab to go to, if you have any questions please feel
+                free to contact me on messenger or (314) 330-9388.</p>
         </div>
-        <div class="schedule-container">
-            <h2>Monthly Usher & Door Greeting Schedule:</h2>
+        <div class="schedule-container" id="doorScheduleContainer">
+            <h2>Monthly Door & Usher Greeting Schedule:</h2>
             <div class="help-info-schedule"><span></span>
                 <p>- indicates todays or next services schedule</p>
             </div>
             <table id="scheduleDB"></table>
             <a href="images/usherdoorguide.pdf" class="ushersdoorguide">Ushers and Door Greeting Guide</a>
         </div>
-        <div class="schedule-container">
+        <div class="schedule-container" id="cleaningScheduleContainer">
             <h2>Monthly Cleaning Schedule:</h2>
             <div class="help-info-schedule"><span></span>
                 <p>- indicates todays or next cleaning schedule</p>

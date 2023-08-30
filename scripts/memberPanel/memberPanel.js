@@ -6,6 +6,12 @@ let showMenu = document.getElementById('show-menu');
 let menuClosed = false;
 let ls = localStorage;
 
+let doorScheduleContainer = document.getElementById('doorScheduleContainer');
+let cleaningScheduleContainer = document.getElementById('cleaningScheduleContainer');
+
+let doorScheduleContainerToggle = document.getElementById('doorScheduleContainerToggle');
+let cleaningScheduleContainerToggle = document.getElementById('cleaningScheduleContainerToggle');
+
 function slide() {
     if (window.matchMedia('screen and (max-width: 750px)').matches) {
         if (menuClosed == true) {
@@ -45,3 +51,26 @@ if (ls.getItem("truthTabMember") == null) {
 showMenu.addEventListener('change', function () {
     slide();
 });
+
+doorScheduleContainerToggler();
+
+doorScheduleContainerToggle.addEventListener('click', function doorScheduleContainerToggler() {
+    doorScheduleContainer.style.display = 'block';
+    cleaningScheduleContainer.style.display = 'none';
+    doorScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
+    cleaningScheduleContainerToggle.style.backgroundColor = 'transparent';
+});
+
+cleaningScheduleContainerToggle.addEventListener('click', function cleaningScheduleContainerToggler() {
+    cleaningScheduleContainer.style.display = 'block';
+    doorScheduleContainer.style.display = 'none';
+    cleaningScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
+    doorScheduleContainerToggle.style.backgroundColor = 'transparent';
+});
+
+function doorScheduleContainerToggler() {
+    doorScheduleContainer.style.display = 'block';
+    cleaningScheduleContainer.style.display = 'none';
+    doorScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
+    cleaningScheduleContainerToggle.style.backgroundColor = 'transparent';
+}

@@ -124,19 +124,36 @@ body {
 }
 
 #accordian label+input[type="radio"]:checked+.content {
-    max-height: 400px;
-}
-
-.content iframe, .trailer-content iframe {
-    width: 100%;
-    max-width: calc(1920px / 3.5);
-    height: calc(1080px / 2);
-    border-radius: 22px;
+    max-height: 600px;
 }
 
 .trailer-content iframe {
-    max-height: calc(1080px / 2.5);
+    width: 100%;
     max-width: 90%;
+    height: calc(1080px / 2);
+    max-height: calc(1080px / 2.5);
+    border-radius: 22px;
+}
+
+.content iframe {
+    width: 100%;
+    max-width: 90%;
+    height: calc(1080px / 1.5);
+    border-radius: 22px;
+}
+
+@media screen and (max-width: 900px) {
+    .content iframe {
+        max-width: calc(1920px / 2);
+        height: calc(1080px / 3);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .content iframe, .trailer-content iframe {
+        max-width: calc(1920px / 2);
+        height: calc(1080px / 3);
+    }
 }
 
 @media screen and (max-width: 500px) {

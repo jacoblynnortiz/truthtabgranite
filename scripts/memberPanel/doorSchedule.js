@@ -11,10 +11,6 @@ const today = new Date();
 const yyyy = today.getFullYear();
 let mm = today.getMonth() + 1; // Months start at 0!
 let dd = today.getDate();
-let d = today.getDate();
-
-if (dd < 10) dd = '0' + dd;
-if (mm < 10) mm = '0' + mm;
 
 let monthlyScheduleDays = [],
     goal = dd;
@@ -53,6 +49,7 @@ $.getJSON('https://sheetdb.io/api/v1/baknlx9pgocds', function (door_schedule) {
             if(door_schedule[i].date[3] == '/' || door_schedule[i].date[3] == '-') {
                 todayDate = door_schedule[i].date[2];
                 monthlyScheduleDays.push(todayDate);
+                console.log(monthlyScheduleDays)
             } else if(door_schedule[i].date[4] == '/' || door_schedule[i].date[4] == '-') {
                 // checks for a double digit day number when month is also single digit number
                 let todayDate1 = door_schedule[i].date[2];
@@ -74,7 +71,7 @@ $.getJSON('https://sheetdb.io/api/v1/baknlx9pgocds', function (door_schedule) {
             }
         }
 
-        if (todayDate == d || todayDate == dd) {
+        if (todayDate == dd) {
             dateV.innerText = "Today's Schedule";
             dateV.style.backgroundColor = 'gold';
             door1V.style.backgroundColor = 'gold';
@@ -83,7 +80,8 @@ $.getJSON('https://sheetdb.io/api/v1/baknlx9pgocds', function (door_schedule) {
             usherV.style.backgroundColor = 'gold';
             noUpcoming = true;
             dateV.setAttribute("data-cell", "Date");
-        } else if (monthlyScheduleDays[i] > d || monthlyScheduleDays[i] > dd) {
+        } else if (monthlyScheduleDays[i] > dd) {
+            console.log(monthlyScheduleDays[i])
             if(noUpcoming == false) {
                 if (dontRepeat == false) {
                     dateV.innerText = "Upcoming Schedule";

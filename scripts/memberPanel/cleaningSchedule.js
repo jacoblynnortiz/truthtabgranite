@@ -59,7 +59,7 @@ $.getJSON('https://sheetdb.io/api/v1/ybpphomtih2ho', function (door_schedule) {
             }
         }
 
-        if (cleaningTodayDate == dd || cleaningTodayDate == d) {
+        if (cleaningTodayDate == dd) {
             cleaningDateV.innerText = "Today's Schedule";
             cleaningDateV.style.backgroundColor = 'gold';
             slot1V.style.backgroundColor = 'gold';
@@ -67,7 +67,7 @@ $.getJSON('https://sheetdb.io/api/v1/ybpphomtih2ho', function (door_schedule) {
             slot3V.style.backgroundColor = 'gold';
             cleaningNoUpcoming = true;
             cleaningDateV.setAttribute("data-cell", "Date");
-        } else if (cleaningMonthlyScheduleDays[i] > dd || cleaningMonthlyScheduleDays[i] > d) {
+        } else if (cleaningMonthlyScheduleDays[i] > dd) {
             if(cleaningNoUpcoming == false) {
                 if (cleaningDontRepeat == false) {
                     cleaningDateV.innerText = "Upcoming Schedule";

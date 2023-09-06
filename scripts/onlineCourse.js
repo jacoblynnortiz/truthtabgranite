@@ -148,7 +148,7 @@ if (ls.getItem('series_stones_fit_the_frame_together') == 0) {
 
 if (ls.getItem('series_revelation') == 0) {
     featuredSeriesBtn1.href = "bible_series_pages/bible_series_revelation_preview.html";
-} else if (ls.getItem('series_biblical_and_spiritual_leadership_formation') == 1) {
+} else if (ls.getItem('series_revelation') == 1) {
     featuredSeriesBtn1.href = "bible_series_pages/bible_series_revelation.html";
 }
 

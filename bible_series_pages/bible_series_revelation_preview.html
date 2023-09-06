@@ -106,7 +106,7 @@
           <input style="opacity: 0; width: 0; height: 0;" id="text" type="text"
             value="Enrolled into The Apokalupsis On Patmos" name="data[message]" required>
           <input style="opacity: 0; width: 0; height: 0;" id="date" type="text" value="" name="data[timestamp]">
-          <button onclick="localStorage.setItem('series_revelation', 1);  window.open('bible_series_revelation.html');"
+          <button onclick="localStorage.setItem('series_revelation', 1);"
             type="submit">Enroll
             now</button>
         </form>
@@ -180,7 +180,10 @@
     if (today.getHours() > 12) { minutes = minutes + 'pm' } else minutes = minutes + 'am';
 
     let date = mm + '/' + dd + '/' + yyyy + " - " + hour + ":" + minutes;
-    
+
+    let timestamp = document.getElementById('date');
+    timestamp.value = date;
+
     setInterval(function () {
       if (document.activeElement === document.getElementById('name')) {
         localStorage.setItem('truthtabUserName', document.getElementById('name').value);
@@ -200,7 +203,7 @@
         response => response.json()
       ).then((html) => {
         // you can put any JS code here
-        window.location = 'bible_series_revelation_preview.html', '_blank';
+        window.location = 'bible_series_revelation.html', '_blank';
 
       });
     });

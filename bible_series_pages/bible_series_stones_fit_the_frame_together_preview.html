@@ -165,6 +165,9 @@
     if (today.getHours() > 12) { minutes = minutes + 'pm' } else minutes = minutes + 'am';
 
     let date = mm + '/' + dd + '/' + yyyy + " - " + hour + ":" + minutes;
+
+    let timestamp = document.getElementById('date');
+    timestamp.value = date;
     
     setInterval(function () {
       if (document.activeElement === document.getElementById('name')) {

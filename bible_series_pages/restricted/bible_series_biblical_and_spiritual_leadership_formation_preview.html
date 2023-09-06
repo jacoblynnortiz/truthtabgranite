@@ -178,6 +178,9 @@
 
     let date = mm + '/' + dd + '/' + yyyy + " - " + hour + ":" + minutes;
 
+    let timestamp = document.getElementById('date');
+    timestamp.value = date;
+
     setInterval(function () {
       if (document.activeElement === document.getElementById('name')) {
         localStorage.setItem('truthtabUserName', document.getElementById('name').value);

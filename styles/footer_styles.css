@@ -13,7 +13,7 @@
 }
 
 .footer {
-    padding-top: 65px;
+    padding-top: 35px;
     width: 100%;
     max-width: 2560px;
     min-height: 100px;
@@ -27,6 +27,7 @@
 .big-footer {
     width: 90%;
     min-height: 300px;
+    padding-top: 30px;
 }
 
 .footer .logo {
@@ -184,4 +185,50 @@
         justify-content: center;
         width: 100%;
     }
+    .big-footer {
+        padding-top: 110px;
+    }
+}
+
+.give-area {
+    position: absolute;
+}
+
+.give-area a {
+    display: block;
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 20px 85px;
+    position: relative;
+    cursor: pointer;
+}
+
+.give-area a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: .3s;
+}
+
+.give-area a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: .3s;
+}
+
+.give-area a:hover::before {
+    width: 100%;
+}
+
+.give-area a:hover::after {
+    width: 100%;
 }

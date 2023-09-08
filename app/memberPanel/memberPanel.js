@@ -59,6 +59,10 @@ doorScheduleContainerToggle.addEventListener('click', function doorScheduleConta
     cleaningScheduleContainer.style.display = 'none';
     doorScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
     cleaningScheduleContainerToggle.style.backgroundColor = 'transparent';
+    if (window.matchMedia('screen and (max-width: 750px)').matches) {
+        showMenu.checked = false;
+        memberPanel.style.paddingLeft = '25px';
+    }
 });
 
 cleaningScheduleContainerToggle.addEventListener('click', function cleaningScheduleContainerToggler() {
@@ -66,6 +70,10 @@ cleaningScheduleContainerToggle.addEventListener('click', function cleaningSched
     doorScheduleContainer.style.display = 'none';
     cleaningScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
     doorScheduleContainerToggle.style.backgroundColor = 'transparent';
+    if (window.matchMedia('screen and (max-width: 750px)').matches) {
+        showMenu.checked = false;
+        memberPanel.style.paddingLeft = '25px';
+    }
 });
 
 function doorScheduleContainerToggler() {
@@ -73,4 +81,8 @@ function doorScheduleContainerToggler() {
     cleaningScheduleContainer.style.display = 'none';
     doorScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
     cleaningScheduleContainerToggle.style.backgroundColor = 'transparent';
+    if (window.matchMedia('screen and (max-width: 750px)').matches) {
+        showMenu.checked = false;
+        memberPanel.style.paddingLeft = '25px';
+    }
 }

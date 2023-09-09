@@ -36,7 +36,7 @@ if (window.matchMedia('screen and (max-width: 750px)').matches) {
 }
 
 if (ls.getItem("truthTabMember") == null) {
-        window.location = 'login.html';
+        window.location = 'login';
 } else {
     name.innerText = ls.truthTabMemberName;
     username.innerText = "." + ls.truthTabMemberUsername;

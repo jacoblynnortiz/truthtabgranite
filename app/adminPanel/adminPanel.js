@@ -42,10 +42,7 @@ if (window.matchMedia('screen and (max-width: 750px)').matches) {
 // detects if user is logged in as an admin for security
 
 if (ls.getItem("truthTabAdmin") == null) {
-    while (true) {
-        alert('You are not permitted to be on this page!');
-        window.location = 'admin_login.html';
-    }
+        window.location = 'login.html';
 } else {
     name.innerText = ls.truthTabAdminName;
     username.innerText = "." + ls.truthTabAdminUsername;

@@ -36,10 +36,7 @@ if (window.matchMedia('screen and (max-width: 750px)').matches) {
 }
 
 if (ls.getItem("truthTabMember") == null) {
-    while (true) {
-        alert('You are not permitted to be on this page!');
-        window.location = 'member_login.html';
-    }
+        window.location = 'login.html';
 } else {
     name.innerText = ls.truthTabMemberName;
     username.innerText = "." + ls.truthTabMemberUsername;

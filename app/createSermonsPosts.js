@@ -17,6 +17,7 @@ $.getJSON('https://sheetdb.io/api/v1/yn7mbvhpvnpn8', function(sermon_posts) {
         // creates sermon video
         newSermonContainer.classList.add("sermon-container");
         newSermonContainer.setAttribute("id", i);
+        newSermonContainer.setAttribute("loading", "lazy");
         newSermonContainer.innerHTML = sermon_posts[i].sermon_src;
 
         // creates sermon title

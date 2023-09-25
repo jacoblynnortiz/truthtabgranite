@@ -121,7 +121,7 @@
 /* animation styling for revealing all sermons */
 
 .animate-in {
-    animation: animateIn 3s forwards;
+    animation: animateIn 1.5s forwards;
 }
 
 @keyframes animateIn {

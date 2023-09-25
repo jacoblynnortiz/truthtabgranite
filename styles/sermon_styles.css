@@ -118,6 +118,23 @@
     width: 100%;
 }
 
+/* animation styling for revealing all sermons */
+
+.animate-in {
+    animation: animateIn 3s forwards;
+}
+
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+}
+
 @media (max-width: 1300px) {
     .sermon-container {
         width: 390px;

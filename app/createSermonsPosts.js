@@ -16,6 +16,9 @@ $.getJSON('https://sheetdb.io/api/v1/yn7mbvhpvnpn8', function(sermon_posts) {
 
         // creates sermon video
         newSermonContainer.classList.add("sermon-container");
+        if(i == sermon_posts.length - 10) {
+            newSermonContainer.style.marginBottom = '65px';
+        }
         newSermonContainer.setAttribute("id", i);
         newSermonContainer.setAttribute("loading", "lazy");
         newSermonContainer.innerHTML = sermon_posts[i].sermon_src;
@@ -48,7 +51,9 @@ viewAllSermonsBtn.addEventListener('click', function() {
 
         // creates sermon video
         newSermonContainer.classList.add("sermon-container");
+        newSermonContainer.classList.add("animate-in");
         newSermonContainer.setAttribute("id", i);
+        newSermonContainer.setAttribute("loading", "lazy");
         newSermonContainer.innerHTML = sermon_posts[i].sermon_src;
 
         // creates sermon title

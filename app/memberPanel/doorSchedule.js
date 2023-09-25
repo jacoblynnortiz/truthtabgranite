@@ -31,9 +31,9 @@ scheduleDB.appendChild(door2);
 scheduleDB.appendChild(door3);
 scheduleDB.appendChild(usher);
 
-$.getJSON('https://sheetdb.io/api/v1/baknlx9pgocds', function (door_schedule) {
+$.getJSON('https://sheetdb.io/api/v1/3gdn1iqegei8j', function (door_usher_schedule) {
 
-    for (let i = 0; i < door_schedule.length; i++) {
+    for (let i = 0; i < door_usher_schedule.length; i++) {
         let dateV = document.createElement("td");
         let door1V = document.createElement("td");
         let door2V = document.createElement("td");
@@ -44,28 +44,28 @@ $.getJSON('https://sheetdb.io/api/v1/baknlx9pgocds', function (door_schedule) {
 
         // looks for day number no matter if single or double digit months and days
 
-        if(door_schedule[i].date[1] == '/' || door_schedule[i].date[1] == '-') {
+        if(door_usher_schedule[i].date[1] == '/' || door_usher_schedule[i].date[1] == '-') {
             // checks for a single digit day number when month is also single digit number
-            if(door_schedule[i].date[3] == '/' || door_schedule[i].date[3] == '-') {
-                todayDate = door_schedule[i].date[2];
+            if(door_usher_schedule[i].date[3] == '/' || door_usher_schedule[i].date[3] == '-') {
+                todayDate = door_usher_schedule[i].date[2];
                 monthlyScheduleDays.push(todayDate);
                 console.log(monthlyScheduleDays)
-            } else if(door_schedule[i].date[4] == '/' || door_schedule[i].date[4] == '-') {
+            } else if(door_usher_schedule[i].date[4] == '/' || door_usher_schedule[i].date[4] == '-') {
                 // checks for a double digit day number when month is also single digit number
-                let todayDate1 = door_schedule[i].date[2];
-                let todayDate2 = door_schedule[i].date[3];
+                let todayDate1 = door_usher_schedule[i].date[2];
+                let todayDate2 = door_usher_schedule[i].date[3];
                 todayDate = todayDate1 + todayDate2;
                 monthlyScheduleDays.push(todayDate);
             }
-        } else if(door_schedule[i].date[2] == '/' || door_schedule[i].date[2] == '-') {
+        } else if(door_usher_schedule[i].date[2] == '/' || door_usher_schedule[i].date[2] == '-') {
             // checks for a single digit day number when month is also double digit number
-            if(door_schedule[i].date[4] == '/' || door_schedule[i].date[4] == '-') {
-                todayDate = door_schedule[i].date[3];
+            if(door_usher_schedule[i].date[4] == '/' || door_usher_schedule[i].date[4] == '-') {
+                todayDate = door_usher_schedule[i].date[3];
                 monthlyScheduleDays.push(todayDate);
-            } else if(door_schedule[i].date[5] == '/' || door_schedule[i].date[4] == '-') {
+            } else if(door_usher_schedule[i].date[5] == '/' || door_usher_schedule[i].date[4] == '-') {
                 // checks for a double digit day number when month is also double digit number
-                let todayDate1 = door_schedule[i].date[3];
-                let todayDate2 = door_schedule[i].date[4];
+                let todayDate1 = door_usher_schedule[i].date[3];
+                let todayDate2 = door_usher_schedule[i].date[4];
                 todayDate = todayDate1 + todayDate2;
                 monthlyScheduleDays.push(todayDate);
             }
@@ -93,22 +93,22 @@ $.getJSON('https://sheetdb.io/api/v1/baknlx9pgocds', function (door_schedule) {
                     dontRepeat = true;
                     dateV.setAttribute("data-cell", "Date");
                 } else {
-                    dateV.innerText = door_schedule[i].date;
+                    dateV.innerText = door_usher_schedule[i].date;
                     dateV.setAttribute("data-cell", "Date");
                 }
             } else {
-                dateV.innerText = door_schedule[i].date;
+                dateV.innerText = door_usher_schedule[i].date;
                 dateV.setAttribute("data-cell", "Date");
             }
         } else {
-            dateV.innerText = door_schedule[i].date;
+            dateV.innerText = door_usher_schedule[i].date;
             dateV.setAttribute("data-cell", "Date");
         }
 
-        door1V.innerText = door_schedule[i].door1;
-        door2V.innerText = door_schedule[i].door2;
-        door3V.innerText = door_schedule[i].door3;
-        usherV.innerText = door_schedule[i].usher;
+        door1V.innerText = door_usher_schedule[i].door1;
+        door2V.innerText = door_usher_schedule[i].door2;
+        door3V.innerText = door_usher_schedule[i].door3;
+        usherV.innerText = door_usher_schedule[i].usher;
 
         door1V.setAttribute("data-cell", "Door #1");
         door2V.setAttribute("data-cell", "Door #2");

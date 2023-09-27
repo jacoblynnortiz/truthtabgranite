@@ -7,6 +7,8 @@ let showMenu = document.getElementById('show-menu');
 let menuClosed = false;
 let ls = localStorage;
 
+let usernameSuccess1 = null, passwordSuccess1 = null;
+
 // function to make sidebar push content over on bigger devices when open or go over it on smaller devices
 
 function slide() {
@@ -27,9 +29,7 @@ function slide() {
     }
 }
 
-showMenu.addEventListener('change', function () {
-    slide();
-});
+showMenu.addEventListener('change', slide);
 
 // checks device width for small screen and if so runs slide function to disable it
 
@@ -42,7 +42,7 @@ if (window.matchMedia('screen and (max-width: 750px)').matches) {
 // detects if user is logged in as an admin for security
 
 if (ls.getItem("truthTabAdmin") == null) {
-        window.location = 'login';
+    window.location = 'login';
 } else {
     name.innerText = ls.truthTabAdminName;
     username.innerText = "." + ls.truthTabAdminUsername;
@@ -50,3 +50,25 @@ if (ls.getItem("truthTabAdmin") == null) {
 
     welcomeUser.innerText = ls.truthTabAdminName + "!";
 }
+
+// checks if username and password that they're logged in with still matches account they're logged in with for
+// security, if it doesnt match it will say session expired and give one option to go to login page to re login
+$.getJSON('https://api.npoint.io/26be1e09aa7b22d08ce6', function (admin_details) {
+    // looks through accounts database looking for match
+    for (let i = 0; i < admin_details.length; i++) {
+        let locateAccount = admin_details[i].username;
+        let getAccountPassword = admin_details[i].password;
+        // checkes if username still matches
+        if (ls.getItem("truthTabAdminUsername") == locateAccount) {
+            usernameSuccess1 = true;
+            // if username matches it will then check if that password also still matches
+            if (ls.getItem("truthTabAdminPassword") == getAccountPassword) {
+                passwordSuccess1 = true;
+            }
+        }
+    }
+    // shows a session expired message to user if username or password doesnt match
+    if (usernameSuccess1 == null || passwordSuccess1 == null) {
+        sessionExpired.style.display = 'flex';
+    }
+});

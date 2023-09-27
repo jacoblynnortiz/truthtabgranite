@@ -66,6 +66,62 @@
     max-width: 400px;
 }
 
+#sessionExpired {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.43);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.session-expired-box {
+    width: 100%;
+    max-width: 400px;
+    min-height: 180px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.session-expired-box h3 {
+    font-size: 1.5rem;
+}
+
+.session-expired-box p {
+    font-size: 1.2rem;
+}
+
+.session-expired-box a {
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 5px 15px;
+    display: block;
+    background-color: #3c7cb9;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.4rem;
+    border: 3px solid #3c7cb9;
+    transition: .3s;
+}
+
+.session-expired-box a:hover {
+    background-color: transparent;
+    color: #3c7cb9;
+}
+
 .welcome-back {
     width: 100%;
     max-width: 600px;

@@ -12,6 +12,11 @@ let cleaningScheduleContainer = document.getElementById('cleaningScheduleContain
 let doorScheduleContainerToggle = document.getElementById('doorScheduleContainerToggle');
 let cleaningScheduleContainerToggle = document.getElementById('cleaningScheduleContainerToggle');
 
+let sessionExpired = document.getElementById('sessionExpired');
+
+let usernameSuccess1 = null, passwordSuccess1 = null;
+
+// funtion to open and close side menu and move or not move content if screen is a certain size
 function slide() {
     if (window.matchMedia('screen and (max-width: 750px)').matches) {
         if (menuClosed == true) {
@@ -30,13 +35,15 @@ function slide() {
     }
 }
 
+// sets screen content to certain position if screen is smaller
 if (window.matchMedia('screen and (max-width: 750px)').matches) {
     showMenu.checked = false;
     memberPanel.style.paddingLeft = '25px';
 }
 
+// if user is not logged in properly, makes it go back to login page
 if (ls.getItem("truthTabMember") == null) {
-        window.location = 'login';
+    window.location = 'login';
 } else {
     name.innerText = ls.truthTabMemberName;
     username.innerText = "." + ls.truthTabMemberUsername;
@@ -45,39 +52,52 @@ if (ls.getItem("truthTabMember") == null) {
     welcomeUser.innerText = ls.truthTabMemberName + "!";
 }
 
-showMenu.addEventListener('change', function () {
-    slide();
+// checks if username and password that they're logged in with still matches account they're logged in with for
+// security, if it doesnt match it will say session expired and give one option to go to login page to re login
+$.getJSON('https://api.npoint.io/080a8e433b1f4f6af3b2', function (member_details) {
+    // looks through accounts database looking for match
+    for (let i = 0; i < member_details.length; i++) {
+        let locateAccount = member_details[i].username;
+        let getAccountPassword = member_details[i].password;
+        // checkes if username still matches
+        if (ls.getItem("truthTabMemberUsername") == locateAccount) {
+            usernameSuccess1 = true;
+            // if username matches it will then check if that password also still matches
+            if (ls.getItem("truthTabMemberPassword") == getAccountPassword) {
+                passwordSuccess1 = true;
+            }
+        }
+    }
+    // shows a session expired message to user if username or password doesnt match
+    if (usernameSuccess1 == null || passwordSuccess1 == null) {
+        sessionExpired.style.display = 'flex';
+    }
 });
+
+showMenu.addEventListener('change', slide);
 
 doorScheduleContainerToggler();
 
-doorScheduleContainerToggle.addEventListener('click', function doorScheduleContainerToggler() {
-    doorScheduleContainer.style.display = 'block';
-    cleaningScheduleContainer.style.display = 'none';
-    doorScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
-    cleaningScheduleContainerToggle.style.backgroundColor = 'transparent';
-    if (window.matchMedia('screen and (max-width: 750px)').matches) {
-        showMenu.checked = false;
-        memberPanel.style.paddingLeft = '25px';
-    }
-});
+doorScheduleContainerToggle.addEventListener('click', doorScheduleContainerToggler);
 
-cleaningScheduleContainerToggle.addEventListener('click', function cleaningScheduleContainerToggler() {
-    cleaningScheduleContainer.style.display = 'block';
-    doorScheduleContainer.style.display = 'none';
-    cleaningScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
-    doorScheduleContainerToggle.style.backgroundColor = 'transparent';
-    if (window.matchMedia('screen and (max-width: 750px)').matches) {
-        showMenu.checked = false;
-        memberPanel.style.paddingLeft = '25px';
-    }
-});
+cleaningScheduleContainerToggle.addEventListener('click', cleaningScheduleContainerToggler);
 
 function doorScheduleContainerToggler() {
     doorScheduleContainer.style.display = 'block';
     cleaningScheduleContainer.style.display = 'none';
     doorScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
     cleaningScheduleContainerToggle.style.backgroundColor = 'transparent';
+    if (window.matchMedia('screen and (max-width: 750px)').matches) {
+        showMenu.checked = false;
+        memberPanel.style.paddingLeft = '25px';
+    }
+}
+
+function cleaningScheduleContainerToggler() {
+    cleaningScheduleContainer.style.display = 'block';
+    doorScheduleContainer.style.display = 'none';
+    cleaningScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
+    doorScheduleContainerToggle.style.backgroundColor = 'transparent';
     if (window.matchMedia('screen and (max-width: 750px)').matches) {
         showMenu.checked = false;
         memberPanel.style.paddingLeft = '25px';

@@ -65,7 +65,7 @@
     <div id="adminPanel" class="admin-panel">
         <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
             <h2>Note from development team:</h2>
-            <p>Hello, the admin panel features are currently not available. The issue will be resolved in about 2 weeks, if you have any questions please feel
+            <p>The Create Post feature is now allowing unlimited words, try to keep it under 800 for now though, if you have any questions please feel
                 free to contact me on messenger or (314) 330-9388.</p>
         </div>
         <div class="add-post-row">
@@ -79,6 +79,7 @@
                             <option value="español">Español</option>
                         </select>
                         <input required placeholder="image URL" type="text" name="data[img_src]">
+                        <input required placeholder="Post Title" type="text" name="data[post_title]">
                         <input id="datePostedContainer" style="opacity: 0; width: 0; height: 0;" name="data[post_date]">
                         <textarea required placeholder="Type Message..." name="data[post_txt]"></textarea>
                         <input type="submit" name="Post" value="Post">
@@ -96,8 +97,7 @@
                                 <option value="español">Español</option>
                             </select>
                             <input required placeholder="Sermon Title" type="text" name="data[sermon_title]">
-                            <input placeholder="Sermon Date" type="text" name="data[sermon_date]"
-                                style="opacity: 0; width: 0; height: 0;" id="datePostedSermonContainer">
+                            <input type="text" name="data[sermon_date]" style="opacity: 0; width: 0; height: 0;" id="datePostedSermonContainer">
                             <textarea required placeholder="iframe goes here..." name="data[sermon_src]"></textarea>
                             <input type="submit" name="Post" value="Upload">
                         </form>

@@ -28,13 +28,6 @@ let usernameSuccess2 = null, passwordSuccess2 = null;
 
 // looks for if user has checked remember me before to auto input their info
 
-if (ls.getItem("truthTabAdmin") == 'undefined') {
-    console.log('you are not saved as an admin');
-} else {
-    username2.value = ls.getItem('autoTruthTabAdminUsername', username2.value);
-    password2.value = ls.getItem('autoTruthTabAdminPassword', password2.value);
-}
-
 if (ls.getItem("truthTabMember") == 'undefined') {
     console.log('you are not saved as an member');
 } else {
@@ -42,20 +35,28 @@ if (ls.getItem("truthTabMember") == 'undefined') {
     password1.value = ls.getItem('autoTruthTabMemberPassword', password1.value);
 }
 
+if (ls.getItem("truthTabAdmin") == 'undefined') {
+    console.log('you are not saved as an admin');
+} else {
+    username2.value = ls.getItem('autoTruthTabAdminUsername', username2.value);
+    password2.value = ls.getItem('autoTruthTabAdminPassword', password2.value);
+}
+
 // listens for enter key being pressed and trys login determining on which tab user is on
 
 window.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        if (memberLoginFocused == true) { loginMember(); }
-        else if (adminLoginFocused == true) { loginAdmin(); }
+    if (e.key === 'Enter' && memberLoginFocused == true) {
+        loginMember();
+    } else if (e.key === 'Enter' && adminLoginFocused == true) {
+        loginAdmin();
     }
 });
 
 // listens for click on login button and trys login
 
-loginBtn1.addEventListener('click', function () { loginMember(); });
+loginBtn1.addEventListener('click', loginMember);
 
-loginBtn2.addEventListener('click', function () { loginAdmin(); });
+loginBtn2.addEventListener('click', loginAdmin);
 
 // listens for click to switch tabs
 
@@ -83,61 +84,6 @@ function adminForm() {
     adminTab.style.color = '#fff';
     memberLoginFocused = false;
     adminLoginFocused = true;
-}
-
-function loginAdmin() {
-    // fetches JSON from account database
-    $.getJSON('https://api.npoint.io/1619ae187ef7402b3aa6', function (admin_details) {
-        // looks through accounts database looking for match
-        for (let i = 0; i < admin_details.length; i++) {
-            let locateAccount = admin_details[i].username;
-            let getAccountPassword = admin_details[i].password;
-            // checkes if username matches
-            if (username2.value == locateAccount) {
-                usernameSuccess2 = true;
-                // if username matches it will then check if that password also matches
-                if (password2.value == getAccountPassword) {
-                    passwordSuccess2 = true;
-                    /* once account login is successfull it checks if user checked
-                    remember me and saves it to local storage */
-                    if (rememberMe2.checked) {
-                        // saves info to local storage
-                        ls.setItem('autoTruthTabAdminUsername', username2.value);
-                        ls.setItem('autoTruthTabAdminPassword', password2.value);
-                        ls.setItem('autoTruthTabAdminName', admin_details[i].name);
-
-                        ls.setItem('truthTabAdminUsername', username2.value);
-                        ls.setItem('truthTabAdminPassword', password2.value);
-                        ls.setItem('truthTabAdminName', admin_details[i].name);
-                        ls.setItem('truthTabAdminProfilePicture', admin_details[i].profilePicture);
-
-                        window.location = "adminPanel.html";
-                    }
-
-                    ls.setItem('truthTabAdminUsername', username2.value);
-                    ls.setItem('truthTabAdminPassword', password2.value);
-                    ls.setItem('truthTabAdminProfilePicture', admin_details[i].profilePicture);
-                    ls.setItem('truthTabAdminName', admin_details[i].name);
-                    ls.setItem('truthTabAdmin', username2.value);
-
-                    window.location = "adminPanel.html";
-                }
-            }
-        }
-        // shows an error message to user if username or password doesnt match
-        if (usernameSuccess2 == null && passwordSuccess2 == null) {
-            errorLogin2.innerText = "The entered username and password is invalid, please try entering login details again.";
-            errorLogin2.style.padding = '15px';
-            usernameSuccess2 = null;
-            passwordSuccess2 = null;
-        }
-        if(usernameSuccess2 == true && passwordSuccess2 == null) {
-            errorLogin2.innerText = "The entered password is invalid, please try entering password again.";
-            errorLogin2.style.padding = '15px';
-            usernameSuccess2 = null;
-            passwordSuccess2 = null;
-        }
-    });
 }
 
 function loginMember() {
@@ -187,11 +133,66 @@ function loginMember() {
             usernameSuccess1 = null;
             passwordSuccess1 = null;
         }
-        if(usernameSuccess1 == true && passwordSuccess1 == null) {
+        if (usernameSuccess1 == true && passwordSuccess1 == null) {
             errorLogin1.innerText = "The entered password is invalid, please try entering password again.";
             errorLogin1.style.padding = '15px';
             usernameSuccess1 = null;
             passwordSuccess1 = null;
+        }
+    });
+}
+
+function loginAdmin() {
+    // fetches JSON from account database
+    $.getJSON('https://api.npoint.io/1619ae187ef7402b3aa6', function (admin_details) {
+        // looks through accounts database looking for match
+        for (let i = 0; i < admin_details.length; i++) {
+            let locateAccount = admin_details[i].username;
+            let getAccountPassword = admin_details[i].password;
+            // checkes if username matches
+            if (username2.value == locateAccount) {
+                usernameSuccess2 = true;
+                // if username matches it will then check if that password also matches
+                if (password2.value == getAccountPassword) {
+                    passwordSuccess2 = true;
+                    /* once account login is successfull it checks if user checked
+                    remember me and saves it to local storage */
+                    if (rememberMe2.checked) {
+                        // saves info to local storage
+                        ls.setItem('autoTruthTabAdminUsername', username2.value);
+                        ls.setItem('autoTruthTabAdminPassword', password2.value);
+                        ls.setItem('autoTruthTabAdminName', admin_details[i].name);
+
+                        ls.setItem('truthTabAdminUsername', username2.value);
+                        ls.setItem('truthTabAdminPassword', password2.value);
+                        ls.setItem('truthTabAdminName', admin_details[i].name);
+                        ls.setItem('truthTabAdminProfilePicture', admin_details[i].profilePicture);
+
+                        window.location = "adminPanel.html";
+                    }
+
+                    ls.setItem('truthTabAdminUsername', username2.value);
+                    ls.setItem('truthTabAdminPassword', password2.value);
+                    ls.setItem('truthTabAdminProfilePicture', admin_details[i].profilePicture);
+                    ls.setItem('truthTabAdminName', admin_details[i].name);
+                    ls.setItem('truthTabAdmin', username2.value);
+
+                    window.location = "adminPanel.html";
+                }
+            }
+        }
+        // shows an error message to user if username or password doesnt match
+        if (usernameSuccess2 == null && passwordSuccess2 == null) {
+            errorLogin2.innerText = "The entered username and password is invalid, please try entering login details again.";
+            errorLogin2.style.padding = '15px';
+            usernameSuccess2 = null;
+            passwordSuccess2 = null;
+        }
+        if (usernameSuccess2 == true && passwordSuccess2 == null) {
+            errorLogin2.innerText = "The entered password is invalid, please try entering password again.";
+            errorLogin2.style.padding = '15px';
+            usernameSuccess2 = null;
+            passwordSuccess2 = null;
         }
     });
 }

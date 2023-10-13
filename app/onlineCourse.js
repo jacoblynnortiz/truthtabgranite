@@ -1,9 +1,3 @@
-let ls = localStorage;
-
-let seriesBtn0 = document.getElementById('seriesBtn0');
-let seriesBtn1 = document.getElementById('seriesBtn1');
-let seriesBtn2 = document.getElementById('seriesBtn2');
-
 let featuredSeriesBtn0 = document.getElementById('featuredSeriesBtn0');
 let featuredSeriesBtn1 = document.getElementById('featuredSeriesBtn1');
 let featuredSeriesBtn2 = document.getElementById('featuredSeriesBtn2');
@@ -19,42 +13,29 @@ let progress1 = document.getElementById('progress1');
 let progress2 = document.getElementById('progress2');
 let progress3 = document.getElementById('progress3');
 
-let auth = document.getElementById('auth');
-let authCodeBox = document.getElementById('authCodeBox');
-
-let errorAuth = document.getElementById('errorAuth');
-
 let percentLabel1 = document.getElementById('percentLabel1');
 let percentLabel2 = document.getElementById('percentLabel2');
 let percentLabel3 = document.getElementById('percentLabel3');
 
 // generate auth screen
 
-let authCodes = [1234, 4444, 232323];
-let authContainer = document.getElementById('authContainer');
-let authScreenActivated = false;
-
 function generateAuthScreen(authScrenActivated) {
     authScreenActivated = true;
     authContainer.style.display = 'flex';
 }
 window.addEventListener('keypress', function (e) {
-    if (authScreenActivated == true) {
-        if (e.key === 'Enter') {
-            authenticate(authCodes);
-        }
+    if (authScreenActivated == true && e.key === 'Enter') {
+        authenticate(authCodes);
     } else {
         console.log('hi')
     }
 });
 
-auth.addEventListener('click', function () {
-    authenticate(authCodes);
-});
+auth.addEventListener('click', authenticate(authCodes));
 
 function authenticate(authCodes) {
     if(authCodeBox.value == authCodes[0]) {
-        window.location = 'bible_series_pages/restricted/bible_series_biblical_and_spiritual_leadership_formation_preview.html'
+        window.location = courseBiblicalSpiritualLeadershipPreview;
     } else if(authCodeBox.value == authCodes[1]) {
         console.log('1')
     } else {
@@ -68,62 +49,62 @@ function authenticate(authCodes) {
 
 if (ls.getItem('series_revelation') != null) {
     console.log('this exists')
-    progress2.style.width = ls.getItem('series_revelation_progess');
-    percentLabel2.innerText = ls.getItem('series_revelation_progess');
+    progress2.style.width = courseRevelationProgress;
+    percentLabel2.innerText = courseRevelationProgress;
 } else {
     ls.setItem('series_revelation', 0)
-    ls.setItem('series_revelation_progess', '0%')
-    percentLabel2.innerText = ls.getItem('series_revelation_progess');
+    ls.setItem(courseRevelationProgress, '0%')
+    percentLabel2.innerText = courseRevelationProgress;
 }
 
 if (ls.getItem('series_stones_fit_the_frame_together') != null) {
     console.log('this exists')
-    progress1.style.width = ls.getItem('series_stones_fit_the_frame_together_progess');
-    percentLabel1.innerText = ls.getItem('series_stones_fit_the_frame_together_progess');
+    progress1.style.width = courseStonesFitlyFramedTogetherProgress;
+    percentLabel1.innerText = courseStonesFitlyFramedTogetherProgress;
 } else {
     ls.setItem('series_stones_fit_the_frame_together', 0)
-    ls.setItem('series_stones_fit_the_frame_together_progess', '0%')
-    percentLabel1.innerText = ls.getItem('series_stones_fit_the_frame_together_progess');
+    ls.setItem(courseStonesFitlyFramedTogetherProgress, '0%')
+    percentLabel1.innerText = courseStonesFitlyFramedTogetherProgress;
 }
 
 if (ls.getItem('series_biblical_and_spiritual_leadership_formation') != null) {
     console.log('this exists')
-    progress3.style.width = ls.getItem('series_biblical_and_spiritual_leadership_formation_progess');
-    percentLabel3.innerText = ls.getItem('series_biblical_and_spiritual_leadership_formation_progess');
+    progress3.style.width = courseBiblicalSpiritualLeadershipProgress;
+    percentLabel3.innerText = courseBiblicalSpiritualLeadershipProgress;
 } else {
     ls.setItem('series_biblical_and_spiritual_leadership_formation', 0)
-    ls.setItem('series_biblical_and_spiritual_leadership_formation_progess', '0%')
-    percentLabel3.innerText = ls.getItem('series_biblical_and_spiritual_leadership_formation_progess');
+    ls.setItem(courseBiblicalSpiritualLeadershipProgress, '0%')
+    percentLabel3.innerText = courseBiblicalSpiritualLeadershipProgress;
 }
 
 // make continue section series section know if to make visible or leave hidden based on if you are already enrolled or not.
 
 if (ls.getItem('series_revelation') == 0) {
-    seriesBtn0.href = "bible_series_pages/bible_series_revelation_preview.html";
+    seriesBtn0.href = courseRevelationPreview;
     seriesBtn0.style.display = 'none';
     continuedetector1 = false;
 } else if (ls.getItem('series_revelation') == 1) {
-    seriesBtn0.href = "bible_series_pages/bible_series_revelation.html";
+    seriesBtn0.href = courseRevelation;
     seriesBtn0.style.display = 'flex';
     continuedetector1 = true;
 }
 
 if (ls.getItem('series_stones_fit_the_frame_together') == 0) {
-    seriesBtn1.href = "bible_series_pages/bible_series_stones_fit_the_frame_together_preview.html";
+    seriesBtn1.href = courseStonesFitlyFramedTogetherPreview;
     seriesBtn1.style.display = 'none';
     continuedetector2 = false;
 } else if (ls.getItem('series_stones_fit_the_frame_together') == 1) {
-    seriesBtn1.href = "bible_series_pages/bible_series_stones_fit_the_frame_together.html";
+    seriesBtn1.href = courseStonesFitlyFramedTogether;
     seriesBtn1.style.display = 'flex';
     continuedetector2 = true;
 }
 
 if (ls.getItem('series_biblical_and_spiritual_leadership_formation') == 0) {
-    seriesBtn2.href = "bible_series_pages/restricted/bible_series_biblical_and_spiritual_leadership_formation_preview.html";
+    seriesBtn2.href = courseBiblicalSpiritualLeadershipPreview;
     seriesBtn2.style.display = 'none';
     continuedetector3 = false;
 } else if (ls.getItem('series_biblical_and_spiritual_leadership_formation') == 1) {
-    seriesBtn2.href = "bible_series_pages/restricted/bible_series_biblical_and_spiritual_leadership_formation.html";
+    seriesBtn2.href = courseBiblicalSpiritualLeadership;
     seriesBtn2.style.display = 'flex';
     continuedetector3 = true;
 }
@@ -141,20 +122,20 @@ if (continuedetector1 || continuedetector2 || continuedetector3 == true) {
 // make featured series section know if to make link go to preview page or lessons page for said course
 
 if (ls.getItem('series_stones_fit_the_frame_together') == 0) {
-    featuredSeriesBtn0.href = "bible_series_pages/bible_series_stones_fit_the_frame_together_preview.html";
+    featuredSeriesBtn0.href = courseStonesFitlyFramedTogetherPreview;
 } else if (ls.getItem('series_stones_fit_the_frame_together') == 1) {
-    featuredSeriesBtn0.href = "bible_series_pages/bible_series_stones_fit_the_frame_together.html";
+    featuredSeriesBtn0.href = courseStonesFitlyFramedTogether;
 }
 
 if (ls.getItem('series_revelation') == 0) {
-    featuredSeriesBtn1.href = "bible_series_pages/bible_series_revelation_preview.html";
+    featuredSeriesBtn1.href = courseRevelationPreview;
 } else if (ls.getItem('series_revelation') == 1) {
-    featuredSeriesBtn1.href = "bible_series_pages/bible_series_revelation.html";
+    featuredSeriesBtn1.href = courseRevelation;
 }
 
 if (ls.getItem('series_biblical_and_spiritual_leadership_formation') == 0) {
     featuredSeriesBtn2.href = "javascript:void(0)";
 } else if (ls.getItem('series_biblical_and_spiritual_leadership_formation') == 1) {
     featuredSeriesBtn2.onclick = '';
-    featuredSeriesBtn2.href = "bible_series_pages/restricted/bible_series_biblical_and_spiritual_leadership_formation.html";
+    featuredSeriesBtn2.href = courseBiblicalSpiritualLeadership;
 }

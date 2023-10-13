@@ -19,7 +19,8 @@
     position: relative;
 }
 
-.about-header h2::before {
+.about-header h2::before,
+.about-header h2::after {
     width: 15px;
     height: 5px;
     border-radius: 8px;
@@ -30,13 +31,12 @@
     left: -35px;
 }
 
+.about-header h2::before {
+    top: calc(50% - 5px);
+    left: -35px;
+}
+
 .about-header h2::after {
-    width: 15px;
-    height: 5px;
-    border-radius: 8px;
-    background-color: #fff;
-    position: absolute;
-    content: '';
     top: calc(50% - 5px);
     right: -35px;
 }

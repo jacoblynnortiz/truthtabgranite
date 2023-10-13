@@ -1,4 +1,3 @@
-
 .contact {
     position: relative;
     min-height: 100vh;
@@ -76,12 +75,9 @@
     font-weight: 300;
 }
 
-.box .text p {
-    color: #fff;
-}
-
+.box .text p,
 .box .text a {
-    color: white;
+    color: #fff;
 }
 
 .box .text a:hover {
@@ -111,7 +107,8 @@
     margin-top: 10px;
 }
 
-.inputBox input, .inputBox textarea {
+.inputBox input,
+.inputBox textarea {
     width: 100%;
     padding: 5px 0;
     font-size: 16px;
@@ -133,15 +130,10 @@
     color: #666;
 }
 
-.inputBox input:focus ~ span,
-.inputBox input:valid ~ span {
-    color: #3c7cb9;
-    font-size: 12px;
-    transform: translateY(-20px);
-}
-
-.inputBox textarea:focus ~ span,
-.inputBox textarea:valid ~ span {
+.inputBox input:focus~span,
+.inputBox input:valid~span,
+.inputBox textarea:focus~span,
+.inputBox textarea:valid~span {
     color: #3c7cb9;
     font-size: 12px;
     transform: translateY(-20px);
@@ -162,11 +154,12 @@
         flex-direction: column;
     }
 
-    .container .contactInfo {
+    .contactInfo {
         margin-bottom: 40px;
     }
 
-    .container .contactInfo, .contactForm {
+    .contactInfo,
+    .contactForm {
         width: 100%;
     }
 
@@ -185,6 +178,7 @@
     .contact {
         padding: 80px 50px;
     }
+
     .contact iframe {
         margin-top: 80px;
         height: 400px;

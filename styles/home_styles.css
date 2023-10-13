@@ -8,9 +8,48 @@
   min-height: 0;
 }
 
+.slider {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  background: url("../images/home_hero_fader/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, .3);
+  animation: animate 150s infinite;
+  position: relative;
+}
+
 .slider h2 {
   font-size: 3rem;
   color: white;
+}
+
+.lang-switcher {
+  width: 65px;
+  height: 65px;
+  margin: 15px;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lang-switcher a img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-bottom: 0;
+  border: 3px solid #fff;
 }
 
 .service-times {
@@ -60,6 +99,8 @@
 .latest-sermon-container h2 {
   padding: 25px;
   color: #3c7cb9;
+  margin: 25px;
+  text-align: center;
 }
 
 .home-news {
@@ -77,15 +118,10 @@
   background-attachment: fixed;
 }
 
-.blog-content {
-  width: 100%;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #fff;
-}
-
 .home-news h2 {
   margin: 25px;
   color: #fff;
+  text-align: center;
 }
 
 .center img {
@@ -94,10 +130,18 @@
   height: 250px;
 }
 
+@media screen and (max-width: 1000px) {
+  .service-times h1 {
+    padding: 45px 0px;
+    font-size: 2.2rem;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .slider h2 {
     font-size: 2rem;
     text-align: center;
+    border-radius: 0;
   }
 
   .center img {
@@ -110,59 +154,6 @@
   .home-news {
     padding: 0;
   }
-}
-
-
-@media screen and (max-width: 1000px) {
-  .service-times h1 {
-    padding: 45px 0px;
-    font-size: 2.2rem;
-  }
-}
-
-.slider {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 25px;
-  background: url("../images/home_hero_fader/bg1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-bottom-left-radius: 40%;
-  border-bottom-right-radius: 40%;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, .3);
-  animation: animate 150s infinite;
-  position: relative;
-}
-
-@media screen and (max-width: 700px) {
-  .slider {
-    border-radius: 0;
-  }
-}
-
-.lang-switcher {
-  width: 65px;
-  height: 65px;
-  margin: 15px;
-  position: absolute;
-  top: 70px;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.lang-switcher a img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  margin-bottom: 0;
-  border: 3px solid #fff;
 }
 
 @keyframes animate {

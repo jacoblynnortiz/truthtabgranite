@@ -12,11 +12,15 @@ if (window.matchMedia('screen and (max-width: 1200px)').matches) {
         sideCourseOverviewOpen = false;
     } else {
         sideCourseOverview.style.right = '0px';
-        sideCourseOverviewBtn.style.right = '450px';
+        if (window.matchMedia('screen and (max-width: 435px)').matches) {
+            sideCourseOverviewBtn.style.right = 'calc(100% - 35px)';
+        } else {
+            sideCourseOverviewBtn.style.right = '400px';
+        }
         sideCourseOverviewOpen = true;
     }
 } else {
-    let sideCourseOverviewOpen = false;
+    sideCourseOverviewOpen = false;
     if (sideCourseOverviewOpen == true) {
         sideCourseOverview.style.right = '-100%';
         sideCourseOverviewBtn.style.right = '0px';
@@ -24,11 +28,11 @@ if (window.matchMedia('screen and (max-width: 1200px)').matches) {
         bibleSeriesContainer.style.paddingRight = '0px';
     } else {
         sideCourseOverview.style.right = '0px';
-        sideCourseOverviewBtn.style.right = '450px';
+        sideCourseOverviewBtn.style.right = '400px';
         sideCourseOverviewOpen = true;
-        bibleSeriesContainer.style.paddingRight = '465px';
+        bibleSeriesContainer.style.paddingRight = '425px';
     }
-}  
+}
 
 function sideCourseOverviewToggle() {
     if (window.matchMedia('screen and (max-width: 1200px)').matches) {
@@ -38,7 +42,12 @@ function sideCourseOverviewToggle() {
             sideCourseOverviewOpen = false;
         } else {
             sideCourseOverview.style.right = '0px';
-            sideCourseOverviewBtn.style.right = '450px';
+            if (window.matchMedia('screen and (max-width: 435px)').matches) {
+                sideCourseOverviewBtn.style.right = 'calc(100% - 35px)';
+            } else {
+                sideCourseOverviewBtn.style.right = '400px';
+            }
+            sideCourseOverviewBtn.style.right = '400px';
             sideCourseOverviewOpen = true;
         }
     } else {
@@ -49,9 +58,9 @@ function sideCourseOverviewToggle() {
             bibleSeriesContainer.style.paddingRight = '0px';
         } else {
             sideCourseOverview.style.right = '0px';
-            sideCourseOverviewBtn.style.right = '450px';
+            sideCourseOverviewBtn.style.right = '400px';
             sideCourseOverviewOpen = true;
-            bibleSeriesContainer.style.paddingRight = '465px';
+            bibleSeriesContainer.style.paddingRight = '425px';
         }
     }    
 }

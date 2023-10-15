@@ -11,24 +11,24 @@ function myFunction() {
 
 // FETCHES JSON FROM DATABASE
 
-if(document.title == 'Truth Tabernacle of Granite City' || document.title == 'Truth Tabernacle de Granite City' ) {
-	$.getJSON('https://sheetdb.io/api/v1/yn7mbvhpvnpn8', function(sermon_posts) {
-	let latestSermon = document.getElementById('latestSermon');
-	let latestSermonHeader = document.createElement('h2');
+if (document.title == 'Truth Tabernacle of Granite City' || document.title == 'Truth Tabernacle de Granite City') {
+	$.getJSON('https://sheetdb.io/api/v1/yn7mbvhpvnpn8', function (sermon_posts) {
+		let latestSermon = document.getElementById('latestSermon');
+		let latestSermonHeader = document.createElement('h2');
 
-	latestSermonHeader.innerText = "Watch this week's sermons";
+		latestSermonHeader.innerText = "Watch this week's sermons";
 
-	// this looks through the sermon posts database and gets the object in the array that is on top
-	// (which is the latest sermon)
+		// this looks through the sermon posts database and gets the object in the array that is on top
+		// (which is the latest sermon)
 
-    for (let i = sermon_posts.length - 1; i >= sermon_posts.length - 3; i--) {
-        latestSermon.innerHTML = sermon_posts[i--].sermon_src + sermon_posts[i--].sermon_src + sermon_posts[i--].sermon_src;
-    }
-});
+		for (let i = sermon_posts.length - 1; i >= sermon_posts.length - 3; i--) {
+			latestSermon.innerHTML = sermon_posts[i--].sermon_src + sermon_posts[i--].sermon_src + sermon_posts[i--].sermon_src;
+		}
+	});
 }
 
-document.getElementById("lang").onchange = function() {
-	if (this.selectedIndex!==0) {
+document.getElementById("lang").onchange = function () {
+	if (this.selectedIndex !== 0) {
 		window.location.href = this.value;
-	}        
+	}
 };

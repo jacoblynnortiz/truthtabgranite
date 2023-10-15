@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Courses | The Apokalupsis On Patmos</title>
   <link rel="icon" href="../images/icon.png">
-  <link rel="stylesheet" href="../styles/bible_series_individual.css">
   <link rel="stylesheet" href="../styles/global_styles.css">
+  <link rel="stylesheet" href="../styles/bible_series_styles.css">
+  <link rel="stylesheet" href="../styles/course_overview_side_styles.css">
   <link rel="stylesheet" href="../styles/nav_styles.css">
   <link rel="stylesheet" href="../styles/footer_styles.css">
 </head>
@@ -18,7 +19,7 @@
     <nav>
       <input type="checkbox" id="show-menu">
       <div class="content">
-        <div class="logo"><a href="../index.html"><img src="../images/logo-modern-transparent.png"> Truth Tabernacle</a>
+        <div class="logo"><a href="../index.html"><img src="../images/icon.png"> Truth Tabernacle</a>
         </div>
         <ul class="links">
           <li><a href="../index.html">Home</a></li>
@@ -27,7 +28,7 @@
             <input type="checkbox" id="show-about">
             <label for="show-about">About Us</label>
             <ul>
-              <li><a href="../about_pages/about_truthtabgranite.html">About Truth Tabernacle</a></li>
+              <li><a href="../about_pages/about.html">About Truth Tabernacle</a></li>
               <li><a href="../about_pages/welcome.html">Pastor's Welcome</a></li>
               <li><a href="../about_pages/pastors_bio.html">Pastor's Bio</a></li>
             </ul>
@@ -50,10 +51,48 @@
       <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
     </nav>
   </div>
+  <div id="sideCourseOverview" class="side-course-overview">
+    <div class="side_course_overview_content">
+      <h2>Course Overview</h2>
+        <p>Awestrucking it must have been when Jesus visited John on the Island of Patmos and gave him the ultimate
+          revelation (apokalupsis) of all time. This course allows for the discovery of how the Book of Revelation is
+          more than just an endtime book, although it does include the end of time. It will be discovered that John's
+          writings are an ultimate Revelation of Jesus Christ, His Kingdom, and Church, and how even though great
+          spiritual, physical, and ideological opposition will come, it will never defeat the eternal victory of Christ
+          and the Church. This course focuses less on world events and rather more focuses on how the book reveals the
+          fall of mankind, the Old Testament's purpose, the life and ministry of Jesus Christ, the outpouring of His
+          Spirit, the establishing of His Kingdom, the escalating war between good and evil, and the climatic event of
+          Christ's Return. Let's start our journey through the awestrucking Revelation Jesus gave to John on the Island
+          of Patmos.</p>
+        <p>In <strong>"The Apokalupsis On Patmos"</strong> you'll learn:
+        <ul>
+          <li>A Book of Revelation</li>
+          <li>Daniel's Seventy Weeks & The Church Age</li>
+          <li>Twenty-Four Elders And Four Beasts</li>
+          <li>The Lion And The Lamb</li>
+          <li>Six Seals</li>
+          <li>The Seventh Seal</li>
+          <li>The Seventh Seal (Pt. 2)</li>
+          <li>Two Witness Prophets</li>
+          <li>The Woman And The Man Child</li>
+          <li>The Beast And False Prophet</li>
+          <li>The Redeemed</li>
+          <li>The Song Of Moses & Tabernacle Of Testimony</li>
+          <li>The Seven Vials</li>
+          <li>Babylon And The Beast</li>
+          <li>The Marriage Supper Of The Lamb</li>
+          <li>The Resurrection</li>
+          <li>New Heaven And New Earth</li>
+          <li>The Tree And River Of Life</li>
+        </ul>
+        </p>
+    </div>
+</div>
+<button id="sideCourseOverviewBtn" style="display: flex; justify-content: center; align-items: center;" onclick="sideCourseOverviewToggle();" id="showSideOverviewBtn" class="toggle-menu-icon"><i id="showSideOverviewBtnIconLeft"></i><i class="fa-solid fa-arrow-left"></i></button>
   <div class="progress-container">
     <div class="progress" id="progress"></div>
   </div>
-  <div class="bible-series">
+  <div class="bible-series" id="bibleSeriesContainer">
     <div class="bible-series-header">
       <h2>The Apokalupsis On Patmos</h2>
     </div>
@@ -535,14 +574,14 @@
       <div class="big-footer">
         <div class="logo">
           <a href="../index.html">
-            <img src="../images/logo-modern-transparent.png">
+            <img src="../images/icon.png">
           </a>
         </div>
         <div class="big-footer-container">
           <div class="page-links">
             <h2>About Us</h2>
             <div class="page-links-a">
-              <a href="../about_pages/about_truthtabgranite.html">About Truth Tabernacle</a>
+              <a href="../about_pages/about.html">About Truth Tabernacle</a>
               <a href="../about_pages/welcome.html">Pastor's Welcome</a>
               <a href="../about_pages/pastors_bio.html">Pastor's Bio</a>
             </div>
@@ -578,6 +617,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
   <script src="../app/main.js"></script>
+  <script src="../app/sideCourseOverview.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
   <script>
     const today = new Date();

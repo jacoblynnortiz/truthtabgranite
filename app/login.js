@@ -73,6 +73,8 @@ function memberForm() {
     adminTab.style.backgroundColor = '#222';
     memberTab.style.color = '#fff';
     adminTab.style.color = '#b3b3b3';
+    memberLoginFocused = true;
+    adminLoginFocused = false;
 }
 
 function adminForm() {

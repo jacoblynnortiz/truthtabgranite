@@ -39,8 +39,8 @@ function authenticate(authCodes) {
     } else if(authCodeBox.value == authCodes[1]) {
         console.log('1')
     } else {
-        authCodeBox.value = ''
-        errorAuth.innerText = "The authentication code you entered is invalid, if you want to access this restricted course please try again or request the auth code for this course from Brother Wilson below.";
+        authCodeBox.value = '';
+        errorAuth.innerText = authErrorMessageText;
         errorAuth.style.padding = '15px';
     }
 }
@@ -77,7 +77,8 @@ if (ls.getItem('series_biblical_and_spiritual_leadership_formation') != null) {
     percentLabel3.innerText = courseBiblicalSpiritualLeadershipProgress;
 }
 
-// make continue section series section know if to make visible or leave hidden based on if you are already enrolled or not.
+// make continue section series section know if to make visible or
+// leave hidden based on if you are already enrolled or not.
 
 if (ls.getItem('series_revelation') == 0) {
     seriesBtn0.href = courseRevelationPreview;
@@ -119,7 +120,8 @@ if (continuedetector1 || continuedetector2 || continuedetector3 == true) {
     console.log('continue area disabled')
 }
 
-// make featured series section know if to make link go to preview page or lessons page for said course
+// make featured series section know if to make link go to
+// preview page or lessons page for said course
 
 if (ls.getItem('series_stones_fit_the_frame_together') == 0) {
     featuredSeriesBtn0.href = courseStonesFitlyFramedTogetherPreview;

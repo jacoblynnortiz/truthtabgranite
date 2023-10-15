@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Courses | Stones Fitly Framed Together</title>
   <link rel="icon" href="../images/icon.png">
-  <link rel="stylesheet" href="../styles/bible_series_individual.css">
   <link rel="stylesheet" href="../styles/global_styles.css">
+  <link rel="stylesheet" href="../styles/bible_series_styles.css">
+  <link rel="stylesheet" href="../styles/course_overview_side_styles.css">
   <link rel="stylesheet" href="../styles/nav_styles.css">
   <link rel="stylesheet" href="../styles/footer_styles.css">
 </head>
@@ -18,7 +19,7 @@
     <nav>
       <input type="checkbox" id="show-menu">
       <div class="content">
-        <div class="logo"><a href="index.html"><img src="../images/logo-modern-transparent.png"> Truth Tabernacle</a>
+        <div class="logo"><a href="index.html"><img src="../images/icon.png"> Truth Tabernacle</a>
         </div>
         <ul class="links">
           <li><a href="../index.html">Home</a></li>
@@ -27,7 +28,7 @@
             <input type="checkbox" id="show-about">
             <label for="show-about">About Us</label>
             <ul>
-              <li><a href="../about_pages/about_truthtabgranite.html">About Truth Tabernacle</a></li>
+              <li><a href="../about_pages/about.html">About Truth Tabernacle</a></li>
               <li><a href="../about_pages/welcome.html">Pastor's Welcome</a></li>
               <li><a href="../about_pages/pastors_bio.html">Pastor's Bio</a></li>
             </ul>
@@ -50,10 +51,30 @@
       <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
     </nav>
   </div>
+  <div id="sideCourseOverview" class="side-course-overview">
+      <div class="side_course_overview_content">
+        <h2>Course Overview</h2>
+        <p>In this course you will have the opportunity to learn how God is building His Kingdom and Church on both the macrocosmic (global) scale and the microcosmic (local and individual) level.  Not only will you have the opportunity to see the big picture but also how you, your family, and your local assembly are the stones being fitly framed together to fulfill the ultimate mission by the hands of the infinite in wisdom Creator.  Let's start our journey of better understanding God's Kingdom and what our role in the Kingdom is.</p>
+        <p>In <strong>"Stones Fitly Framed Together"</strong> you'll learn:
+        <ul>
+          <li>The Fall And Ramifications But God's Predestined Plan</li>
+          <li>The Realignment of Heaven And Earth</li>
+          <li>God's Universal Church</li>
+          <li>Belonging To The Universal Church By Being In The Local Church</li>
+          <li>The Need For Leadership</li>
+          <li>The Church's Impact On The Marriage</li>
+          <li>The Church's Impact On Parents And Children</li>
+          <li>The Church's Impact On Employers And Employees</li>
+          <li>The Manifold Wisdom Of God Revealed</li>
+          <li>Be Strong And Fight The Good Fight Of Faith</li>
+        </ul>
+      </div>
+  </div>
+  <button id="sideCourseOverviewBtn" style="display: flex; justify-content: center; align-items: center;" onclick="sideCourseOverviewToggle();" id="showSideOverviewBtn" class="toggle-menu-icon"><i id="showSideOverviewBtnIconLeft"></i><i class="fa-solid fa-arrow-left"></i></button>
   <div class="progress-container">
     <div class="progress" id="progress"></div>
   </div>
-  <div class="bible-series">
+  <div class="bible-series" id="bibleSeriesContainer">
     <div class="bible-series-header">
       <h2>Stones Fitly Framed Together</h2>
     </div>
@@ -307,14 +328,14 @@
       <div class="big-footer">
         <div class="logo">
           <a href="../index.html">
-            <img src="../images/logo-modern-transparent.png">
+            <img src="../images/icon.png">
           </a>
         </div>
         <div class="big-footer-container">
           <div class="page-links">
             <h2>About Us</h2>
             <div class="page-links-a">
-              <a href="../about_pages/about_truthtabgranite.html">About Truth Tabernacle</a>
+              <a href="../about_pages/about.html">About Truth Tabernacle</a>
               <a href="../about_pages/welcome.html">Pastor's Welcome</a>
               <a href="../about_pages/pastors_bio.html">Pastor's Bio</a>
             </div>
@@ -350,6 +371,7 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
   <script src="../app/main.js"></script>
+  <script src="../app/sideCourseOverview.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
   <script>
     const today = new Date();

@@ -10,10 +10,17 @@ if (window.matchMedia('screen and (max-width: 1200px)').matches) {
         sideCourseOverview.style.right = '-100%';
         sideCourseOverviewBtn.style.right = '0px';
         sideCourseOverviewOpen = false;
+        if (window.matchMedia('screen and (max-width: 435px)').matches) {
+            sideCourseOverviewBtn.style.left = null;
+            sideCourseOverviewBtn.style.right = '0px';
+        } else {
+            sideCourseOverviewBtn.style.right = '0px';
+        }
     } else {
         sideCourseOverview.style.right = '0px';
         if (window.matchMedia('screen and (max-width: 435px)').matches) {
-            sideCourseOverviewBtn.style.right = 'calc(100% - 35px)';
+            sideCourseOverviewBtn.style.right = null;
+                sideCourseOverviewBtn.style.left = '0px';
         } else {
             sideCourseOverviewBtn.style.right = '400px';
         }
@@ -40,10 +47,17 @@ function sideCourseOverviewToggle() {
             sideCourseOverview.style.right = '-100%';
             sideCourseOverviewBtn.style.right = '0px';
             sideCourseOverviewOpen = false;
+            if (window.matchMedia('screen and (max-width: 435px)').matches) {
+                sideCourseOverviewBtn.style.left = null;
+                sideCourseOverviewBtn.style.right = '0px';
+            } else {
+                sideCourseOverviewBtn.style.right = '0px';
+            }
         } else {
             sideCourseOverview.style.right = '0px';
             if (window.matchMedia('screen and (max-width: 435px)').matches) {
-                sideCourseOverviewBtn.style.right = 'calc(100% - 35px)';
+                sideCourseOverviewBtn.style.right = null;
+                sideCourseOverviewBtn.style.left = '0px';
             } else {
                 sideCourseOverviewBtn.style.right = '400px';
             }

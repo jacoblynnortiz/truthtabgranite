@@ -1,4 +1,6 @@
 let sideCourseOverview = document.getElementById('sideCourseOverview');
+let sideCourseOverviewBtn = document.getElementById('sideCourseOverviewBtn');
+
 let bibleSeriesContainer = document.getElementById('bibleSeriesContainer');
 
 let sideCourseOverviewOpen = true;
@@ -8,9 +10,13 @@ if (window.matchMedia('screen and (max-width: 1200px)').matches) {
         let i = sideCourseOverview.clientWidth;
         let j = '-' + i + 'px';
         sideCourseOverview.style.right = j;
+        sideCourseOverviewBtn.style.rotate = '0deg';
+        sideCourseOverviewBtn.style.transform = 'translateX(0px)';
         sideCourseOverviewOpen = false;
     } else {
         sideCourseOverview.style.right = '0px';
+        sideCourseOverviewBtn.style.rotate = '180deg';
+        sideCourseOverviewBtn.style.transform = 'translateX(-35px)';
         sideCourseOverviewOpen = true;
     }
 } else {
@@ -19,10 +25,12 @@ if (window.matchMedia('screen and (max-width: 1200px)').matches) {
         let i = sideCourseOverview.clientWidth;
         let j = '-' + i + 'px';
         sideCourseOverview.style.right = j;
+        sideCourseOverviewBtn.style.rotate = '0deg';
         sideCourseOverviewOpen = false;
         bibleSeriesContainer.style.paddingRight = '0px';
     } else {
         sideCourseOverview.style.right = '0px';
+        sideCourseOverviewBtn.style.rotate = '180deg';
         sideCourseOverviewOpen = true;
         bibleSeriesContainer.style.paddingRight = '425px';
     }
@@ -34,9 +42,13 @@ function sideCourseOverviewToggle() {
             let i = sideCourseOverview.clientWidth;
             let j = '-' + i + 'px';
             sideCourseOverview.style.right = j;
+            sideCourseOverviewBtn.style.rotate = '0deg';
+            sideCourseOverviewBtn.style.transform = 'translateX(0px)';
             sideCourseOverviewOpen = false;
         } else {
             sideCourseOverview.style.right = '0px';
+            sideCourseOverviewBtn.style.rotate = '180deg';
+            sideCourseOverviewBtn.style.transform = 'translateX(-35px)';
             sideCourseOverviewOpen = true;
         }
     } else {
@@ -44,10 +56,12 @@ function sideCourseOverviewToggle() {
             let i = sideCourseOverview.clientWidth;
             let j = '-' + i + 'px';
             sideCourseOverview.style.right = j;
+            sideCourseOverviewBtn.style.rotate = '0deg';
             sideCourseOverviewOpen = false;
             bibleSeriesContainer.style.paddingRight = '0px';
         } else {
             sideCourseOverview.style.right = '0px';
+            sideCourseOverviewBtn.style.rotate = '180deg';
             sideCourseOverviewOpen = true;
             bibleSeriesContainer.style.paddingRight = '425px';
         }

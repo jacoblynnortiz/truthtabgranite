@@ -51,9 +51,10 @@
       <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
     </nav>
   </div>
-  <div id="sideCourseOverview" class="side-course-overview">
-    <div class="side_course_overview_content">
-      <h2>Course Overview</h2>
+  <div id="sideCourseOverview" class="side-course-overview-container">
+    <div class="side-course-overview">
+      <div class="side_course_overview_content">
+        <h2>Course Overview</h2>
         <p>Awestrucking it must have been when Jesus visited John on the Island of Patmos and gave him the ultimate
           revelation (apokalupsis) of all time. This course allows for the discovery of how the Book of Revelation is
           more than just an endtime book, although it does include the end of time. It will be discovered that John's
@@ -86,9 +87,13 @@
           <li>The Tree And River Of Life</li>
         </ul>
         </p>
+      </div>
+      <button id="sideCourseOverviewBtn" style="display: flex; justify-content: center; align-items: center;"
+        onclick="sideCourseOverviewToggle();" id="showSideOverviewBtn" class="toggle-menu-icon"><i
+          id="showSideOverviewBtnIconLeft"></i><i class="fa-solid fa-arrow-left"></i></button>
     </div>
-</div>
-<button id="sideCourseOverviewBtn" style="display: flex; justify-content: center; align-items: center;" onclick="sideCourseOverviewToggle();" id="showSideOverviewBtn" class="toggle-menu-icon"><i id="showSideOverviewBtnIconLeft"></i><i class="fa-solid fa-arrow-left"></i></button>
+  </div>
+
   <div class="progress-container">
     <div class="progress" id="progress"></div>
   </div>
@@ -625,7 +630,7 @@
     let mm = today.getMonth() + 1; // Months start at 0!
     let dd = today.getDate();
     let hour = today.getHours()
-    let minutes =  today.getMinutes()
+    let minutes = today.getMinutes()
 
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;

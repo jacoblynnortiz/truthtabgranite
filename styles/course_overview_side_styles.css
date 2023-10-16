@@ -3,41 +3,40 @@
     src: url('Outfit-Thin.ttf');
 }
 
-.side-course-overview {
-    background: #171c24;
-    width: 100%;
+.side-course-overview-container {
+    width: 100vw;
+    max-width: 400px;
     height: calc(100vh - 70px);
-    max-height: calc(100vh - 70px);
-    margin: 0;
-    z-index: 100;
-    display: block;
-    z-index: 49;
+    z-index: 45;
     position: fixed;
-    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     top: 70px;
     right: 0;
-    margin-left: 0;
+    transition: 0.3s;
+}
+
+.side-course-overview {
     width: calc(100vw - 35px);
     max-width: 400px;
+    height: calc(100vh - 70px);
+    background: #171c24;
+    z-index: 49;
     overflow-y: auto;
-    transition: 0.3s;
     box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
-    border-left: 1px solid gray;
 }
 
 .toggle-menu-icon {
+    width: 35px;
+    height: 50px;
+    position: absolute;
+    top: 45px;
+    left: -35px;
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer;
     line-height: 70px;
-    width: 35px;
-    height: 50px;
-    text-align: center;
-    position: fixed;
-    top: 105px;
-    right: 450px;
-    z-index: 51;
-    transition: 0.4s;
     background-color: #171c24;
     outline-color: grey;
     border: none;

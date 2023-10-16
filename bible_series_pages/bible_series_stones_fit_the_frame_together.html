@@ -51,10 +51,15 @@
       <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
     </nav>
   </div>
-  <div id="sideCourseOverview" class="side-course-overview">
+  <div id="sideCourseOverview" class="side-course-overview-container">
+    <div class="side-course-overview">
       <div class="side_course_overview_content">
         <h2>Course Overview</h2>
-        <p>In this course you will have the opportunity to learn how God is building His Kingdom and Church on both the macrocosmic (global) scale and the microcosmic (local and individual) level.  Not only will you have the opportunity to see the big picture but also how you, your family, and your local assembly are the stones being fitly framed together to fulfill the ultimate mission by the hands of the infinite in wisdom Creator.  Let's start our journey of better understanding God's Kingdom and what our role in the Kingdom is.</p>
+        <p>In this course you will have the opportunity to learn how God is building His Kingdom and Church on both the
+          macrocosmic (global) scale and the microcosmic (local and individual) level. Not only will you have the
+          opportunity to see the big picture but also how you, your family, and your local assembly are the stones being
+          fitly framed together to fulfill the ultimate mission by the hands of the infinite in wisdom Creator. Let's
+          start our journey of better understanding God's Kingdom and what our role in the Kingdom is.</p>
         <p>In <strong>"Stones Fitly Framed Together"</strong> you'll learn:
         <ul>
           <li>The Fall And Ramifications But God's Predestined Plan</li>
@@ -69,8 +74,11 @@
           <li>Be Strong And Fight The Good Fight Of Faith</li>
         </ul>
       </div>
+    </div>
+    <button id="sideCourseOverviewBtn" style="display: flex; justify-content: center; align-items: center;"
+        onclick="sideCourseOverviewToggle();" id="showSideOverviewBtn" class="toggle-menu-icon"><i
+          id="showSideOverviewBtnIconLeft"></i><i class="fa-solid fa-arrow-left"></i></button>
   </div>
-  <button id="sideCourseOverviewBtn" style="display: flex; justify-content: center; align-items: center;" onclick="sideCourseOverviewToggle();" id="showSideOverviewBtn" class="toggle-menu-icon"><i id="showSideOverviewBtnIconLeft"></i><i class="fa-solid fa-arrow-left"></i></button>
   <div class="progress-container">
     <div class="progress" id="progress"></div>
   </div>
@@ -87,20 +95,22 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-1">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name1" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email1" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text1" type="text" value="Completed Lesson 1 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date1" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '10%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-1">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name1" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email1" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text1" type="text"
+              value="Completed Lesson 1 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date1" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '10%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
@@ -111,20 +121,22 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-2">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name2" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email2" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text2" type="text" value="Completed Lesson 2 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date2" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '20%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-2">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name2" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email2" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text2" type="text"
+              value="Completed Lesson 2 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date2" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '20%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
@@ -135,44 +147,49 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-3">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name3" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email3" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text3" type="text" value="Completed Lesson 3 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date3" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '30%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-3">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name3" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email3" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text3" type="text"
+              value="Completed Lesson 3 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date3" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '30%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
-        <label for="forth">Lesson 4: Belonging To The Universal Church By Being In The Local Church<span>&#x3e;</span></label>
+        <label for="forth">Lesson 4: Belonging To The Universal Church By Being In The Local
+          Church<span>&#x3e;</span></label>
         <input type="radio" name="accordian" id="forth">
         <div class="content">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/sXOlA3pgR8o" title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-4">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name4" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email4" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text4" type="text" value="Completed Lesson 4 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date4" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '40%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-4">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name4" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email4" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text4" type="text"
+              value="Completed Lesson 4 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date4" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '40%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
@@ -183,20 +200,22 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-5">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name5" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email5" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text5" type="text" value="Completed Lesson 5 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date5" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '50%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-5">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name5" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email5" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text5" type="text"
+              value="Completed Lesson 5 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date5" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '50%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
@@ -207,20 +226,22 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-6">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name6" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email6" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text6" type="text" value="Completed Lesson 6 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date6" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '60%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-6">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name6" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email6" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text6" type="text"
+              value="Completed Lesson 6 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date6" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '60%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
@@ -231,20 +252,22 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-7">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name7" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email7" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text7" type="text" value="Completed Lesson 7 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date7" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '70%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-7">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name7" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email7" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text7" type="text"
+              value="Completed Lesson 7 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date7" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '70%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
@@ -255,20 +278,22 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-8">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name8" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email8" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text8" type="text" value="Completed Lesson 8 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date8" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '80%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-8">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name8" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email8" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text8" type="text"
+              value="Completed Lesson 8 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date8" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '80%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
@@ -279,20 +304,22 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-9">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name9" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email9" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text9" type="text" value="Completed Lesson 9 of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date9" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '90%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-9">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name9" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email9" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text9" type="text"
+              value="Completed Lesson 9 of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date9" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '90%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
       <li>
@@ -303,20 +330,22 @@
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
-            <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-10">
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input style="opacity: 0; width: 0; height: 0;" id="name10" type="text" name="data[fullName]">
-              </div>
-              <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
-                <input id="email10" type="email" name="data[email]">
-              </div>
-              <input style="opacity: 0; width: 0; height: 0;" id="text10" type="text" value="Completed the course of Stones Fitly Framed Together" name="data[message]" required>
-              <input style="opacity: 0; width: 0; height: 0;" id="date10" type="text" value="0" name="data[timestamp]">
-              <button
-                onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '100%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');" type="submit">Click
-                to
-                complete</button>
-            </form>
+          <form action="https://sheetdb.io/api/v1/w43vaikf1jpi2" method="post" id="sheetdb-form-10">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name10" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email10" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text10" type="text"
+              value="Completed the course of Stones Fitly Framed Together" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date10" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_stones_fit_the_frame_together_progess', '100%'); progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
         </div>
       </li>
     </ul>
@@ -379,7 +408,7 @@
     let mm = today.getMonth() + 1; // Months start at 0!
     let dd = today.getDate();
     let hour = today.getHours()
-    let minutes =  today.getMinutes()
+    let minutes = today.getMinutes()
 
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
@@ -389,7 +418,7 @@
     if (today.getHours() > 12) { minutes = minutes + 'pm' } else minutes = minutes + 'am';
 
     let date = mm + '/' + dd + '/' + yyyy + " - " + hour + ":" + minutes;
-        
+
     let progress = document.getElementById('progress');
 
     let name1 = document.getElementById('name1');
@@ -466,145 +495,145 @@
     progress.style.width = localStorage.getItem('series_stones_fit_the_frame_together_progess');
 
     var form1 = document.getElementById('sheetdb-form-1');
-        form1.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form1.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-1")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+    form1.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form1.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-1")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form2 = document.getElementById('sheetdb-form-2');
-        form2.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form2.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-2")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form2 = document.getElementById('sheetdb-form-2');
+    form2.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form2.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-2")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form3 = document.getElementById('sheetdb-form-3');
-        form3.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form3.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-3")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form3 = document.getElementById('sheetdb-form-3');
+    form3.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form3.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-3")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form4 = document.getElementById('sheetdb-form-4');
-        form4.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form4.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-4")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form4 = document.getElementById('sheetdb-form-4');
+    form4.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form4.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-4")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form5 = document.getElementById('sheetdb-form-5');
-        form5.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form5.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-5")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form5 = document.getElementById('sheetdb-form-5');
+    form5.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form5.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-5")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form6 = document.getElementById('sheetdb-form-6');
-        form6.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form6.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-6")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form6 = document.getElementById('sheetdb-form-6');
+    form6.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form6.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-6")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form7 = document.getElementById('sheetdb-form-7');
-        form7.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form7.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-7")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form7 = document.getElementById('sheetdb-form-7');
+    form7.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form7.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-7")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form8 = document.getElementById('sheetdb-form-8');
-        form8.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form8.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-8")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form8 = document.getElementById('sheetdb-form-8');
+    form8.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form8.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-8")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form9 = document.getElementById('sheetdb-form-9');
-        form9.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form9.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-9")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form9 = document.getElementById('sheetdb-form-9');
+    form9.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form9.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-9")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
-        var form10 = document.getElementById('sheetdb-form-10');
-        form10.addEventListener("submit", e => {
-            e.preventDefault();
-            fetch(form10.action, {
-                method: "POST",
-                body: new FormData(document.getElementById("sheetdb-form-10")),
-            }).then(
-                response => response.json()
-            ).then((html) => {
-                // you can put any JS code here
-                window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
+      });
+    });
+    var form10 = document.getElementById('sheetdb-form-10');
+    form10.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form10.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-10")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_stones_fit_the_frame_together.html', '_blank';
 
-            });
-        });
+      });
+    });
 
   </script>
 </body>

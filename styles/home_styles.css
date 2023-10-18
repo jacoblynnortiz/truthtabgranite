@@ -23,7 +23,7 @@
   border-bottom-left-radius: 40%;
   border-bottom-right-radius: 40%;
   box-shadow: 0px 5px 8px rgba(0, 0, 0, .3);
-  animation: animate 150s infinite;
+  animation: animate 185s infinite;
   position: relative;
 }
 
@@ -137,103 +137,146 @@
 }
 
 @keyframes animate {
-  6.67% {
+  4% {
     background: url("../images/home_hero_fader/bg2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  13.34% {
+  8% {
     background: url("../images/home_hero_fader/bg3.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  20.01% {
+  12% {
     background: url("../images/home_hero_fader/bg4.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  26.68% {
+  16% {
     background: url("../images/home_hero_fader/bg5.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  33.35% {
+  20% {
     background: url("../images/home_hero_fader/bg6.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  40.02% {
+  24% {
     background: url("../images/home_hero_fader/bg7.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  46.69% {
+  28% {
     background: url("../images/home_hero_fader/bg8.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  45% {
+  32% {
     background: url("../images/home_hero_fader/bg9.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  53.36% {
+  36% {
     background: url("../images/home_hero_fader/bg10.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  60.03% {
+  40% {
     background: url("../images/home_hero_fader/bg11.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  66.7% {
+  44% {
     background: url("../images/home_hero_fader/bg12.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  73.37% {
+  48% {
     background: url("../images/home_hero_fader/bg13.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  80.04% {
+  52% {
     background: url("../images/home_hero_fader/bg14.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
 
-  86.71% {
+  56% {
     background: url("../images/home_hero_fader/bg15.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  60% {
+    background: url("../images/home_hero_fader/bg16.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  64% {
+    background: url("../images/home_hero_fader/bg17.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  68% {
+    background: url("../images/home_hero_fader/bg18.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  76% {
+    background: url("../images/home_hero_fader/bg19.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  84% {
+    background: url("../images/home_hero_fader/bg20.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  92% {
+    background: url("../images/home_hero_fader/bg21.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   100% {
     background: url("../images/home_hero_fader/bg1.jpg");
     background-size: cover;

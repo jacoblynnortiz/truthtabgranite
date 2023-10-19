@@ -31,7 +31,7 @@ scheduleDB.appendChild(door2);
 scheduleDB.appendChild(door3);
 scheduleDB.appendChild(usher);
 
-$.getJSON('https://sheetdb.io/api/v1/3gdn1iqegei8j', function (door_usher_schedule) {
+$.getJSON('https://sheetdb.io/api/v1/vic0ho7i91v4l', function (door_usher_schedule) {
 
     for (let i = 0; i < door_usher_schedule.length; i++) {
         let dateV = document.createElement("td");

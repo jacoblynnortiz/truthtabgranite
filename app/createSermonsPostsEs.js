@@ -5,7 +5,7 @@ let viewAllSermonsBtn = document.getElementById("viewAllSermonsBtn");
 
 // FETCHES JSON FROM DATABASE 
 
-$.getJSON('https://sheetdb.io/api/v1/83a6hzm456qyj', function (sermon_posts) {
+$.getJSON('https://sheetdb.io/api/v1/y68gx4ny6pvzr', function (sermon_posts) {
     // looks through sermons database displaying each one
     for (let i = sermon_posts.length - 1; i >= sermon_posts.length - 10; i--) {
         // creates new sermon post
@@ -40,7 +40,7 @@ $.getJSON('https://sheetdb.io/api/v1/83a6hzm456qyj', function (sermon_posts) {
 });
 
 viewAllSermonsBtn.addEventListener('click', function () {
-    $.getJSON('https://sheetdb.io/api/v1/83a6hzm456qyj', function (sermon_posts) {
+    $.getJSON('https://sheetdb.io/api/v1/y68gx4ny6pvzr', function (sermon_posts) {
         // looks through sermons database displaying each one
         for (let i = sermon_posts.length - 11; i >= 0; i--) {
             // creates new sermon post

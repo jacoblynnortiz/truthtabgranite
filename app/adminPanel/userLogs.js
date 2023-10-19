@@ -1,4 +1,4 @@
-$.getJSON('https://sheetdb.io/api/v1/w43vaikf1jpi2', function (course_enrollments) {
+$.getJSON('https://sheetdb.io/api/v1/8yk5oje5mdf3w', function (user_enrollments) {
     let usersEnrolledDB = document.getElementById("usersEnrolledDB");
 
     // creates charts headers
@@ -20,7 +20,7 @@ $.getJSON('https://sheetdb.io/api/v1/w43vaikf1jpi2', function (course_enrollment
 
     // loops through entire database to display all logs
 
-    for (let i = 0; i <= course_enrollments.length; i++) {
+    for (let i = 0; i <= user_enrollments.length; i++) {
         // creates a new log
 
         let fullNameV = document.createElement("td");
@@ -35,10 +35,10 @@ $.getJSON('https://sheetdb.io/api/v1/w43vaikf1jpi2', function (course_enrollment
 
         let tableRow = document.createElement("tr");
 
-        fullNameV.innerText = course_enrollments[i].fullName;
-        emailV.innerText = course_enrollments[i].email;
-        messageV.innerText = course_enrollments[i].message;
-        timestampV.innerText = course_enrollments[i].timestamp;
+        fullNameV.innerText = user_enrollments[i].fullName;
+        emailV.innerText = user_enrollments[i].email;
+        messageV.innerText = user_enrollments[i].message;
+        timestampV.innerText = user_enrollments[i].timestamp;
 
         tableRow.appendChild(fullNameV);
         tableRow.appendChild(emailV);

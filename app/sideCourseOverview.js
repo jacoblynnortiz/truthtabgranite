@@ -12,11 +12,18 @@ if (window.matchMedia('screen and (max-width: 1200px)').matches) {
         sideCourseOverview.style.right = j;
         sideCourseOverviewBtn.style.rotate = '0deg';
         sideCourseOverviewBtn.style.transform = 'translateX(0px)';
+        if (window.matchMedia('screen and (max-width: 435px)').matches) {
+            sideCourseOverviewBtn.style.transform = 'translateX(0px)';
+            sideCourseOverviewOpen = false;
+        }
         sideCourseOverviewOpen = false;
     } else {
         sideCourseOverview.style.right = '0px';
         sideCourseOverviewBtn.style.rotate = '180deg';
-        sideCourseOverviewBtn.style.transform = 'translateX(-35px)';
+        if (window.matchMedia('screen and (max-width: 435px)').matches) {
+            sideCourseOverviewBtn.style.transform = 'translateX(-35px)';
+            sideCourseOverviewOpen = true;
+        }
         sideCourseOverviewOpen = true;
     }
 } else {
@@ -43,12 +50,18 @@ function sideCourseOverviewToggle() {
             let j = '-' + i + 'px';
             sideCourseOverview.style.right = j;
             sideCourseOverviewBtn.style.rotate = '0deg';
-            sideCourseOverviewBtn.style.transform = 'translateX(0px)';
+            if (window.matchMedia('screen and (max-width: 435px)').matches) {
+                sideCourseOverviewBtn.style.transform = 'translateX(0px)';
+                sideCourseOverviewOpen = false;
+            }
             sideCourseOverviewOpen = false;
         } else {
             sideCourseOverview.style.right = '0px';
             sideCourseOverviewBtn.style.rotate = '180deg';
-            sideCourseOverviewBtn.style.transform = 'translateX(-35px)';
+            if (window.matchMedia('screen and (max-width: 435px)').matches) {
+                sideCourseOverviewBtn.style.transform = 'translateX(-35px)';
+                sideCourseOverviewOpen = true;
+            }
             sideCourseOverviewOpen = true;
         }
     } else {

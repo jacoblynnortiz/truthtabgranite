@@ -124,6 +124,10 @@
     border-radius: 0;
   }
 
+  .slider {
+    border-radius: 0%;
+  }
+
   .center img {
     width: 200px;
     height: 200px;

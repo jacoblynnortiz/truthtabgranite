@@ -171,7 +171,11 @@ $.getJSON('https://sheetdb.io/api/v1/qckxhew1zxe30', function (cleaning_schedule
 
         if (scheduleMonth == mm && scheduleDayClean == dd) {
 
-            dateItem.innerText = "Today's Schedule";
+            if(hour >= 12) {
+                dateItem.innerText = "Tonight's Schedule";
+            } else {
+                dateItem.innerText = "Today's Schedule";
+            }
             dateItem.style.backgroundColor = 'gold';
             cleaner1Item.style.backgroundColor = 'gold';
             cleaner2Item.style.backgroundColor = 'gold';

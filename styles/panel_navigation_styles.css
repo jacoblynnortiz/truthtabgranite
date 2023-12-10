@@ -71,6 +71,14 @@
   color: #fff;
 }
 
+.report {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
 #profilePicture {
   width: 175px;
   height: 175px;

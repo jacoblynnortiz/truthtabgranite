@@ -1,108 +1,238 @@
-let cleaningScheduleDB = document.getElementById("cleaningScheduleDB");
-let cleaningDontRepeat = false;
-let cleaningNoUpcoming = false;
-let cleaningDate = document.createElement("th");
-let slot1 = document.createElement("th");
-let slot2 = document.createElement("th");
-let slot3 = document.createElement("th");
+// variables for the 3 month tables
 
-let cleaningMonthlyScheduleDays = [],
-    cleaningGoal = dd;
+let monthTable1Clean = document.getElementById("monthTable1Clean");
+let monthTable2Clean = document.getElementById("monthTable2Clean");
+let monthTable3Clean = document.getElementById("monthTable3Clean");
 
-let cleaningTodayDate = null;
+// variables for the names of the 3 months and name of list
 
-cleaningDate.innerText = "Date";
-slot1.innerText = "Slot #1";
-slot2.innerText = "Slot #2";
-slot3.innerText = "Slot #3";
+let quaterHeaderClean = document.getElementById("quaterHeaderClean");
+let M1HeaderClean = document.getElementById("monthHeader1Clean");
+let M2HeaderClean = document.getElementById("monthHeader2Clean");
+let M3HeaderClean = document.getElementById("monthHeader3Clean");
 
-cleaningScheduleDB.appendChild(cleaningDate);
-cleaningScheduleDB.appendChild(slot1);
-cleaningScheduleDB.appendChild(slot2);
-cleaningScheduleDB.appendChild(slot3);
+// these are the true or false booleans that determin if
+// there is still an upcoming schedule after one has been asigned
+
+let noUpcomingScheduleClean = false;
+
+// creates headers for the schedules tables
+
+let M1dateClean = document.createElement("th");
+let M1cleaner1 = document.createElement("th");
+let M1cleaner2 = document.createElement("th");
+let M1cleaner3 = document.createElement("th");
+
+let M2dateClean = document.createElement("th");
+let M2cleaner1 = document.createElement("th");
+let M2cleaner2 = document.createElement("th");
+let M2cleaner3 = document.createElement("th");
+
+let M3dateClean = document.createElement("th");
+let M3cleaner1 = document.createElement("th");
+let M3cleaner2 = document.createElement("th");
+let M3cleaner3 = document.createElement("th");
+
+M1dateClean.innerText = "Date";
+M1cleaner1.innerText = "Cleaner #1";
+M1cleaner2.innerText = "Cleaner #2";
+M1cleaner3.innerText = "Cleaner #3";
+
+M2dateClean.innerText = "Date";
+M2cleaner1.innerText = "Cleaner #1";
+M2cleaner2.innerText = "Cleaner #2";
+M2cleaner3.innerText = "Cleaner #3";
+
+M3dateClean.innerText = "Date";
+M3cleaner1.innerText = "Cleaner #1";
+M3cleaner2.innerText = "Cleaner #2";
+M3cleaner3.innerText = "Cleaner #3";
+
+monthTable1Clean.appendChild(M1dateClean);
+monthTable1Clean.appendChild(M1cleaner1);
+monthTable1Clean.appendChild(M1cleaner2);
+monthTable1Clean.appendChild(M1cleaner3);
+
+monthTable2Clean.appendChild(M2dateClean);
+monthTable2Clean.appendChild(M2cleaner1);
+monthTable2Clean.appendChild(M2cleaner2);
+monthTable2Clean.appendChild(M2cleaner3);
+
+monthTable3Clean.appendChild(M3dateClean);
+monthTable3Clean.appendChild(M3cleaner1);
+monthTable3Clean.appendChild(M3cleaner2);
+monthTable3Clean.appendChild(M3cleaner3);
+
+// creates variables to know the current date
+
+let monthlyScheduleDayClean = [],
+    goalClean = dd;
+
+let scheduleDayClean = null;
+
+// logic to know what quarter it is and rename the names
+
+let QuarterM1Clean, QuarterM2Clean, QuarterM3Clean;
+
+if (mm == 1 || mm == 2 || mm == 3) {
+    QuarterM1Clean = 1;
+    QuarterM2Clean = 2;
+    QuarterM3Clean = 3;
+    quaterHeaderClean.innerText = 'QT 1 - Door & Usher Greeting Schedule:';
+
+    M1HeaderClean.innerText = 'January:';
+    M2HeaderClean.innerText = 'February:';
+    M3HeaderClean.innerText = 'March:';
+} else if (mm == 4 || mm == 5 || mm == 6) {
+    QuarterM1Clean = 4;
+    QuarterM2Clean = 5;
+    QuarterM3Clean = 6;
+    quaterHeaderClean.innerText = 'QT 2 - Door & Usher Greeting Schedule:';
+
+    M1HeaderClean.innerText = 'April:';
+    M2HeaderClean.innerText = 'May:';
+    M3HeaderClean.innerText = 'June:';
+} else if (mm == 7 || mm == 8 || mm == 9) {
+    QuarterM1Clean = 7;
+    QuarterM2Clean = 8;
+    QuarterM3Clean = 9;
+    quaterHeaderClean.innerText = 'QT 3 - Door & Usher Greeting Schedule:';
+
+    M1Header.innerText = 'July:';
+    M2Header.innerText = 'August:';
+    M3Header.innerText = 'September:';
+} else if (mm == 10 || mm == 11 || mm == 12) {
+    QuarterM1Clean = 10;
+    QuarterM2Clean = 11;
+    QuarterM3Clean = 12;
+    quaterHeaderClean.innerText = 'QT 4 - Door & Usher Greeting Schedule:';
+
+    M1HeaderClean.innerText = 'October:';
+    M2HeaderClean.innerText = 'November:';
+    M3HeaderClean.innerText = 'December:';
+}
 
 $.getJSON('https://sheetdb.io/api/v1/qckxhew1zxe30', function (cleaning_schedule) {
 
     for (let i = 0; i < cleaning_schedule.length; i++) {
-        let cleaningDateV = document.createElement("td");
-        let slot1V = document.createElement("td");
-        let slot2V = document.createElement("td");
-        let slot3V = document.createElement("td");
 
-        let tableRow = document.createElement("tr");
+        // this logic determins what month table the schedule needs to go to
+
+        if (cleaning_schedule[i].date[1] == '/' || cleaning_schedule[i].date[1] == '-') {
+            // checks for a double digit day number when month is also double digit number
+            let scheduleMonth1 = cleaning_schedule[i].date[0];
+            scheduleMonth = scheduleMonth1;
+        } else if (cleaning_schedule[i].date[2] == '/' || cleaning_schedule[i].date[2] == '-') {
+            // checks for a double digit day number when month is also double digit number
+            let scheduleMonth1 = cleaning_schedule[i].date[0];
+            let scheduleMonth2 = cleaning_schedule[i].date[1];
+            scheduleMonth = scheduleMonth1 + scheduleMonth2;
+        }
+
+        // creates elements needed for a schedule
+
+        let dateItem = document.createElement("td");
+        let cleaner1Item = document.createElement("td");
+        let cleaner2Item = document.createElement("td");
+        let cleaner3Item = document.createElement("td");
+
+        let scheduleRow = document.createElement("tr");
 
         // looks for day number no matter if single or double digit months and days
 
-        if(cleaning_schedule[i].date[1] == '/' || cleaning_schedule[i].date[1] == '-') {
+        if (cleaning_schedule[i].date[1] == '/' || cleaning_schedule[i].date[1] == '-') {
             // checks for a single digit day number when month is also single digit number
-            if(cleaning_schedule[i].date[3] == '/' || cleaning_schedule[i].date[3] == '-') {
-                cleaningTodayDate = cleaning_schedule[i].date[2];
-                cleaningMonthlyScheduleDays.push(cleaningTodayDate);
-            } else if(cleaning_schedule[i].date[4] == '/' || cleaning_schedule[i].date[4] == '-') {
+            if (cleaning_schedule[i].date[3] == '/' || cleaning_schedule[i].date[3] == '-') {
+                scheduleDayClean = cleaning_schedule[i].date[2];
+                monthlyScheduleDayClean.push(scheduleDayClean);
+            } else if (cleaning_schedule[i].date[4] == '/' || cleaning_schedule[i].date[4] == '-') {
                 // checks for a double digit day number when month is also single digit number
-                let cleaningTodayDate1 = cleaning_schedule[i].date[2];
-                let cleaningTodayDate2 = cleaning_schedule[i].date[3];
-                cleaningTodayDate = cleaningTodayDate1 + cleaningTodayDate2;
-                cleaningMonthlyScheduleDays.push(cleaningTodayDate);
+                let scheduleDayClean1 = cleaning_schedule[i].date[2];
+                let scheduleDayClean2 = cleaning_schedule[i].date[3];
+                scheduleDayClean = scheduleDayClean1 + scheduleDayClean2;
+                monthlyScheduleDayClean.push(scheduleDayClean);
             }
-        } else if(cleaning_schedule[i].date[2] == '/' || cleaning_schedule[i].date[2] == '-') {
+        } else if (cleaning_schedule[i].date[2] == '/' || cleaning_schedule[i].date[2] == '-') {
             // checks for a single digit day number when month is also double digit number
-            if(cleaning_schedule[i].date[4] == '/' || cleaning_schedule[i].date[4] == '-') {
-                cleaningTodayDate = cleaning_schedule[i].date[3];
-                cleaningMonthlyScheduleDays.push(cleaningTodayDate);
-            } else if(cleaning_schedule[i].date[5] == '/' || cleaning_schedule[i].date[4] == '-') {
+            if (cleaning_schedule[i].date[4] == '/' || cleaning_schedule[i].date[4] == '-') {
+                scheduleDayClean = cleaning_schedule[i].date[3];
+                monthlyScheduleDayClean.push(scheduleDayClean);
+            } else if (cleaning_schedule[i].date[5] == '/' || cleaning_schedule[i].date[4] == '-') {
                 // checks for a double digit day number when month is also double digit number
-                let cleaningTodayDate1 = cleaning_schedule[i].date[3];
-                let cleaningTodayDate2 = cleaning_schedule[i].date[4];
-                cleaningTodayDate = cleaningTodayDate1 + cleaningTodayDate2;
-                cleaningMonthlyScheduleDays.push(cleaningTodayDate);
+                let scheduleDayClean1 = cleaning_schedule[i].date[3];
+                let scheduleDayClean2 = cleaning_schedule[i].date[4];
+                scheduleDayClean = scheduleDayClean1 + scheduleDayClean2;
+                monthlyScheduleDayClean.push(scheduleDayClean);
             }
         }
 
-        if (cleaningTodayDate == dd) {
-            cleaningDateV.innerText = "Today's Schedule";
-            cleaningDateV.style.backgroundColor = 'gold';
-            slot1V.style.backgroundColor = 'gold';
-            slot2V.style.backgroundColor = 'gold';
-            slot3V.style.backgroundColor = 'gold';
-            cleaningNoUpcoming = true;
-            cleaningDateV.setAttribute("data-cell", "Date");
-        } else if (cleaningMonthlyScheduleDays[i] > dd) {
-            if(cleaningNoUpcoming == false) {
-                if (cleaningDontRepeat == false) {
-                    cleaningDateV.innerText = "Upcoming Schedule";
-                    cleaningDateV.style.backgroundColor = 'gold';
-                    slot1V.style.backgroundColor = 'gold';
-                    slot2V.style.backgroundColor = 'gold';
-                    slot3V.style.backgroundColor = 'gold';
-                    cleaningDontRepeat = true;
-                    cleaningDateV.setAttribute("data-cell", "Date");
-                } else {
-                    cleaningDateV.innerText = cleaning_schedule[i].date;
-                    cleaningDateV.setAttribute("data-cell", "Date");
-                }
+        //labels schedule in gold and says todays schedule if schedule date
+        // matches same month and day as today
+
+        if (scheduleMonth == mm && scheduleDayClean == dd) {
+
+            dateItem.innerText = "Today's Schedule";
+            dateItem.style.backgroundColor = 'gold';
+            cleaner1Item.style.backgroundColor = 'gold';
+            cleaner2Item.style.backgroundColor = 'gold';
+            cleaner3Item.style.backgroundColor = 'gold';
+            noUpcomingScheduleClean = true;
+            dateItem.setAttribute("data-cell", "Date");
+
+        } else if (scheduleMonth == mm && monthlyScheduleDayClean[i] > dd) {
+            if (noUpcomingScheduleClean == false) {
+
+                dateItem.innerText = "Upcoming Schedule";
+                dateItem.style.backgroundColor = 'gold';
+                cleaner1Item.style.backgroundColor = 'gold';
+                cleaner2Item.style.backgroundColor = 'gold';
+                cleaner3Item.style.backgroundColor = 'gold';
+                noUpcomingScheduleClean = true;
+                dateItem.setAttribute("data-cell", "Date");
             } else {
-                cleaningDateV.innerText = cleaning_schedule[i].date;
-                cleaningDateV.setAttribute("data-cell", "Date");
+                dateItem.innerText = cleaning_schedule[i].date;
+                dateItem.setAttribute("data-cell", "Date");
             }
+        } else if (scheduleMonth == mm + 1 && noUpcomingScheduleClean == false) {
+
+                dateItem.innerText = "Upcoming Schedule";
+                dateItem.style.backgroundColor = 'gold';
+                cleaner1Item.style.backgroundColor = 'gold';
+                cleaner2Item.style.backgroundColor = 'gold';
+                cleaner3Item.style.backgroundColor = 'gold';
+                noUpcomingScheduleClean = true;
+                dateItem.setAttribute("data-cell", "Date");
         } else {
-            cleaningDateV.innerText = cleaning_schedule[i].date;
-            cleaningDateV.setAttribute("data-cell", "Date");
+            dateItem.innerText = cleaning_schedule[i].date;
+            dateItem.setAttribute("data-cell", "Date");
         }
 
-        slot1V.innerText = cleaning_schedule[i].name1;
-        slot2V.innerText = cleaning_schedule[i].name2;
-        slot3V.innerText = cleaning_schedule[i].name3;
+        // sets the text and attributes needed to the items
 
-        slot1V.setAttribute("data-cell", "Slot #1");
-        slot2V.setAttribute("data-cell", "Slot #2");
-        slot3V.setAttribute("data-cell", "Slot #3");
+        cleaner1Item.innerText = cleaning_schedule[i].cleaner1;
+        cleaner2Item.innerText = cleaning_schedule[i].cleaner2;
+        cleaner3Item.innerText = cleaning_schedule[i].cleaner3;
 
-        tableRow.appendChild(cleaningDateV);
-        tableRow.appendChild(slot1V);
-        tableRow.appendChild(slot2V);
-        tableRow.appendChild(slot3V);
-        cleaningScheduleDB.appendChild(tableRow);
+        cleaner1Item.setAttribute("data-cell", "Cleaner #1");
+        cleaner2Item.setAttribute("data-cell", "Cleaner #2");
+        cleaner3Item.setAttribute("data-cell", "Cleaner #3");
+
+        // appends items to the schedule row
+
+        scheduleRow.appendChild(dateItem);
+        scheduleRow.appendChild(cleaner1Item);
+        scheduleRow.appendChild(cleaner2Item);
+        scheduleRow.appendChild(cleaner3Item);
+
+        // adds schedule to whichever month it is assigned to
+
+        if (QuarterM1 == scheduleMonth) {
+            monthTable1Clean.appendChild(scheduleRow);
+        } else if (QuarterM2 == scheduleMonth) {
+            monthTable2Clean.appendChild(scheduleRow);
+        } else if (QuarterM3 == scheduleMonth) {
+            monthTable3Clean.appendChild(scheduleRow);
+        }
     }
 
 });

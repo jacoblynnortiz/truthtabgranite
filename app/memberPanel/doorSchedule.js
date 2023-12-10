@@ -79,6 +79,8 @@ const yyyy = today.getFullYear();
 let mm = today.getMonth() + 1; // Months start at 0!
 let dd = today.getDate();
 
+let hour = today.getHours()
+
 let monthlyScheduleDays = [],
     goal = dd;
 
@@ -187,8 +189,11 @@ $.getJSON('https://sheetdb.io/api/v1/vic0ho7i91v4l', function (door_usher_schedu
         // matches same month and day as today
 
         if (scheduleMonth == mm && scheduleDay == dd) {
-
-            dateItem.innerText = "Today's Schedule";
+            if(hour >= 12) {
+                dateItem.innerText = "Tonight's Schedule";
+            } else {
+                dateItem.innerText = "Today's Schedule";
+            }
             dateItem.style.backgroundColor = 'gold';
             door1Item.style.backgroundColor = 'gold';
             door2Item.style.backgroundColor = 'gold';

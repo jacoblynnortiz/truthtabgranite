@@ -45,9 +45,6 @@
 }
 
 @media screen and (max-width: 850px) {
-    .delete-all {
-        bottom: 85px;
-    }
 
     .ushersdoorguide {
         margin-top: 65px;
@@ -55,6 +52,7 @@
 }
 
 @media screen and (max-width: 750px) {
+
     .help-info-container {
         right: 0;
         top: 85px;
@@ -64,11 +62,5 @@
 @media screen and (max-width: 450px) {
     .ushersdoorguide {
         margin-top: 65px;
-    }
-}
-
-@media screen and (max-width: 430px) {
-    .delete-all {
-        bottom: 115px;
     }
 }

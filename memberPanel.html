@@ -31,8 +31,10 @@
                             style="margin-right: 10px;">Member Panel</a></div>
                 <ul class="links">
                     <div class="side-nav">
-                        <a title="Logout" class="logout" href="login"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i></a>
-                        <a title="Report an issue" class="report" href="tel:3143309388"><i class="fa-solid fa-flag"></i></a>
+                        <a title="Logout" class="logout" href="login"><i
+                                class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i></a>
+                        <a title="Report an issue" class="report" href="tel:3143309388"><i
+                                class="fa-solid fa-flag"></i></a>
                         <img id="profilePicture" src="#">
                         <h2 id="name">name undefined</h2>
                         <h2 id="username">.username_undefined</h2>
@@ -49,14 +51,22 @@
     <div id="memberPanel" class="member-panel">
         <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
             <h2>Note from development team:</h2>
-            <p>The schedule viewing areas are now made to show a quarter of a year at a time, please make sure when
-                looking at a schedule if a position has 2 names with a | in between the names that means the first name
-                is for morning service and the second name is for evening service.</p>
+            <p>The schedule viewing areas are now made to show a quarter of a year at a time. There is also a new report button in the side menu and a help button in the top right corner</p>
         </div>
         <div class="schedule-container" id="doorScheduleContainer">
-            <h2 id="quaterHeader" style="font-size: 1.5rem;">QT null - Door & Usher Greeting Schedule:</h2>
-            <div class="help-info-schedule"><span></span>
-                <p>- indicates todays or next services schedule</p>
+            <div class="schedule-heading">
+                <h2 id="quaterHeader" style="font-size: 1.8rem;">QT null - Door & Usher Schedule:</h2>
+                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                <div class="help-info-container">
+                    <ul>
+                        <li><span style="background-color: gold;"></span>
+                            <p>- indicates todays or the next schedule</p>
+                        </li>
+                        <li><span></span>
+                            <p>- 2 names on 1 position means the 1st name is for morning and 2nd name is for evening</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <h2 id="monthHeader1" style="font-size: 1.5rem; padding: 5px 0;">Month 1:</h2>
             <table id="monthTable1"></table>
@@ -67,9 +77,19 @@
             <a href="images/usherdoorguide.pdf" class="ushersdoorguide">Ushers and Door Greeting Guide</a>
         </div>
         <div class="schedule-container" id="cleaningScheduleContainer">
-            <h2 id="quaterHeaderClean" style="font-size: 1.5rem;">QT null - Door & Usher Greeting Schedule:</h2>
-            <div class="help-info-schedule"><span></span>
-                <p>- indicates todays or next cleaning schedule</p>
+            <div class="schedule-heading">
+                <h2 id="quaterHeaderClean" style="font-size: 1.8rem;">QT null - Cleaning Schedule:</h2>
+                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                <div class="help-info-container">
+                    <ul>
+                        <li><span style="background-color: gold;"></span>
+                            <p>- indicates todays or the next schedule</p>
+                        </li>
+                        <li><span></span>
+                            <p>- 2 names on 1 position means the 1st name is for morning and 2nd name is for evening</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <h2 id="monthHeader1Clean" style="font-size: 1.5rem; padding: 5px 0;">Month 1:</h2>
             <table id="monthTable1Clean"></table>

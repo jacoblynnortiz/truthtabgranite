@@ -189,11 +189,7 @@ $.getJSON('https://sheetdb.io/api/v1/vic0ho7i91v4l', function (door_usher_schedu
         // matches same month and day as today
 
         if (scheduleMonth == mm && scheduleDay == dd) {
-            if(hour >= 12) {
-                dateItem.innerText = "Tonight's Schedule";
-            } else {
-                dateItem.innerText = "Today's Schedule";
-            }
+            dateItem.innerText = "Today's Schedule";
             dateItem.style.backgroundColor = 'gold';
             door1Item.style.backgroundColor = 'gold';
             door2Item.style.backgroundColor = 'gold';

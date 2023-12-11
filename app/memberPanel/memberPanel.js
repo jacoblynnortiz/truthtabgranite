@@ -17,6 +17,46 @@ let sessionExpired = document.getElementById('sessionExpired');
 
 let usernameSuccess1 = null, passwordSuccess1 = null;
 
+let doorScheduleFocused = true;
+let cleaningScheduleFocused = false;
+
+let doorTab = document.getElementById('doorTab');
+let cleanTab = document.getElementById('cleanTab');
+let doorSchedule = document.getElementById('doorSchedule');
+let cleaningSchedule = document.getElementById('cleaningSchedule');
+
+let requestDoorDelete = document.getElementById('requestDoorDelete');
+let requestCleaningDelete = document.getElementById('requestCleaningDelete');
+
+let deleteDoorConfirmation = document.getElementById('deleteDoorConfirmation');
+let deleteCleaningConfirmation = document.getElementById('deleteCleaningConfirmation');
+
+let cancelDoorScheduleDelete = document.getElementById('cancelDoorScheduleDelete');
+let cancelCleaningScheduleDelete = document.getElementById('cancelCleaningScheduleDelete');
+
+
+// checks for deletion request
+
+requestDoorDelete.addEventListener('click', function () {
+    deleteDoorConfirmation.classList.add("animateConfirmation");
+    deleteDoorConfirmation.classList.remove("animateUnConfirmation");
+});
+
+requestCleaningDelete.addEventListener('click', function () {
+    deleteCleaningConfirmation.classList.add("animateConfirmation");
+    deleteCleaningConfirmation.classList.remove("animateUnConfirmation");
+});
+
+cancelDoorScheduleDelete.addEventListener('click', function () {
+    deleteDoorConfirmation.classList.add("animateUnConfirmation");
+    deleteDoorConfirmation.classList.remove("animateConfirmation");
+});
+
+cancelCleaningScheduleDelete.addEventListener('click', function () {
+    deleteCleaningConfirmation.classList.add("animateUnConfirmation");
+    deleteCleaningConfirmation.classList.remove("animateConfirmation");
+});
+
 // funtion to open and close side menu and move or not move content if screen is a certain size
 function slide() {
     if (window.matchMedia('screen and (max-width: 750px)').matches) {
@@ -68,8 +108,12 @@ $.getJSON('https://api.npoint.io/75b2953ec730e3b4fdfb', function (member_details
 
             if (adminStatus == 0) {
                 adminBadge.style.display = 'none';
+                requestDoorDelete.style.display = 'none';
+                requestCleaningDelete.style.display = 'none';
             } else if (adminStatus == 1) {
                 adminBadge.style.display = 'flex';
+                requestDoorDelete.style.display = 'flex';
+                requestCleaningDelete.style.display = 'flex';
             }
             // if username matches it will then check if that password also still matches
             if (ls.getItem("truthTabMemberPassword") == getAccountPassword) {
@@ -79,8 +123,12 @@ $.getJSON('https://api.npoint.io/75b2953ec730e3b4fdfb', function (member_details
 
                 if (adminStatus == 0) {
                     adminBadge.style.display = 'none';
+                    requestDoorDelete.style.display = 'none';
+                    requestCleaningDelete.style.display = 'none';
                 } else if (adminStatus == 1) {
                     adminBadge.style.display = 'flex';
+                    requestDoorDelete.style.display = 'flex';
+                    requestCleaningDelete.style.display = 'flex';
                 }
             }
         }

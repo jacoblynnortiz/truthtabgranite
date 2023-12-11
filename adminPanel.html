@@ -47,11 +47,14 @@
         <nav>
             <input type="checkbox" id="show-menu" checked>
             <div class="content">
-                <div class="logo"><a href="adminPanel.html"><img src="images/admin_icon.png" style="margin-right: 10px;">Admin Panel</a></div>
+                <div class="logo"><a href="adminPanel.html"><img src="images/admin_icon.png"
+                            style="margin-right: 10px;">Admin Panel</a></div>
                 <ul class="links">
                     <div class="side-nav">
-                        <a title="Logout" class="logout" href="login"><i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i></a>
-                        <a title="Report an issue" class="report" href="tel:3143309388"><i class="fa-solid fa-flag"></i></a>
+                        <a title="Logout" class="logout" href="login"><i
+                                class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i></a>
+                        <a title="Report an issue" class="report" href="tel:3143309388"><i
+                                class="fa-solid fa-flag"></i></a>
                         <img id="profilePicture" src="#">
                         <h2 id="name">name undefined</h2>
                         <h2 id="username">.username_undefined</h2>
@@ -64,16 +67,30 @@
     <div id="adminPanel" class="admin-panel">
         <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
             <h2>Note from development team:</h2>
-            <p>The schedule viewing areas now are made to show a quarter of a year at a time, please make sure when
-                making a schedule for sundays to not make a seperate one for morning and evening just make one for both
-                services and seperate peoples names by a | for example Door #1: Brother Jonathan | Brother Mifflin. That
-                would mean for morning service Brother Jonathan and for evening service Brother Mifflin.</p>
+            <p>The schedule viewing areas are now made to show a quarter of a year at a time. There is also a new report button in the side menu and a help button in the top right corner.
+            </p>
         </div>
         <div class="add-post-row">
             <div class="add-post-container">
                 <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Create News Posts:</h2>
                 <div class="add-post">
-                    <h2>Create Post</h2>
+                    <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px">
+                        <h2 style="font-size: 1.6rem;">Create Post</h2>
+                        <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                        <div class="help-info-container">
+                            <ul>
+                                <li>
+                                    <p><strong>Post Title:</strong> for the post title, please keep it under 15-20 characters long</p>
+                                </li>
+                                <li>
+                                    <p><strong>Image URL:</strong> for the posts picture, please keep it 16:9 or 4:3 ratio only</p>
+                                </li>
+                                <li>
+                                    <p><strong>Message:</strong> for the posts message, no limit on how many words you can have</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <form action="https://sheetdb.io/api/v1/dl7jl844tj7ts" method="post" id="sheetdb-form-1">
                         <select id="postLangChanger">
                             <option value="english">English</option>
@@ -91,7 +108,20 @@
                 <div class="add-post-container">
                     <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Upload Sermons:</h2>
                     <div class="add-post">
-                        <h2>Upload Sermon</h2>
+                        <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px"">
+                            <h2 style="font-size: 1.6rem;">Upload Sermon</h2>
+                            <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                            <div class="help-info-container">
+                                <ul>
+                                    <li>
+                                        <p><strong>Sermon Title:</strong> for the sermons title</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Sermon iframe:</strong> embed link to add live stream from facebook</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                         <form action="https://sheetdb.io/api/v1/swgohhf2dmwev" method="post" id="sheetdb-form-2">
                             <select id="sermonLangChanger">
                                 <option value="english">English</option>
@@ -116,7 +146,23 @@
                     </div>
                     <div class="change-schedule" id="doorSchedule">
                         <form action="https://sheetdb.io/api/v1/vic0ho7i91v4l" method="delete" id="sheetdb-form-3">
-                            <h2>Create Schedule</h2>
+                            <div class="schedule-heading" style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
+                                <h2 style="font-size: 1.6rem;">Create Schedule</h2>
+                                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                                <div class="help-info-container">
+                                    <ul>
+                                        <li>
+                                            <p><strong>Date:</strong> allows people to see what the schedules date is</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Morning & Evening Service Schedule:</strong> have morning greeter and evening greeter in text box seperated with a | symbol</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Delete Button:</strong> This button opens a confirm popup to delete all the schedules, please do not delete them unless it is the end of the quarter</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                             <div class="schedule-row1">
                                 <input type="text" name="data[date]" required placeholder="Date">
                             </div>
@@ -136,7 +182,23 @@
                     </div>
                     <div class="change-schedule" id="cleaningSchedule">
                         <form action="https://sheetdb.io/api/v1/qckxhew1zxe30" method="delete" id="sheetdb-form-5">
-                            <h2>Create Schedule</h2>
+                            <div class="schedule-heading" style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
+                                <h2 style="font-size: 1.6rem;">Create Schedule</h2>
+                                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                                <div class="help-info-container">
+                                    <ul>
+                                        <li>
+                                            <p><strong>Date:</strong> allows people to see what the schedules date is</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Cleaner Boxes:</strong> positions for cleaner names or family names, you do not have to fill in all boxes if not needed</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Delete Button:</strong> This button opens a confirm popup to delete all the schedules, please do not delete them unless it is the end of the quarter</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                             <div class="schedule-row1">
                                 <input type="text" name="data[date]" required placeholder="Date">
                                 <input type="text" name="data[cleaner1]" required placeholder="Cleaner #1">
@@ -155,7 +217,26 @@
             </div>
         </div>
         <div class="users-enrolled-container-max">
-            <h2 style="font-size: 2rem; margin: 25px 0; margin-top: 15px; color: #000;">User Logs:</h2>
+            <div class="schedule-heading">
+                <h2 style="font-size: 1.6rem;">User Logs:</h2>
+                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                <div class="help-info-container">
+                    <ul>
+                        <li>
+                            <p><strong>Name:</strong> shows the users name</p>
+                        </li>
+                        <li>
+                            <p><strong>E-mail:</strong> shows the users email</p>
+                        </li>
+                        <li>
+                            <p><strong>Message:</strong> shows the message of what the user did</p>
+                        </li>
+                        <li>
+                            <p><strong>Timestamp:</strong> shows what time and date the user did that action</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <div class="users-enrolled-container">
                 <table id="userLogsTable"></table>
             </div>

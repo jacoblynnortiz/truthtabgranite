@@ -1,6 +1,7 @@
 let username = document.getElementById('username');
 let name = document.getElementById('name');
 let profilePicture = document.getElementById('profilePicture');
+let adminBadge = document.getElementById('adminBadge');
 let memberPanel = document.getElementById('memberPanel');
 let showMenu = document.getElementById('show-menu');
 let menuClosed = false;
@@ -62,9 +63,25 @@ $.getJSON('https://api.npoint.io/75b2953ec730e3b4fdfb', function (member_details
         // checkes if username still matches
         if (ls.getItem("truthTabMemberUsername") == locateAccount) {
             usernameSuccess1 = true;
+
+            let adminStatus = member_details[i].adminStatus;
+
+            if (adminStatus == 0) {
+                adminBadge.style.display = 'none';
+            } else if (adminStatus == 1) {
+                adminBadge.style.display = 'flex';
+            }
             // if username matches it will then check if that password also still matches
             if (ls.getItem("truthTabMemberPassword") == getAccountPassword) {
                 passwordSuccess1 = true;
+
+                let adminStatus = member_details[i].adminStatus;
+
+                if (adminStatus == 0) {
+                    adminBadge.style.display = 'none';
+                } else if (adminStatus == 1) {
+                    adminBadge.style.display = 'flex';
+                }
             }
         }
     }

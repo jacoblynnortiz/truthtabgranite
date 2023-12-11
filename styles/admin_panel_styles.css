@@ -402,6 +402,7 @@ table {
 
 .help-info-container {
     display: none;
+    z-index: 1;
     width: 100%;
     max-width: 450px;
     min-height: 100px;

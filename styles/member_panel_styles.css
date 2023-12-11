@@ -155,6 +155,78 @@ table {
     -moz-box-shadow: 0px 0px 21px 9px rgba(0, 0, 0, 0.43);
 }
 
+.schedule-heading {
+    padding: 10px 10px 15px 0;
+    border-bottom: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.help-info-btn {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 5px 15px;
+    display: block;
+    background-color: #3c7cb9;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.4rem;
+    border: 3px solid #3c7cb9;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.help-info-btn:hover {
+    background-color: transparent;
+    color: #3c7cb9;
+}
+
+.help-info-btn:hover ~ .help-info-container {
+    display: flex;
+}
+
+.help-info-container {
+    display: none;
+    width: 100%;
+    max-width: 450px;
+    min-height: 100px;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    padding: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 21px 9px rgba(0, 0, 0, 0.43);
+    -webkit-box-shadow: 0px 0px 21px 9px rgba(0, 0, 0, 0.43);
+    -moz-box-shadow: 0px 0px 21px 9px rgba(0, 0, 0, 0.43);
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.help-info-container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+}
+
+.help-info-container span {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.help-info-container p {
+    font-size: 1.3rem;
+    padding-left: 10px;
+}
+
 .ushersdoorguide {
     width: 100%;
     max-width: 600px;
@@ -175,26 +247,6 @@ table {
     color: #3c7cb9;
 }
 
-.help-info-schedule {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 15px 0;
-    padding-left: 5px;
-}
-
-.help-info-schedule span {
-    width: 20px;
-    height: 20px;
-    display: block;
-    background-color: gold;
-}
-
-.help-info-schedule  p {
-    font-size: 1.3rem;
-    padding-left: 10px;
-}
-
 @media screen and (max-width: 1100px) {
     td {
         display: block;
@@ -211,6 +263,14 @@ table {
 
     th {
         display: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .help-info-container {
+        right: 0;
+        top: 85px;
     }
 }
 

@@ -96,7 +96,7 @@ if (mm == 1 || mm == 2 || mm == 3) {
     QuarterM1 = 1;
     QuarterM2 = 2;
     QuarterM3 = 3;
-    quaterHeader.innerText = 'QT 1 - Door & Usher Greeting Schedule:';
+    quaterHeader.innerText = 'QT 1 - Door & Usher Schedule:';
 
     M1Header.innerText = 'January:';
     M2Header.innerText = 'February:';
@@ -105,7 +105,7 @@ if (mm == 1 || mm == 2 || mm == 3) {
     QuarterM1 = 4;
     QuarterM2 = 5;
     QuarterM3 = 6;
-    quaterHeader.innerText = 'QT 2 - Door & Usher Greeting Schedule:';
+    quaterHeader.innerText = 'QT 2 - Door & Usher Schedule:';
 
     M1Header.innerText = 'April:';
     M2Header.innerText = 'May:';
@@ -114,7 +114,7 @@ if (mm == 1 || mm == 2 || mm == 3) {
     QuarterM1 = 7;
     QuarterM2 = 8;
     QuarterM3 = 9;
-    quaterHeader.innerText = 'QT 3 - Door & Usher Greeting Schedule:';
+    quaterHeader.innerText = 'QT 3 - Door & Usher Schedule:';
 
     M1Header.innerText = 'July:';
     M2Header.innerText = 'August:';
@@ -123,7 +123,7 @@ if (mm == 1 || mm == 2 || mm == 3) {
     QuarterM1 = 10;
     QuarterM2 = 11;
     QuarterM3 = 12;
-    quaterHeader.innerText = 'QT 4 - Door & Usher Greeting Schedule:';
+    quaterHeader.innerText = 'QT 4 - Door & Usher Schedule:';
 
     M1Header.innerText = 'October:';
     M2Header.innerText = 'November:';

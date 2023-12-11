@@ -78,7 +78,7 @@ if (mm == 1 || mm == 2 || mm == 3) {
     QuarterM1Clean = 1;
     QuarterM2Clean = 2;
     QuarterM3Clean = 3;
-    quaterHeaderClean.innerText = 'QT 1 - Door & Usher Greeting Schedule:';
+    quaterHeaderClean.innerText = 'QT 1 - Cleaning Schedule:';
 
     M1HeaderClean.innerText = 'January:';
     M2HeaderClean.innerText = 'February:';
@@ -87,7 +87,7 @@ if (mm == 1 || mm == 2 || mm == 3) {
     QuarterM1Clean = 4;
     QuarterM2Clean = 5;
     QuarterM3Clean = 6;
-    quaterHeaderClean.innerText = 'QT 2 - Door & Usher Greeting Schedule:';
+    quaterHeaderClean.innerText = 'QT 2 - Cleaning Schedule:';
 
     M1HeaderClean.innerText = 'April:';
     M2HeaderClean.innerText = 'May:';
@@ -96,7 +96,7 @@ if (mm == 1 || mm == 2 || mm == 3) {
     QuarterM1Clean = 7;
     QuarterM2Clean = 8;
     QuarterM3Clean = 9;
-    quaterHeaderClean.innerText = 'QT 3 - Door & Usher Greeting Schedule:';
+    quaterHeaderClean.innerText = 'QT 3 - Cleaning Schedule:';
 
     M1Header.innerText = 'July:';
     M2Header.innerText = 'August:';
@@ -105,7 +105,7 @@ if (mm == 1 || mm == 2 || mm == 3) {
     QuarterM1Clean = 10;
     QuarterM2Clean = 11;
     QuarterM3Clean = 12;
-    quaterHeaderClean.innerText = 'QT 4 - Door & Usher Greeting Schedule:';
+    quaterHeaderClean.innerText = 'QT 4 - Cleaning Schedule:';
 
     M1HeaderClean.innerText = 'October:';
     M2HeaderClean.innerText = 'November:';

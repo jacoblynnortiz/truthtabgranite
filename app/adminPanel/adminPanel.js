@@ -61,9 +61,25 @@ $.getJSON('https://api.npoint.io/1619ae187ef7402b3aa6', function (admin_details)
         // checkes if username still matches
         if (ls.getItem("truthTabAdminUsername") == locateAccount) {
             usernameSuccess1 = true;
+
+            let adminStatus = admin_details[i].adminStatus;
+
+            if (adminStatus == 0) {
+                adminBadge.style.display = 'none';
+            } else if (adminStatus == 1) {
+                adminBadge.style.display = 'flex';
+            }
             // if username matches it will then check if that password also still matches
             if (ls.getItem("truthTabAdminPassword") == getAccountPassword) {
                 passwordSuccess1 = true;
+
+                let adminStatus = admin_details[i].adminStatus;
+
+                if (adminStatus == 0) {
+                    adminBadge.style.display = 'none';
+                } else if (adminStatus == 1) {
+                    adminBadge.style.display = 'flex';
+                }
             }
         }
     }

@@ -182,12 +182,6 @@ table {
     padding-bottom: 5px;
 }
 
-.help-info-container span {
-    width: 20px;
-    height: 20px;
-    display: block;
-}
-
 .help-info-container p {
     font-size: 1.3rem;
     padding-left: 10px;

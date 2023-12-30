@@ -82,6 +82,11 @@
     align-items: center;
 }
 
+.inputBox {
+    width: 100%;
+    position: relative;
+}
+
 .login-panel input {
     width: 100%;
     margin-bottom: 25px;
@@ -92,6 +97,49 @@
     color: #fff;
     border: none;
     font-size: 1.2rem;
+}
+
+.view-password-btn {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    background-color: rgb(34, 34, 34);
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    z-index: 5;
+}
+
+.eye-slash::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+    border-radius: 8px;
+    animation: eye-slash ease .3s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes eye-slash {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 .login-panel div {
@@ -121,7 +169,7 @@
     margin-right: 15px;
 }
 
-.login-panel button {
+#loginBtn1, #loginBtn2 {
     width: 100%;
     margin-bottom: 25px;
     padding: 15px;
@@ -136,7 +184,7 @@
     transition: .3s;
 }
 
-.login-panel button:hover {
+#loginBtn1:hover, #loginBtn2:hover {
     background-color: transparent;
     color: #fff;
 }

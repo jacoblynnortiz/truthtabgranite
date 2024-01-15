@@ -2,6 +2,9 @@ let datePostedContainer = document.getElementById('datePostedContainer');
 let sheetdbForm1 = document.getElementById('sheetdb-form-1');
 let postLangChanger = document.getElementById('postLangChanger');
 
+let imgSrcInput = document.getElementById('imgSrcInput');
+let previewPostImage = document.getElementById('previewPostImage');
+
 // gets current date to be able to make timestamp for post
 
 const today = new Date();
@@ -24,3 +27,7 @@ document.getElementById("postLangChanger").onchange = function () {
         datePostedContainer.value = "<span>Publicada: " + datePosted + "</span>";
     }
 };
+
+setInterval(function() {
+    previewPostImage.src = imgSrcInput.value;
+}, 1000);

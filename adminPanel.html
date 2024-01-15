@@ -77,7 +77,7 @@
         <div class="add-post-row">
             <div class="add-post-container">
                 <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Create News Posts:</h2>
-                <div class="add-post">
+                <div class="add-post" style="max-height: 1600px;">
                     <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px">
                         <h2 style="font-size: 1.6rem;">Create Post</h2>
                         <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
@@ -101,7 +101,8 @@
                             <option value="español">Español</option>
                         </select>
                         <input required placeholder="Post Title" type="text" name="data[post_title]">
-                        <input required placeholder="image URL" type="text" name="data[img_src]">
+                        <input required id="imgSrcInput" placeholder="image URL" type="text" name="data[img_src]">
+                        <img id="previewPostImage" src="">
                         <input id="datePostedContainer" style="opacity: 0; width: 0; height: 0;" name="data[post_date]">
                         <textarea required placeholder="Type Message..." name="data[post_txt]"></textarea>
                         <input type="submit" name="Post" value="Post">

@@ -9,8 +9,8 @@ datePostedSermonContainer.value = datePosted;
 
 document.getElementById("sermonLangChanger").onchange = function () {
     if (this.value == 'english') {
-        sheetdbForm2.action = 'https://sheetdb.io/api/v1/swgohhf2dmwev';
+        sheetdbForm2.action = 'https://sheetdb.io/api/v1/1f0b8g95rfrlf';
     } else {
-        sheetdbForm2.action = 'https://sheetdb.io/api/v1/y68gx4ny6pvzr';
+        sheetdbForm2.action = 'https://sheetdb.io/api/v1/id5r5hiin7tld';
     }
 };

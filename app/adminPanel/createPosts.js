@@ -20,10 +20,10 @@ datePostedContainer.value = "<span>Posted: " + datePosted + "</span>";
 
 document.getElementById("postLangChanger").onchange = function () {
     if (this.value == 'english') {
-        sheetdbForm1.action = 'https://sheetdb.io/api/v1/dl7jl844tj7ts';
+        sheetdbForm1.action = 'https://sheetdb.io/api/v1/sn4bwy4h5v3t1';
         datePostedContainer.value = "<span>Posted: " + datePosted + "</span>";
     } else {
-        sheetdbForm1.action = 'https://sheetdb.io/api/v1/0ttugccwroyw8';
+        sheetdbForm1.action = 'https://sheetdb.io/api/v1/p15xdj6p5l8fi';
         datePostedContainer.value = "<span>Publicada: " + datePosted + "</span>";
     }
 };

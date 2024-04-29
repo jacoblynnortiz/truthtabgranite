@@ -4,7 +4,7 @@ const postSection = document.getElementById("posts");
 // FETCHES JSON FROM DATABASE 
 
     if(document.title == 'Truth Tabernacle de Granite City') {
-        $.getJSON('https://sheetdb.io/api/v1/0ttugccwroyw8', function (blog_posts) {
+        $.getJSON('https://sheetdb.io/api/v1/p15xdj6p5l8fi', function (blog_posts) {
             // looks through news database displaying each one
             for (let i = blog_posts.length - 1; i >= blog_posts.length - 3; i--) {
                 // creates new news post
@@ -59,7 +59,7 @@ const postSection = document.getElementById("posts");
             }
         });
     } else {
-        $.getJSON('https://sheetdb.io/api/v1/0ttugccwroyw8', function (blog_posts) {
+        $.getJSON('https://sheetdb.io/api/v1/p15xdj6p5l8fi', function (blog_posts) {
             // looks through news database displaying each one
             for (let i = blog_posts.length - 1; i >= blog_posts.length - 6; i--) {
                 // creates new news post

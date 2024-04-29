@@ -1,4 +1,4 @@
-$.getJSON('https://sheetdb.io/api/v1/8yk5oje5mdf3w', function (user_enrollments) {
+$.getJSON('https://sheetdb.io/api/v1/9423yqblhh11f', function (user_enrollments) {
     let userLogsTable = document.getElementById("userLogsTable");
 
     // creates charts headers

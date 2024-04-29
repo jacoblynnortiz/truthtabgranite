@@ -12,7 +12,7 @@ function myFunction() {
 // FETCHES JSON FROM DATABASE
 
 if (document.title == 'Truth Tabernacle of Granite City' || document.title == 'Truth Tabernacle de Granite City') {
-	$.getJSON('https://sheetdb.io/api/v1/swgohhf2dmwev', function (sermon_posts) {
+	$.getJSON('https://sheetdb.io/api/v1/id5r5hiin7tld', function (sermon_posts) {
 		let latestSermon = document.getElementById('latestSermon');
 		let latestSermonHeader = document.createElement('h2');
 

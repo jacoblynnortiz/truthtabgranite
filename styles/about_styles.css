@@ -28,16 +28,13 @@
     position: absolute;
     content: '';
     top: calc(50% - 5px);
-    left: -35px;
 }
 
 .about-header h2::before {
-    top: calc(50% - 5px);
     left: -35px;
 }
 
 .about-header h2::after {
-    top: calc(50% - 5px);
     right: -35px;
 }
 

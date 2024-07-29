@@ -1,0 +1,66 @@
+.member-panel {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #333;
+    position: relative;
+    padding: 25px;
+    padding-left: 325px;
+    padding-right: 25px;
+    padding-top: 85px;
+    transition: .3s;
+}
+
+.schedule-container {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 2000px;
+    background-color: #fff;
+    position: relative;
+    overflow-x: auto;
+    padding: 7.5px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 21px 9px rgba(0, 0, 0, 0.43);
+    -webkit-box-shadow: 0px 0px 21px 9px rgba(0, 0, 0, 0.43);
+    -moz-box-shadow: 0px 0px 21px 9px rgba(0, 0, 0, 0.43);
+}
+
+.ushersdoorguide {
+    width: 100%;
+    max-width: 600px;
+    margin: 15px auto;
+    text-align: center;
+    padding: 7.5px 15px;
+    display: block;
+    background-color: #3c7cb9;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.4rem;
+    border: 3px solid #3c7cb9;
+    transition: .3s;
+}
+
+.ushersdoorguide:hover {
+    background-color: transparent;
+    color: #3c7cb9;
+}
+
+@media screen and (max-width: 850px) {
+
+    .ushersdoorguide {
+        margin-top: 65px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .help-info-container {
+        right: 0;
+        top: 85px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .ushersdoorguide {
+        margin-top: 65px;
+    }
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Courses | Biblical & Spiritual Leadership Formation</title>
+  <link rel="icon" href="../images/icon.png">
+  <link rel="stylesheet" href="../../styles/global_styles.css">
+  <link rel="stylesheet" href="../../styles/bible_series_styles.css">
+  <link rel="stylesheet" href="../../styles/course_overview_side_styles.css">
+  <link rel="stylesheet" href="../../styles/nav_styles.css">
+  <link rel="stylesheet" href="../../styles/footer_styles.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-menu">
+      <div class="content">
+        <div class="logo"><a href="../../index.html"><img src="../../images/icon.png"> Truth Tabernacle</a>
+        </div>
+        <ul class="links">
+          <li><a href="../../index.html">Home</a></li>
+          <li>
+            <a href="javascript:void(0)" class="desktop-link">About Us</a>
+            <input type="checkbox" id="show-about">
+            <label for="show-about">About Us</label>
+            <ul>
+              <li><a href="../../about_pages/about.html">About Truth Tabernacle</a></li>
+              <li><a href="../../about_pages/welcome.html">Pastor's Welcome</a></li>
+              <li><a href="../../about_pages/pastors_bio.html">Pastor's Bio</a></li>
+            </ul>
+          </li>
+          <li><a href="../../sermons.html">Sermons</a></li>
+          <li><a href="../../news.html">News</a></li>
+          <li>
+            <a href="javascript:void(0)" class="desktop-link">Podcasts</a>
+            <input type="checkbox" id="show-podcasts">
+            <label for="show-podcasts">Podcasts</label>
+            <ul>
+              <li><a href="https://revealedradionetwork.site">Revealed Radio Network</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100076264966127">Revealed Biblical Network</a></li>
+            </ul>
+          </li>
+          <li><a href="../../online_courses.html">Online Courses</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+    </nav>
+  </div>
+  <div id="sideCourseOverview" class="side-course-overview-container">
+    <div class="side-course-overview">
+      <div class="side_course_overview_content">
+        <h2>Course Overview</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur
+          adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>In <strong>"Biblical & Spiritual Leadership Formation"</strong> you'll learn:
+        <ul>
+          <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+          <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+        </ul>
+      </div>
+      <button id="sideCourseOverviewBtn" style="display: flex; justify-content: center; align-items: center;"
+        onclick="sideCourseOverviewToggle();" id="showSideOverviewBtn" class="toggle-menu-icon"><i
+          id="showSideOverviewBtnIconLeft"></i><i class="fa-solid fa-arrow-left"></i></button>
+    </div>
+  </div>
+  <div class="progress-container">
+    <div class="progress" id="progress"></div>
+  </div>
+  <div class="bible-series" id="bibleSeriesContainer">
+    <div class="bible-series-header">
+      <h2>Biblical & Spiritual Leadership Formation</h2>
+    </div>
+    <ul id="accordian">
+      <li>
+        <label for="first">Lesson 1 <span>&#x3e;</span></label>
+        <input type="radio" name="accordian" id="first">
+        <div class="content">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/sXOlA3pgR8o" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <form action="https://sheetdb.io/api/v1/8yk5oje5mdf3w" method="post" id="sheetdb-form-1">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name1" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email1" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text1" type="text"
+              value="Completed Lesson 1 of Biblical & Spiritual Leadership Formation" name="data[message]" required>
+            <input style="opacity: 0; width: 0; height: 0;" id="date1" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_biblical_and_spiritual_leadership_formation_progess', '50%'); progress.style.width = localStorage.getItem('series_biblical_and_spiritual_leadership_formation_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
+        </div>
+      </li>
+      <li>
+        <label for="second">Lesson 2 <span>&#x3e;</span></label>
+        <input type="radio" name="accordian" id="second">
+        <div class="content">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/sXOlA3pgR8o" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <form action="https://sheetdb.io/api/v1/8yk5oje5mdf3w" method="post" id="sheetdb-form-2">
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input style="opacity: 0; width: 0; height: 0;" id="name2" type="text" name="data[fullName]">
+            </div>
+            <div style="opacity: 0; width: 0; height: 0;" class="inputBox">
+              <input id="email2" type="email" name="data[email]">
+            </div>
+            <input style="opacity: 0; width: 0; height: 0;" id="text2" type="text"
+              value="Completed the course of Biblical & Spiritual Leadership Formation" name="data[message]">
+            <input style="opacity: 0; width: 0; height: 0;" id="date2" type="text" value="0" name="data[timestamp]">
+            <button
+              onclick="localStorage.setItem('series_biblical_and_spiritual_leadership_formation_progess', '100%'); progress.style.width = localStorage.getItem('series_biblical_and_spiritual_leadership_formation_progess');"
+              type="submit">Click
+              to
+              complete</button>
+          </form>
+
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- footer -->
+  <div class="footer-container">
+    <div class="footer">
+      <div class="give-area">
+        <a href="https://www.paypal.com/donate/?hosted_button_id=7CPCV6CTKACDL">Give</a>
+      </div>
+      <div class="big-footer">
+      <div class="logo">
+        <a href="../../index.html">
+          <div class="big-footer">
+            <img src="../../images/icon.png">
+        </a>
+      </div>
+      <div class="big-footer-container">
+        <div class="page-links">
+          <h2>About Us</h2>
+          <div class="page-links-a">
+            <a href="../../about_pages/about.html">About Truth Tabernacle</a>
+            <a href="../../about_pages/welcome.html">Pastor's Welcome</a>
+            <a href="../../about_pages/pastors_bio.html">Pastor's Bio</a>
+          </div>
+        </div>
+        <div class="page-links">
+          <h2>Suggestions</h2>
+          <div class="page-links-a">
+            <a href="../../sermons.html">Sermons</a>
+            <a href="../../news.html">News</a>
+            <a href="../../online_courses.html">Online Courses</a>
+            <a href="../../contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="social-links">
+          <h2>Social Media</h2>
+          <p>Follow us on social media to find out the latest updates on our progress.</p>
+          <div class="social-links-a">
+            <a href="https://facebook.com/TruthTabGranite"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://youtube.com/@truthtabgranite"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com/truthtabgranite"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="little-footer">
+      <h3>Copyright © 2024, Truth Tabernacle | All Rights Reserved.</h3>
+      <select id="lang">
+        <option value="../../index.html">English</option>
+        <option value="../../es.html">Español</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <script src="../../app/main.js"></script>
+  <script src="../../app/sideCourseOverview.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  <script>
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // Months start at 0!
+    let dd = today.getDate();
+    let hour = today.getHours()
+    let minutes = today.getMinutes()
+
+    if (dd < 10) dd = '0' + dd;
+    if (mm < 10) mm = '0' + mm;
+    if (hour > 12) hour = hour - 12;
+    if (minutes < 10) minutes = '0' + minutes;
+
+    if (today.getHours() > 12) { minutes = minutes + 'pm' } else minutes = minutes + 'am';
+
+    let date = mm + '/' + dd + '/' + yyyy + " - " + hour + ":" + minutes;
+
+    let progress = document.getElementById('progress');
+
+    let name1 = document.getElementById('name1');
+    let email1 = document.getElementById('email1');
+    let date1 = document.getElementById('date1');
+    let name2 = document.getElementById('name2');
+    let email2 = document.getElementById('email2');
+    let date2 = document.getElementById('date2');
+
+    name1.value = localStorage.getItem('truthtabUserName');
+    email1.value = localStorage.getItem('truthtabUserEmail');
+    date1.value = date;
+    name2.value = localStorage.getItem('truthtabUserName');
+    email2.value = localStorage.getItem('truthtabUserEmail');
+    date2.value = date;
+
+    progress.style.width = localStorage.getItem('series_biblical_and_spiritual_leadership_formation_progess');
+
+    var form1 = document.getElementById('sheetdb-form-1');
+    form1.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form1.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-1")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_biblical_and_spiritual_leadership_formation.html', '_blank';
+
+      });
+    });
+    var form2 = document.getElementById('sheetdb-form-2');
+    form2.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form2.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("sheetdb-form-2")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        window.location = 'bible_series_biblical_and_spiritual_leadership_formation.html', '_blank';
+
+      });
+    });
+  </script>
+</body>
+
+</html>

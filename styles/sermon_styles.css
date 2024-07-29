@@ -1,0 +1,146 @@
+.sermons-container {
+    width: 90%;
+    min-height: 100vh;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+
+.sermons-header {
+    font-size: 2.5rem;
+    color: white;
+    margin: 25px;
+    position: relative;
+}
+
+.sermons-header::before,
+.sermons-header::after {
+    width: 15px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+}
+
+.sermons-header::before {
+    top: calc(50% - 5px);
+    left: -35px;
+}
+
+.sermons-header::after {
+    top: calc(50% - 5px);
+    right: -35px;
+}
+
+.sermon-container {
+    width: 70%;
+    max-width: 1200px;
+    min-height: 0;
+    background-color: #fff;
+    margin: 25px;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    box-shadow: 0px 15px 8px rgba(0, 0, 0, .3);
+    margin-top: 100px;
+}
+
+.sermon-container iframe {
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.sermon-container h2 {
+    padding: 15px;
+}
+
+.sermon-container h3 {
+    padding-left: 15px;
+}
+
+.view-all-sermons-container {
+    width: 90%;
+    min-height: 10px;
+    border-bottom: 1px solid white;
+    margin: 0 auto;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-all-sermons {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: block;
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 20px 45px;
+    position: relative;
+    cursor: pointer;
+}
+
+.view-all-sermons::before,
+.view-all-sermons::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: .3s;
+}
+
+.view-all-sermons::before {
+    top: 0;
+    left: 0;
+}
+
+.view-all-sermons::after {
+    bottom: 0;
+    right: 0;
+}
+
+.view-all-sermons:hover::before,
+.view-all-sermons:hover::after {
+    width: 100%;
+}
+
+/* animation styling for revealing all sermons */
+
+.animate-in {
+    animation: animateIn 1.5s forwards;
+}
+
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+}
+
+@media (max-width: 1300px) {
+    .sermon-container {
+        width: 390px;
+        flex-direction: column;
+    }
+
+    .sermon-container iframe {
+        width: 100%;
+    }
+}
+
+@media (max-width: 630px) {
+    .sermon-container {
+        text-align: center;
+    }
+}

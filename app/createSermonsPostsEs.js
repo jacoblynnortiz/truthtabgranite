@@ -40,7 +40,7 @@ $.getJSON('https://sheetdb.io/api/v1/1f0b8g95rfrlf', function (sermon_posts) {
 });
 
 viewAllSermonsBtn.addEventListener('click', function () {
-    $.getJSON('https://sheetdb.io/api/v1/id5r5hiin7tld', function (sermon_posts) {
+    $.getJSON('https://sheetdb.io/api/v1/1f0b8g95rfrlf', function (sermon_posts) {
         // looks through sermons database displaying each one
         for (let i = sermon_posts.length - 11; i >= 0; i--) {
             // creates new sermon post

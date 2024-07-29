@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truth Tabernacle | Online Courses</title>
+  <link rel="icon" href="images/icon.png">
+  <link rel='stylesheet' type='text/css' href='styles/global_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/nav_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/online_courses_styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles/footer_styles.css'>
+</head>
+
+<body>
+  <div class="auth-container" id="authContainer" style="background: url(images/admin-login-banner.jpg); background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;">
+    <a class="backup" href="online_courses.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <div class="login-container-max">
+      <div class="login-panel">
+        <h2>Authentication needed</h2>
+        <input type="text" id="authCodeBox" placeholder="Auth Code...">
+        <p id="errorAuth"></p>
+        <button id="auth">Authenticate</button>
+      </div>
+    </div>
+    <a class="authRequest" href="mailto:info@truthtabgranite.com?subject=Authentication code request">Request Auth
+      Code</a>
+  </div>
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-menu">
+      <div class="content">
+        <div class="logo"><a href="index.html"><img src="images/icon.png"> Truth Tabernacle</a></div>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="javascript:void(0)" class="desktop-link">About Us</a>
+            <input type="checkbox" id="show-about">
+            <label for="show-about">About Us</label>
+            <ul>
+              <li><a href="about_pages/about.html">About Truth Tabernacle</a></li>
+              <li><a href="about_pages/welcome.html">Pastor's Welcome</a></li>
+              <li><a href="about_pages/pastors_bio.html">Pastor's Bio</a></li>
+            </ul>
+          </li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="news.html">News</a></li>
+          <li>
+            <a href="javascript:void(0)" class="desktop-link">Podcasts</a>
+            <input type="checkbox" id="show-podcasts">
+            <label for="show-podcasts">Podcasts</label>
+            <ul>
+              <li><a href="https://revealedradionetwork.site">Revealed Radio Network</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100076264966127">Revealed Biblical Network</a></li>
+            </ul>
+          </li>
+          <li><a href="online_courses.html">Online Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+    </nav>
+  </div>
+  <div class="home-hero">
+    <div class="introduction-text">
+      <h2>Let's Begin!</h2>
+      <p>While Truth Tabernacle is not ashamed of our passionate and affectionate praise and worship, we are not a
+        church merely driven by emotion alone. It is believed that the affectionate expression of love is to help bring
+        us closer to the Almighty God who wishes to also reveal Himself, bringing us to divine wisdom and understanding
+        of Himself and the Truth. The word revelation by definition is the revealing through affection. It is an
+        intimate word. Therefore, Truth Tabernacle believes in the balance of affectionate praise and Biblical
+        revelation.</p>
+      <p>The following courses are to help impart doctrinal understanding of God, His plan, and how we
+        fulfill His plan, both individually and collectively. We pray that as you embark on the journey through these
+        courses your eyes of understanding will be enlightened and you will see the hope of your calling.</p>
+    </div>
+    <div class="introduction-video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/devxGM7RCRw?si=obpER1ooXoL4cTRf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div id="continueContainerHeader" class="online-courses-header">
+    <h2 style="text-align: center;">Continue where you left off</h2>
+  </div>
+  <div id="continueContainer" class="bible_series_container">
+    <!-- id="seriesBtn1" -->
+    <a href="#">
+      <div class="bible_series"
+        style="background-image: url('images/course_thumbnails/stones.jpg');">
+        <h2>Stones Fitly Framed Together</h2>
+        <span class="percent-label" id="percentLabel1">percentage%</span>
+        <div class="progress-container">
+          <div class="progress" id="progress1"></div>
+        </div>
+      </div>
+    </a>
+    <a id="seriesBtn0" href="#">
+      <div class="bible_series"
+        style="background-image: url('images/course_thumbnails/apokalupsis.jpg');">
+        <h2>The Apokalupsis On Patmos</h2>
+        <span class="percent-label" id="percentLabel2">percentage%</span>
+        <div class="progress-container">
+          <div class="progress" id="progress2"></div>
+        </div>
+      </div>
+    </a>
+    <a id="seriesBtn2" href="#">
+      <div class="bible_series"
+        style="background-image: url('images/course_thumbnails/biblical.jpg');">
+        <h2>Biblical & Spiritual Leadership Formation</h2>
+        <span class="percent-label" id="percentLabel3">percentage%</span>
+        <div class="progress-container">
+          <div class="progress" id="progress3"></div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="featured-main-container"
+    style="display: flex; justify-content: center; align-items: center; width: 100%;">
+    <div class="featured-series-container" style="max-width: 2560px; width: 90%;">
+      <div class="featured-courses-header">
+        <h2>Featured Courses</h2>
+      </div>
+      <div class="featured-scroll-container">
+        <div class="featured-courses-scroll">
+          <!-- id="featuredSeriesBtn0" -->
+          <a href="#">
+            <div class="bible_series" style="background-image: url('images/course_thumbnails/stones.jpg');">
+              <h2 style="font-weight: lighter; color: #fff; position: absolute; left: 15px; bottom: 15px;">Stones Fitly
+                Framed Together</h2>
+            </div>
+          </a>
+          <a style="display: none;" id="featuredSeriesBtn1" href="#">
+            <div class="bible_series" style="background-image: url('images/course_thumbnails/apokalupsis.jpg');">
+              <h2 style="font-weight: lighter; color: #fff; position: absolute; left: 15px; bottom: 15px;">The
+                Apokalupsis On Patmos</h2>
+            </div>
+          </a>
+          <a style="display: none;" id="featuredSeriesBtn2" href="#">
+            <div class="bible_series" onclick="generateAuthScreen();"
+              style="background-image: url('images/course_thumbnails/biblical.jpg');">
+              <h2 style="font-weight: lighter; color: #fff; position: absolute; left: 15px; bottom: 15px;">Biblical &
+                Spiritual Leadership Formation</h2>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a class="view-courses" href="online_courses_all.html">View All Courses</a>
+    </div>
+  </div>
+  <!-- footer -->
+  <div class="footer-container" style="margin-top: 0;">
+    <div class="footer">
+      <div class="give-area">
+        <a href="https://www.paypal.com/donate/?hosted_button_id=7CPCV6CTKACDL">Give</a>
+      </div>
+      <div class="big-footer">
+        <div class="logo">
+          <a href="index.html">
+            <img src="images/icon.png">
+          </a>
+        </div>
+        <div class="big-footer-container">
+          <div class="page-links">
+            <h2>About Us</h2>
+            <div class="page-links-a">
+              <a href="about_pages/about.html">About Truth Tabernacle</a>
+              <a href="about_pages/welcome.html">Pastor's Welcome</a>
+              <a href="about_pages/pastors_bio.html">Pastor's Bio</a>
+            </div>
+          </div>
+          <div class="page-links">
+            <h2>Suggestions</h2>
+            <div class="page-links-a">
+              <a href="sermons.html">Sermons</a>
+              <a href="news.html">News</a>
+              <a href="online_courses.html">Online Courses</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+          <div class="social-links">
+            <h2>Social Media</h2>
+            <p>Follow us on social media to find out the latest updates on our progress.</p>
+            <div class="social-links-a">
+              <a href="https://facebook.com/TruthTabGranite"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://youtube.com/@truthtabgranite"><i class="fa-brands fa-youtube"></i></a>
+              <a href="https://instagram.com/truthtabgranite"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="little-footer">
+        <h3>Copyright © 2024, Truth Tabernacle | All Rights Reserved.</h3>
+        <select id="lang">
+          <option value="index.html">English</option>
+          <option value="es.html">Español</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  <script src="app/global.js"></script>
+  <script src="app/main.js"></script>
+  <script src="app/onlineCourse.js"></script>
+</body>
+
+</html>

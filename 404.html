@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            line-height: 1.4;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #2c2f33;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #171515;
+            border-radius: 12px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #171515;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://iili.io/J9MmHhP.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        .heading,
+        .heading-pun,
+        .back-link {
+            color: #fff;
+            margin: 25px 15px;
+        }
+
+        .heading {
+            font-size: 3.5rem;
+        }
+
+        .heading-pun {
+            font-size: 2.2rem;
+        }
+
+        .back-link {
+            font-size: 1.4rem;
+            border: 2px solid white;
+            padding: 15px;
+            transition: all .3s ease;
+            background-color: transparent;
+        }
+
+        .back-link:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Error 404</h1>
+    <h2 class="heading-pun">something's going on in the graveyard, but not on this page.</h2>
+    <a class="back-link" href="https://truthtabgranite.site">Return to website</a>
+</body>
+</html>

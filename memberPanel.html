@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Panel</title>
+    <link rel="icon" href="images/member_icon.png">
+    <link rel='stylesheet' type='text/css' href='styles/global_styles.css'>
+    <link rel='stylesheet' type='text/css' href='styles/admin_member_component_styles.css'>
+    <link rel='stylesheet' type='text/css' href='styles/member_panel_styles.css'>
+    <link rel='stylesheet' type='text/css' href='styles/panel_navigation_styles.css'>
+</head>
+
+<body>
+
+    <!-- Session Expired -->
+
+    <div id="sessionExpired">
+        <div class="session-expired-box">
+            <h3>Session Expired</h3>
+            <p>Please login again.</p>
+            <a href="login">OK</a>
+        </div>
+    </div>
+
+    <!-- Welcome back message -->
+
+    <div class="welcome-back">
+        <h2>Welcome back, <span id="welcomeUser">undefined user</span></h2>
+    </div>
+
+    <!-- navigation menu -->
+
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-menu" checked>
+            <div class="content">
+                <div class="logo"><a href="memberPanel.html"><img src="images/member_icon.png"
+                            style="margin-right: 10px;">Member Panel</a></div>
+                <ul class="links">
+                    <div class="side-nav">
+                        <a title="Logout" class="logout" href="login"><i
+                                class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i></a>
+                        <a title="Report an issue" class="report" href="tel:3143309388"><i
+                                class="fa-solid fa-flag"></i></a>
+                        <div style="display: flex; position: relative;">
+                            <img id="profilePicture" src="#">
+                            <img id="adminBadge" src="images/admin-badge.png"
+                                style="display: none; position: absolute; bottom: 5px; right: 5px; width: 35px; height: 35px;">
+                        </div>
+                        <h2 id="name">name undefined</h2>
+                        <h2 id="username">.username_undefined</h2>
+                        <div class="nav-btns">
+                            <button id="doorScheduleContainerToggle">Door & Usher</button>
+                            <button id="cleaningScheduleContainerToggle">Cleaning</button>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+        </nav>
+    </div>
+
+    <!-- member panel -->
+
+    <div id="memberPanel" class="member-panel">
+
+        <!-- Note from development team  -->
+
+        <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
+            <h2>Note from development team:</h2>
+            <p>The schedule viewing areas are now made to show a quarter of a year at a time. There is also a new report
+                button in the side menu and a help button in the top right corner</p>
+        </div>
+        <div class="schedule-container" id="doorScheduleContainer">
+            <div class="schedule-heading">
+                <h2 id="quaterHeader" style="font-size: 1.8rem;">QT null - Door & Usher Schedule:</h2>
+                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                <div class="help-info-container">
+                    <ul>
+                        <li><p><strong>Yellow Highlight:</strong> indicates todays or the next schedule</p></li>
+                        <li><p><strong>John Smith | John Smith:</strong> 2 names on 1 position means the 1st name is for morning and 2nd name is for evening</p></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 id="monthHeader1" style="font-size: 1.5rem; padding: 5px 0;">Month 1:</h2>
+            <table id="monthTable1"></table>
+            <h2 id="monthHeader2" style="font-size: 1.5rem; padding: 5px 0;">Month 2:</h2>
+            <table id="monthTable2"></table>
+            <h2 id="monthHeader3" style="font-size: 1.5rem; padding: 5px 0;">Month 3:</h2>
+            <table id="monthTable3"></table>
+            <a href="images/usherdoorguide.pdf" class="ushersdoorguide">Ushers and Door Greeting Guide</a>
+        </div>
+        <div class="schedule-container" id="cleaningScheduleContainer">
+            <div class="schedule-heading">
+                <h2 id="quaterHeaderClean" style="font-size: 1.8rem;">QT null - Cleaning Schedule:</h2>
+                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                <div class="help-info-container">
+                    <ul>
+                        <li><p><strong>Yellow Highlight:</strong> indicates todays or the next schedule</p></li>
+                    </ul>
+                </div>
+            </div>
+            <h2 id="monthHeader1Clean" style="font-size: 1.5rem; padding: 5px 0;">Month 1:</h2>
+            <table id="monthTable1Clean"></table>
+            <h2 id="monthHeader2Clean" style="font-size: 1.5rem; padding: 5px 0;">Month 2:</h2>
+            <table id="monthTable2Clean"></table>
+            <h2 id="monthHeader3Clean" style="font-size: 1.5rem; padding: 5px 0;">Month 3:</h2>
+            <table id="monthTable3Clean"></table>
+            <a href="images/cleaningCalender.jpg" class="ushersdoorguide">Cleaning Schedule Calender</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="app/memberPanel/memberPanel.js"></script>
+    <script src="app/memberPanel/doorSchedule.js"></script>
+    <script src="app/memberPanel/cleaningSchedule.js"></script>
+</body>
+
+</html>

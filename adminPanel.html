@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth Tabernacle | Admin Panel</title>
+    <link rel="icon" href="images/admin_icon.png">
+    <link rel='stylesheet' type='text/css' href='styles/global_styles.css'>
+    <link rel='stylesheet' type='text/css' href='styles/admin_member_component_styles.css'>
+    <link rel='stylesheet' type='text/css' href='styles/admin_panel_styles.css'>
+    <link rel='stylesheet' type='text/css' href='styles/panel_navigation_styles.css'>
+</head>
+
+<body>
+    <div id="sessionExpired">
+        <div class="session-expired-box">
+            <h3>Session Expired</h3>
+            <p>Please login again.</p>
+            <a href="login">OK</a>
+        </div>
+    </div>
+    <div class="welcome-back">
+        <h2>Welcome back, <span id="welcomeUser">undefined user</span></h2>
+    </div>
+    <div id="deleteDoorConfirmation">
+        <h2>Are you sure you want to delete all door & usher schedules?</h2>
+        <div class="confirmation-buttons">
+            <button id="cancelDoorScheduleDelete">Cancel</i></button>
+            <form style="width: 100%" action="https://sheetdb.io/api/v1/9xbs0d16nkjhc/all" method="Delete"
+                id="sheetdb-form-4">
+                <button id="deleteDoorConfirm" name="Post">Confirm</i></button>
+            </form>
+        </div>
+    </div>
+    <div id="deleteCleaningConfirmation">
+        <h2>Are you sure you want to delete all cleaning schedules?</h2>
+        <div class="confirmation-buttons">
+            <button id="cancelCleaningScheduleDelete">Cancel</i></button>
+            <form style="width: 100%" action="https://sheetdb.io/api/v1/r30p0zrj31ui1/all" method="Delete"
+                id="sheetdb-form-6">
+                <button id="deleteCleaningConfirm" name="Post">Confirm</i></button>
+            </form>
+        </div>
+    </div>
+    <!-- navigation menu -->
+    <div class="wrapper">
+        <nav>
+            <input type="checkbox" id="show-menu" checked>
+            <div class="content">
+                <div class="logo"><a href="adminPanel.html"><img src="images/admin_icon.png"
+                            style="margin-right: 10px;">Admin Panel</a></div>
+                <ul class="links">
+                    <div class="side-nav">
+                        <a title="Logout" class="logout" href="login"><i
+                                class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i></a>
+                        <a title="Report an issue" class="report" href="tel:3143309388"><i
+                                class="fa-solid fa-flag"></i></a>
+                        <div style="display: flex; position: relative;">
+                            <img id="profilePicture" src="#">
+                            <img id="adminBadge" src="images/admin-badge.png" style="display: none; position: absolute; bottom: 5px; right: 5px; width: 35px; height: 35px;">
+                        </div>
+                        <h2 id="name">name undefined</h2>
+                        <h2 id="username">.username_undefined</h2>
+                    </div>
+                </ul>
+            </div>
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+        </nav>
+    </div>
+    <div id="adminPanel" class="admin-panel">
+        <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
+            <h2>Note from development team:</h2>
+            <p>The schedule viewing areas are now made to show a quarter of a year at a time. There is also a new report button in the side menu and a help button in the top right corner.
+            </p>
+        </div>
+        <div class="add-post-row">
+            <div class="add-post-container">
+                <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Create News Posts:</h2>
+                <div class="add-post" style="max-height: 1600px;">
+                    <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px">
+                        <h2 style="font-size: 1.6rem;">Create Post</h2>
+                        <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                        <div class="help-info-container">
+                            <ul>
+                                <li>
+                                    <p><strong>Post Title:</strong> for the post title, please keep it under 15-20 characters long</p>
+                                </li>
+                                <li>
+                                    <p><strong>Image URL:</strong> for the posts picture, please keep it 16:9 or 4:3 ratio only</p>
+                                </li>
+                                <li>
+                                    <p><strong>Message:</strong> for the posts message, no limit on how many words you can have</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <form action="https://sheetdb.io/api/v1/sn4bwy4h5v3t1" method="post" id="sheetdb-form-1">
+                        <select id="postLangChanger">
+                            <option value="english">English</option>
+                            <option value="español">Español</option>
+                        </select>
+                        <input required placeholder="Post Title" type="text" name="data[post_title]">
+                        <input required id="imgSrcInput" placeholder="image URL" type="text" name="data[img_src]">
+                        <img id="previewPostImage" src="">
+                        <input id="datePostedContainer" style="opacity: 0; width: 0; height: 0;" name="data[post_date]">
+                        <textarea required placeholder="Type Message..." name="data[post_txt]"></textarea>
+                        <input type="submit" name="Post" value="Post">
+                    </form>
+                </div>
+            </div>
+            <div class="add-post-container">
+                <div class="add-post-container">
+                    <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Upload Sermons:</h2>
+                    <div class="add-post">
+                        <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px"">
+                            <h2 style="font-size: 1.6rem;">Upload Sermon</h2>
+                            <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                            <div class="help-info-container">
+                                <ul>
+                                    <li>
+                                        <p><strong>Sermon Title:</strong> for the sermons title</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Sermon iframe:</strong> embed link to add live stream from facebook</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form action="https://sheetdb.io/api/v1/1f0b8g95rfrlf" method="post" id="sheetdb-form-2">
+                            <select id="sermonLangChanger">
+                                <option value="english">English</option>
+                                <option value="español">Español</option>
+                            </select>
+                            <input required placeholder="Sermon Title" type="text" name="data[sermon_title]">
+                            <input type="text" name="data[sermon_date]" style="opacity: 0; width: 0; height: 0;"
+                                id="datePostedSermonContainer">
+                            <textarea required placeholder="iframe goes here..." name="data[sermon_src]"></textarea>
+                            <input type="submit" name="Post" value="Upload">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="change-schedule-max">
+                <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Change Schedules:</h2>
+                <div class="change-schedules-box">
+                    <div class="tabs">
+                        <button class="tab-btn" id="doorTab">Door & Usher</button>
+                        <button class="tab-btn" id="cleanTab">Cleaning</button>
+                    </div>
+                    <div class="change-schedule" id="doorSchedule">
+                        <form action="https://sheetdb.io/api/v1/9xbs0d16nkjhc" method="delete" id="sheetdb-form-3">
+                            <div class="schedule-heading" style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
+                                <h2 style="font-size: 1.6rem;">Create Schedule</h2>
+                                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                                <div class="help-info-container">
+                                    <ul>
+                                        <li>
+                                            <p><strong>Date:</strong> allows people to see what the schedules date is</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Morning & Evening Service Schedule:</strong> have morning greeter and evening greeter in text box seperated with a | symbol</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Delete Button:</strong> This button opens a confirm popup to delete all the schedules, please do not delete them unless it is the end of the quarter</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="schedule-row1">
+                                <input type="text" name="data[date]" required placeholder="Date">
+                            </div>
+                            <div class="schedule-row2">
+                                <input type="text" name="data[door1]" required placeholder="Door #1">
+                                <input type="text" name="data[door2]" required placeholder="Door #2">
+                            </div>
+                            <div class="schedule-row3">
+                                <input type="text" name="data[door3]" required placeholder="Door #3">
+                                <input type="text" name="data[usher]" required placeholder="Usher">
+                            </div>
+                            <input name="Post" type="submit" value="Create Schedule">
+                        </form>
+                        <div class="delete-all">
+                            <button id="requestDoorDelete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="change-schedule" id="cleaningSchedule">
+                        <form action="https://sheetdb.io/api/v1/r30p0zrj31ui1" method="delete" id="sheetdb-form-5">
+                            <div class="schedule-heading" style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
+                                <h2 style="font-size: 1.6rem;">Create Schedule</h2>
+                                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                                <div class="help-info-container">
+                                    <ul>
+                                        <li>
+                                            <p><strong>Date:</strong> allows people to see what the schedules date is</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Cleaner Boxes:</strong> positions for cleaner names or family names, you do not have to fill in all boxes if not needed</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Delete Button:</strong> This button opens a confirm popup to delete all the schedules, please do not delete them unless it is the end of the quarter</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="schedule-row1">
+                                <input type="text" name="data[date]" required placeholder="Date">
+                                <input type="text" name="data[cleaner1]" required placeholder="Cleaner #1">
+                            </div>
+                            <div class="schedule-row2">
+                                <input type="text" name="data[cleaner2]" placeholder="Cleaner #2">
+                                <input type="text" name="data[cleaner3]" placeholder="Cleaner #3">
+                            </div>
+                            <input name="Post" type="submit" value="Create Schedule">
+                        </form>
+                        <div class="delete-all">
+                            <button id="requestCleaningDelete"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="users-enrolled-container-max">
+            <div class="schedule-heading" style="margin-bottom: 15px;">
+                <h2 style="font-size: 1.6rem;">User Logs:</h2>
+                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                <div class="help-info-container">
+                    <ul>
+                        <li>
+                            <p><strong>Name:</strong> shows the users name</p>
+                        </li>
+                        <li>
+                            <p><strong>E-mail:</strong> shows the users email</p>
+                        </li>
+                        <li>
+                            <p><strong>Message:</strong> shows the message of what the user did</p>
+                        </li>
+                        <li>
+                            <p><strong>Timestamp:</strong> shows what time and date the user did that action</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="users-enrolled-container">
+                <table id="userLogsTable"></table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="app/adminPanel/adminPanel.js"></script>
+    <script src="app/adminPanel/createPosts.js"></script>
+    <script src="app/adminPanel/uploadSermons.js"></script>
+    <script src="app/adminPanel/scheduleChanger.js"></script>
+    <script src="app/adminPanel/userLogs.js"></script>
+</body>
+
+</html>

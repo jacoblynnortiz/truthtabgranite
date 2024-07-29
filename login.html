@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="images/icon.png">
+    <link rel="stylesheet" href="styles/global_styles.css">
+    <link rel="stylesheet" href="styles/login_styles.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <a class="backup" href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="login-container-max">
+            <div class="tabs">
+                <button class="tab-btn" id="memberTab">Member</button>
+                <button class="tab-btn" id="adminTab">Admin</button>
+            </div>
+            <div class="login-panel" id="loginPanel1">
+                <h2>Login</h2>
+                <div class="inputBox">
+                    <input type="text" id="username1" placeholder="Username">
+                </div>
+                <div class="inputBox">
+                    <input type="password" id="password1" placeholder="Password">
+                    <button id="viewPassword1" class="view-password-btn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <div>
+                    <h4><input type="checkbox" id="rememberMe1"> Remember me</h4>
+                </div>
+                <p id="errorLogin1"></p>
+                <button onclick="login();" id="loginBtn1">Login</button>
+            </div>
+            <div class="login-panel" id="loginPanel2">
+                <h2>Login</h2>
+                <div class="inputBox">
+                    <input type="text" id="username2" placeholder="Username">
+                </div>
+                <div class="inputBox">
+                    <input type="password" id="password2" placeholder="Password">
+                    <button id="viewPassword2" class="view-password-btn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <div>
+                    <h4><input type="checkbox" id="rememberMe2"> Remember me</h4>
+                </div>
+                <p id="errorLogin2"></p>
+                <button onclick="login();" id="loginBtn2">Login</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="app/login.js"></script>
+</body>
+
+</html>

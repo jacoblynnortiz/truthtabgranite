@@ -10,11 +10,6 @@ let password1 = document.getElementById('password1');
 let username2 = document.getElementById('username2');
 let password2 = document.getElementById('password2');
 
-let viewPassword1Btn = document.getElementById('viewPassword1');
-let viewPassword2Btn = document.getElementById('viewPassword2');
-
-let viewingPassword1 = false, viewingPassword2 = false;
-
 let loginBtn1 = document.getElementById('loginBtn1');
 let loginBtn2 = document.getElementById('loginBtn2');
 
@@ -63,10 +58,6 @@ loginBtn1.addEventListener('click', loginMember);
 
 loginBtn2.addEventListener('click', loginAdmin);
 
-viewPassword1Btn.addEventListener('click', viewPassword1);
-
-viewPassword2Btn.addEventListener('click', viewPassword2);
-
 // listens for click to switch tabs
 
 memberForm();
@@ -95,34 +86,6 @@ function adminForm() {
     adminTab.style.color = '#fff';
     memberLoginFocused = false;
     adminLoginFocused = true;
-}
-
-function viewPassword1() {
-    if (viewingPassword1 == true) {
-        password1.type="password";
-        viewPassword1Btn.classList.toggle("eye-slash");
-
-        viewingPassword1 = false;
-    } else {
-        password1.type="text";
-        viewPassword1Btn.classList.toggle("eye-slash");
-
-        viewingPassword1 = true;
-    }
-}
-
-function viewPassword2() {
-    if (viewingPassword2 == true) {
-        password2.type="password";
-        viewPassword2Btn.classList.toggle("eye-slash");
-
-        viewingPassword2 = false;
-    } else {
-        password2.type="text"; 
-        viewPassword2Btn.classList.toggle("eye-slash");
-
-        viewingPassword2 = true;
-    }
 }
 
 function loginMember() {

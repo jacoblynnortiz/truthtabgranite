@@ -31,9 +31,7 @@ window.addEventListener('keypress', function (e) {
     }
 });
 
-auth.addEventListener('click', function() {
-    authenticate(authCodes)
-});
+auth.addEventListener('click', authenticate(authCodes));
 
 function authenticate(authCodes) {
     if(authCodeBox.value == authCodes[0]) {

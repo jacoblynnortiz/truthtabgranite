@@ -1,0 +1,285 @@
+.content {
+    padding: 0;
+    padding-top: 70px;
+}
+
+.about-header {
+    width: 100%;
+    height: 300px;
+    background: url('../res/images/about_truthtabgranite/about-header.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, .3);
+}
+
+.about-header h2 {
+    color: var(--light);
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.about-header h2::before,
+.about-header h2::after {
+    width: 15px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #fff;
+    position: absolute;
+    content: '';
+    top: calc(50% - 5px);
+}
+
+.about-header h2::before {
+    left: -35px;
+}
+
+.about-header h2::after {
+    right: -35px;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    width: 90%;
+    min-height: 10px;
+    margin: 0 auto;
+    margin-top: 45px;
+    border-bottom: 1px solid var(--light);
+}
+
+.about-content {
+    width: 90%;
+    max-width: 1500px;
+    min-height: 0;
+    display: flex;
+    padding: 25px;
+    padding-top: 50px;
+    margin-top: 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.about-content-row {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 75px;
+}
+
+.about-info {
+    width: 50%;
+    min-height: 100px;
+}
+
+.about-info h2 {
+    text-align: center;
+    padding: 18px 0;
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.about-info p {
+    padding: 15px 0;
+    font-size: 1.2rem;
+    color: var(--light);
+}
+
+.about-picture {
+    width: 50%;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-picture img {
+    width: 500px;
+    height: 350px;
+}
+
+/* ABOUT/HISTORY SEPERATOR */
+
+.wave {
+    width: 120%;
+    max-width: 1920px;
+    height: 200px;
+    background: url('../res/images/about_truthtabgranite/wave.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+/* BRIEF HISTORY SECTION */
+
+.brief-history {
+    width: 120%;
+    max-width: 1920px;
+    min-height: 500px;
+    background-color: var(--light);
+}
+
+.brief-history h2 {
+    text-align: left;
+    padding: 18px 0;
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 65px;
+    padding-left: 250px;
+}
+
+.timeline-container {
+    width: 100%;
+    overflow-x: auto;
+    padding-top: 45px;
+    padding-left: 250px;
+}
+
+.timeline {
+    width: calc(250px * 9);
+    min-height: 350px;
+    max-height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.timeline-progress-bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.milestone {
+    width: 250px;
+    margin-right: 250px;
+    position: relative;
+}
+
+.milestone-point {
+    width: 15px;
+    height: 15px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: -7.5px;
+    left: 0;
+}
+
+.milestone:nth-last-child(-n+1) {
+    background-color: transparent;
+}
+
+.milestone h3 {
+    color: var(--dark);
+    position: absolute;
+    top: -45px;
+    left: 0;
+}
+
+.milestone-info {
+    width: 20ch;
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.milestone span {
+    background-color: rgba(60, 124, 185, .5);
+    opacity: .5;
+    padding: 3px 7.5px;
+    margin-bottom: 15px;
+    border-radius: 22px;
+    display: inline-block;
+}
+
+.milestone p {
+    max-width: 50ch;
+    color: var(--dark);
+}
+
+/* Width */
+.timeline-container::-webkit-scrollbar {
+	height: 8px;
+}
+
+/* Track */
+.timeline-container::-webkit-scrollbar-track {
+	background: #ffffff;
+}
+
+/* Handle */
+.timeline-container::-webkit-scrollbar-thumb {
+	background: #c5c5c5;
+	border-radius: 12px;
+}
+
+/* Handle on hover */
+.timeline-container::-webkit-scrollbar-thumb:hover {
+	background: var(--accent-color);
+}
+
+
+@media screen and (max-width: 1250px) {
+    .about-content-row {
+        flex-direction: column;
+    }
+    .about-info {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .about-content-row:nth-child(2) {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .brief-history h2 {
+        text-align: left;
+        padding-left: 100px;
+    }
+    
+    .timeline-container {
+        padding-left: 100px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .about-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about-picture img {
+        width: 350px;
+        height: 250px;
+    }
+
+    .brief-history h2 {
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .timeline-container {
+        padding-left: 50px;
+    }
+}

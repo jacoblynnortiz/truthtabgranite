@@ -269,6 +269,10 @@
 }
 
 @media screen and (max-width: 600px) {
+    .about-content {
+        padding: 0;
+    }
+
     .about-picture img {
         width: 350px;
         height: 250px;

@@ -367,4 +367,11 @@
     .latest-sermon-col2 p {
         font-size: 1rem;
     }
+    .sermons {
+        padding: 15px 0;
+    }
+    .sermon {
+        width: 100%;
+        margin: 25px auto;
+    }
 }

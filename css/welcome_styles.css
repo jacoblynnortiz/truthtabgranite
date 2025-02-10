@@ -162,7 +162,10 @@
 @media screen and (max-width: 600px) {
     .welcome iframe {
         height: calc(1080px / 3);
-        max-width: 100%;
+        width: 150%;
         max-height: calc(1080px / 6);
+    }
+    .welcome {
+        padding: 15px 0;
     }
 }

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Truth Tabernacle | Admin Panel</title>
-    <link rel="icon" href="images/admin_icon.png">
-    <link rel='stylesheet' type='text/css' href='styles/global_styles.css'>
-    <link rel='stylesheet' type='text/css' href='styles/admin_member_component_styles.css'>
-    <link rel='stylesheet' type='text/css' href='styles/admin_panel_styles.css'>
-    <link rel='stylesheet' type='text/css' href='styles/panel_navigation_styles.css'>
+    <link rel="icon" href="res/images/admin_icon.png">
+    <link rel='stylesheet' type='text/css' href='css/global.css'>
+    <link rel='stylesheet' type='text/css' href='css/admin_member_component_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/admin_panel_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/panel_navigation_styles.css'>
 </head>
 
 <body>
@@ -44,11 +44,11 @@
         </div>
     </div>
     <!-- navigation menu -->
-    <div class="wrapper">
+    <div class="header">
         <nav>
             <input type="checkbox" id="show-menu" checked>
-            <div class="content">
-                <div class="logo"><a href="adminPanel.html"><img src="images/admin_icon.png"
+            <div class="header-content">
+                <div class="logo"><a href="adminPanel.html"><img src="res/images/admin_icon.png"
                             style="margin-right: 10px;">Admin Panel</a></div>
                 <ul class="links">
                     <div class="side-nav">
@@ -58,7 +58,7 @@
                                 class="fa-solid fa-flag"></i></a>
                         <div style="display: flex; position: relative;">
                             <img id="profilePicture" src="#">
-                            <img id="adminBadge" src="images/admin-badge.png" style="display: none; position: absolute; bottom: 5px; right: 5px; width: 35px; height: 35px;">
+                            <img id="adminBadge" src="res/images/admin-badge.png" style="display: none; position: absolute; bottom: 5px; right: 5px; width: 35px; height: 35px;">
                         </div>
                         <h2 id="name">name undefined</h2>
                         <h2 id="username">.username_undefined</h2>
@@ -69,9 +69,10 @@
         </nav>
     </div>
     <div id="adminPanel" class="admin-panel">
-        <div style="background-color: #3c7cb9; padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
+        <div style="background-color: var(--accent-color); padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
             <h2>Note from development team:</h2>
-            <p>The schedule viewing areas are now made to show a quarter of a year at a time. There is also a new report button in the side menu and a help button in the top right corner.
+            <p>
+                The UI update for the website is pretty much complete now, the new features for the admin panel is the sermon upload feature now includes a field to add the speakers name, and sermon discription, also the date can now be added properly I finally fixed that bug.
             </p>
         </div>
         <div class="add-post-row">
@@ -100,11 +101,20 @@
                             <option value="english">English</option>
                             <option value="español">Español</option>
                         </select>
-                        <input required placeholder="Post Title" type="text" name="data[post_title]">
-                        <input required id="imgSrcInput" placeholder="image URL" type="text" name="data[img_src]">
+                        <div class="inputBox">
+                            <input required type="text" name="data[post_title]">
+                            <span>Post Title</span>
+                        </div>
+                        <div class="inputBox">
+                            <input required id="imgSrcInput" type="text" name="data[img_src]">
+                            <span>Image URL</span>
+                        </div>
                         <img id="previewPostImage" src="">
                         <input id="datePostedContainer" style="opacity: 0; width: 0; height: 0;" name="data[post_date]">
-                        <textarea required placeholder="Type Message..." name="data[post_txt]"></textarea>
+                        <div class="inputBox">
+                            <textarea required name="data[post_txt]"></textarea>
+                            <span>Type your Message...</span>
+                        </div>
                         <input type="submit" name="Post" value="Post">
                     </form>
                 </div>
@@ -122,7 +132,16 @@
                                         <p><strong>Sermon Title:</strong> for the sermons title</p>
                                     </li>
                                     <li>
-                                        <p><strong>Sermon iframe:</strong> embed link to add live stream from facebook</p>
+                                        <p><strong>Sermon Speaker:</strong> for the speaker of the sermon</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Sermon Date:</strong> for the sermon date, it is auto generated but can be changed if needed.</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Sermon iframe:</strong> embed link to add live stream from facebook or youtube</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Sermon Discription:</strong> for a short discription of the sermon, if you dont know what to write or nothing is available that is fine</p>
                                     </li>
                                 </ul>
                             </div>
@@ -132,10 +151,29 @@
                                 <option value="english">English</option>
                                 <option value="español">Español</option>
                             </select>
-                            <input required placeholder="Sermon Title" type="text" name="data[sermon_title]">
-                            <input type="text" name="data[sermon_date]" style="opacity: 0; width: 0; height: 0;"
-                                id="datePostedSermonContainer">
-                            <textarea required placeholder="iframe goes here..." name="data[sermon_src]"></textarea>
+                            <div class="inputBox">
+                                <input required type="text" name="data[sermon_title]">
+                                <span>Sermon Title</span>
+                            </div>
+                            <div class="sermon-input-row">
+                                <div class="inputBox" style="margin-right: 15px;">
+                                    <input required type="text" name="data[sermon_speaker]">
+                                    <span>Speaker</span>
+                                </div>
+                                <div class="inputBox">
+                                    <input required type="text" name="data[sermon_date]" id="datePostedSermonContainer">
+                                    <span>Date</span>
+                                </div>
+                            </div>
+                            <div class="inputBox">
+                                <input required type="text" name="data[sermon_src]">
+                                <span>iframe goes here...</span>
+                            </div>
+                            <div class="inputBox">
+                                <textarea required maxlength="400" name="data[sermon_discription]"></textarea>
+                                <span>Type Discription...</span>
+                            </div>
+                            <input required type="text" style="width: 0; height: 0; opacity: 0;" value="https://www.facebook.com/TruthTabGranite" name="data[sermon_link]">
                             <input type="submit" name="Post" value="Upload">
                         </form>
 
@@ -169,15 +207,30 @@
                                 </div>
                             </div>
                             <div class="schedule-row1">
-                                <input type="text" name="data[date]" required placeholder="Date">
+                                <div class="inputBox">
+                                    <input type="text" name="data[date]" required>
+                                    <span>Date</span>
+                                </div>
                             </div>
                             <div class="schedule-row2">
-                                <input type="text" name="data[door1]" required placeholder="Door #1">
-                                <input type="text" name="data[door2]" required placeholder="Door #2">
+                                <div class="inputBox" style="margin-right: 15px;">
+                                    <input type="text" name="data[door1]" required>
+                                    <span>Door #1</span>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" name="data[door2]" required>
+                                    <span>Door #2</span>
+                                </div>
                             </div>
                             <div class="schedule-row3">
-                                <input type="text" name="data[door3]" required placeholder="Door #3">
-                                <input type="text" name="data[usher]" required placeholder="Usher">
+                                <div class="inputBox" style="margin-right: 15px;">
+                                    <input type="text" name="data[door3]" required>
+                                    <span>Door #3</span>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" name="data[usher]" required>
+                                    <span>Usher</span>
+                                </div>
                             </div>
                             <input name="Post" type="submit" value="Create Schedule">
                         </form>
@@ -205,12 +258,24 @@
                                 </div>
                             </div>
                             <div class="schedule-row1">
-                                <input type="text" name="data[date]" required placeholder="Date">
-                                <input type="text" name="data[cleaner1]" required placeholder="Cleaner #1">
+                                <div class="inputBox" style="margin-right: 15px;">
+                                    <input type="text" name="data[date]" required>
+                                    <span>Date</span>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" name="data[cleaner1]" required>
+                                    <span>Cleaner #1</span>
+                                </div>
                             </div>
                             <div class="schedule-row2">
-                                <input type="text" name="data[cleaner2]" placeholder="Cleaner #2">
-                                <input type="text" name="data[cleaner3]" placeholder="Cleaner #3">
+                                <div class="inputBox" style="margin-right: 15px;">
+                                    <input type="text" name="data[cleaner3]" required>
+                                    <span>Cleaner #3</span>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" name="data[cleaner4]" required>
+                                    <span>Cleaner #4</span>
+                                </div>
                             </div>
                             <input name="Post" type="submit" value="Create Schedule">
                         </form>
@@ -249,11 +314,12 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
-    <script src="app/adminPanel/adminPanel.js"></script>
-    <script src="app/adminPanel/createPosts.js"></script>
-    <script src="app/adminPanel/uploadSermons.js"></script>
-    <script src="app/adminPanel/scheduleChanger.js"></script>
-    <script src="app/adminPanel/userLogs.js"></script>
+
+    <script src="js/adminPanel/adminPanel.js"></script>
+    <script src="js/adminPanel/createPosts.js"></script>
+    <script src="js/adminPanel/uploadSermons.js"></script>
+    <script src="js/adminPanel/scheduleChanger.js"></script>
+    <script src="js/adminPanel/userLogs.js"></script>
 </body>
 
 </html>

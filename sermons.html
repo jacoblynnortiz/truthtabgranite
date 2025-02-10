@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truth Tabernacle | Contact</title>
+    <title>Truth Tabernacle | Sermons</title>
     <link rel="icon" href="res/images/icon.png">
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/navigation_styles.css">
-    <link rel="stylesheet" href="css/contact_styles.css">
+    <link rel="stylesheet" href="css/sermons_styles.css">
     <link rel="stylesheet" href="css/footer_styles.css">
 
 </head>
@@ -61,68 +61,32 @@
     <!-- Content -->
 
     <div class="content">
-        <div class="content-contact">
-            <h2>Contact Us</h2>
-            <p>I, Pastor John Wilson, and Truth Tabernacle are praying for you and can’t wait to meet you! </p>
+        <div class="sermons-header">
+            <h2>Sermons</h2>
         </div>
-        <div class="container">
-            <div class="contactInfo">
-                <div class="box">
-                    <div class="icon"><i style="color: #3c7cb9;" class="fa-solid fa-location-dot"></i></div>
-                    <div class="text">
-                        <h3>Address</h3>
-                        <p><a
-                                href="https://www.google.com/maps/dir/38.7842048,-90.2332416/1120+W+Pontoon+Rd,+Granite+City,+IL+62040/@38.7102899,-90.3698884,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x87df5218b20e044f:0xa0d5b8b342c6e8ad!2m2!1d-90.1314011!2d38.7312223">1120
-                                W Pontoon Rd,<br>Granite City, IL <br>62040</a></p>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="icon"><i style="color: #3c7cb9;" class="fa-solid fa-phone"></i></div>
-                    <div class="text">
-                        <h3>Phone</h3>
-                        <p><a href="tel:270-952-7278">(270) 952-7278</a></p>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="icon"><i style="color: #3c7cb9;" class="fa-regular fa-envelope"></i></div>
-                    <div class="text">
-                        <h3>Email</h3>
-                        <p><a href="mailto:info@truthtabgranite.com">info@truthtabgranite.site</a></p>
-                    </div>
-                </div>
+        <div class="latest-sermon-container">
+            <h2>Watch the latest sermon</h2>
+            <div class="latest-sermon" id="latestSermon">
+              <div class="latest-sermon-col1" id="latestSermonVideoContainer"></div>
+              <div class="latest-sermon-col2">
+                <h4>FEATURED</h4>
+                <h3 id="latestSermonTitleContainer"></h3>
+                <p id="latestSermonDiscriptionContainer"></p>
+                  <h5><span id="latestSermonSpeakerContainer"></span> • <span id="latestSermonDateContainer"></span></h5>
+                <a href="#" id="latestSermonViewMediaContainer">View Media</a>
+              </div>
             </div>
-            <div class="contactForm">
-                <form action="js/contactForm.php" method="post">
-                    <h2>Send Message</h2>
-                    <div class="inputBox">
-                        <input id="name" type="text" name="name" required>
-                        <span>Full Name</span>
-                    </div>
-                    <div class="inputBox">
-                        <input id="email" type="text" name="email" required>
-                        <span>Email</span>
-                    </div>
-                    <div class="inputBox">
-                        <input id="subject" type="text" name="subject" required>
-                        <span>Subject</span>
-                    </div>
-                    <div class="inputBox">
-                        <textarea id="message" name="message" required></textarea>
-                        <span>Type your Message...</span>
-                    </div>
-                    <div class="inputBox">
-                        <button type="submit" name="submit">Send</button>
-                    </div>
-                </form>
+          </div>
+        <div class="sermons">
+            <div class="sermons-container" id="sermonsContainer"></div>
+            <div class="view-all-sermons-container">
+                <button class="view-all-sermons" id="viewAllSermonsBtn">View All Sermons</button>
             </div>
         </div>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.415503892213!2d-90.13397602346552!3d38.73122645649086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87df5218b2100001%3A0x2fd5a97a6ddcaa0c!2sTruth%20Tabernacle!5e0!3m2!1sen!2sus!4v1694469633119!5m2!1sen!2sus"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <!-- Footer -->
+    <div class="footer-seperator" style="width: 100%; height: 25px; background-color: var(--primary-color);"></div>
     <div class="footer-container" style="margin-top: 0;">
         <div class="footer">
             <div class="give-area">
@@ -179,6 +143,8 @@
 
     <script src="js/global.js"></script>
     <script src="js/navigation.js"></script>
+    <script src="js/createLatestSermon.js"></script>
+    <script src="js/createSermonsPosts.js"></script>
 
 </body>
 

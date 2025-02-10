@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Error 403</title>
     <style>
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto:wght@100;300&display=swap");
+
+        :root {
+            --button: #3c7cb9;
+            --button-color: #fff;
+            --shadow: #000;
+            --bg: #737373;
+            --header: #3c7cb9;
+            --color: #fafafa;
+            --lit-header: #e6e6e6;
+            --speed: 2s;
+        }
+
         * {
+            transform-style: preserve-3d;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -16,91 +30,191 @@
             list-style: none;
         }
 
-        @keyframes fadeInAnimation {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
+        @property --swing-x {
+            initial-value: 0;
+            inherits: false;
+            syntax: '\<integer\>';
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            background: #2c2f33;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #171515;
-            border-radius: 12px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #171515;
+        @property --swing-y {
+            initial-value: 0;
+            inherits: false;
+            syntax: '\<integer\>';
         }
 
         body {
-            width: 100%;
-            height: 100vh;
-            background-image: url('https://iili.io/J9VKwfp.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            overflow-y: hidden;
-            overflow-x: hidden;
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family: 'Roboto', sans-serif;
             flex-direction: column;
-            animation: fadeInAnimation ease 1s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            color: var(--color);
+            perspective: 1200px;
         }
 
-        .heading,
-        .heading-pun,
-        .back-link {
-            color: #fff;
-            margin: 25px 15px;
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            background: var(--button);
+            color: var(--button-color);
+            padding: 1rem 4rem;
+            border-radius: 4rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05rem;
+            border: 3px solid #3c7cb9;
+            transition: .3s;
         }
 
-        .heading {
-            font-size: 3.5rem;
-        }
-
-        .heading-pun {
-            font-size: 2.2rem;
-        }
-
-        .back-link {
-            font-size: 1.4rem;
-            border: 2px solid white;
-            padding: 15px;
-            transition: all .3s ease;
+        a:hover {
             background-color: transparent;
         }
 
-        .back-link:hover {
-            background-color: white;
-            color: black;
+        p {
+            font-weight: 100;
+        }
+
+        h1 {
+            animation: swing var(--speed) infinite alternate ease-in-out;
+            font-size: clamp(5rem, 40vmin, 20rem);
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            margin-bottom: 1rem;
+            letter-spacing: 1rem;
+            transform: translate3d(0, 0, 0vmin);
+            --x: calc(50% + (var(--swing-x) * 0.5) * 1%);
+            background: radial-gradient(var(--lit-header), var(--header) 45%) var(--x) 100%/200% 200%;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        h1:after {
+            animation: swing var(--speed) infinite alternate ease-in-out;
+            content: "403";
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--shadow);
+            filter: blur(1.5vmin);
+            transform: scale(1.05) translate3d(0, 12%, -10vmin) translate(calc((var(--swing-x, 0) * 0.05) * 1%), calc((var(--swing-y) * 0.05) * 1%));
+        }
+
+        .cloak {
+            animation: swing var(--speed) infinite alternate-reverse ease-in-out;
+            height: 100%;
+            width: 100%;
+            transform-origin: 50% 30%;
+            transform: rotate(calc(var(--swing-x) * -0.25deg));
+            background: radial-gradient(40% 40% at 50% 42%, transparent, #000 35%);
+        }
+
+        .cloak__wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+        }
+
+        .cloak__container {
+            height: 250vmax;
+            width: 250vmax;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .info {
+            text-align: center;
+            line-height: 1.5;
+            max-width: clamp(16rem, 90vmin, 25rem);
+        }
+
+        .info>p {
+            margin-bottom: 3rem;
+        }
+
+        @-moz-keyframes swing {
+            0% {
+                --swing-x: -100;
+                --swing-y: -100;
+            }
+
+            50% {
+                --swing-y: 0;
+            }
+
+            100% {
+                --swing-y: -100;
+                --swing-x: 100;
+            }
+        }
+
+        @-webkit-keyframes swing {
+            0% {
+                --swing-x: -100;
+                --swing-y: -100;
+            }
+
+            50% {
+                --swing-y: 0;
+            }
+
+            100% {
+                --swing-y: -100;
+                --swing-x: 100;
+            }
+        }
+
+        @-o-keyframes swing {
+            0% {
+                --swing-x: -100;
+                --swing-y: -100;
+            }
+
+            50% {
+                --swing-y: 0;
+            }
+
+            100% {
+                --swing-y: -100;
+                --swing-x: 100;
+            }
+        }
+
+        @keyframes swing {
+            0% {
+                --swing-x: -100;
+                --swing-y: -100;
+            }
+
+            50% {
+                --swing-y: 0;
+            }
+
+            100% {
+                --swing-y: -100;
+                --swing-x: 100;
+            }
         }
     </style>
 </head>
+
 <body>
-    <h1 class="heading">Error 403</h1>
-    <h2 class="heading-pun">That tree is forbidden, and so is this page</h2>
-    <a class="back-link" href="https://truthtabgranite.site">Return to website</a>
+    <h1>403</h1>
+    <div class="cloak__wrapper">
+        <div class="cloak__container">
+            <div class="cloak"></div>
+        </div>
+    </div>
+    <div class="info">
+        <h2>This page is restricted access</h2>
+        <p>You may only access this page with administrative permission.</p>
+        <a href="index.html">Home</a>
+    </div>
 </body>
+
 </html>

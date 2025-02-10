@@ -170,6 +170,9 @@
 }
 
 @media screen and (max-width: 500px) {
+    .news {
+        padding: 15px 0;
+    }
     .post-title {
         font-size: 1.5rem;
     }

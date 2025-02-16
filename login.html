@@ -17,6 +17,36 @@
 <body>
 
     <!-- Content -->
+    <div class="forgot-password-container" id="forgotPasswordContainer">
+        <a class="backup" href="login"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="reset-password-container-max">
+            <div class="reset-password-panel-1" id="resetPasswordContainer1" style="display: flex;">
+                <h2>Forgot Password</h2>
+                <p>Enter your email address</p>
+                <form style="width: 100%;">
+                    <div class="inputBox">
+                        <input type="email" id="acctEmail" placeholder="Enter email address">
+                    </div>
+                    <p id="errorResetPassword1"></p>
+                    <button id="resetPasswordBtn" onclick="lookUpEmail(event)" type="submit">Continue</button>
+                </form>
+            </div>
+            <div class="reset-password-panel-2" id="resetPasswordContainer2">
+                <h2>New Password</h2>
+                <p>Enter your new password</p>
+                <form style="width: 100%;">
+                    <div class="inputBox">
+                        <input type="text" id="newPassword" placeholder="Create new password">
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" id="confirmNewPassword" placeholder="Confirm your password">
+                    </div>
+                    <p id="errorResetPassword2"></p>
+                    <button id="resetPasswordBtn" onclick="update(event)" type="submit">Reset Password</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <div class="login-container">
         <a class="backup" href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
         <div class="login-container-max">
@@ -35,7 +65,7 @@
                 </div>
                 <div>
                     <h4><input type="checkbox" id="rememberMe1"> Remember me</h4>
-                    <h4 class="forgot-password"><button id="forgotPassword1">Forgot password?</a></h4>
+                    <h4 class="forgot-password"><button id="forgotPasswordBtn1">Forgot password?</a></h4>
                 </div>
                 <p id="errorLogin1"></p>
                 <button id="loginBtn1">Login</button>
@@ -51,7 +81,7 @@
                 </div>
                 <div>
                     <h4><input type="checkbox" id="rememberMe2"> Remember me</h4>
-                    <h4 class="forgot-password"><button id="forgotPassword2">Forgot password?</a></h4>
+                    <h4 class="forgot-password"><button id="forgotPasswordBtn2">Forgot password?</a></h4>
                 </div>
                 <p id="errorLogin2"></p>
                 <button id="loginBtn2">Login</button>
@@ -64,6 +94,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
 
     <script src="js/login.js"></script>
+    <script src="js/forgotPassword.js"></script>
 
 </body>
 

@@ -416,20 +416,6 @@
                 <table id="userLogsTable"></table>
             </div>
         </div>
-        <div class="update-database-practice"
-            style="background-color: rgb(206, 91, 91); color: white; padding: 15px; margin-top: 15px;">
-            <h2>To change password enter your email asociated with your account:</h2>
-            <form>
-                <input type="email" id="acctEmail" required placeholder="Email">
-                <button onclick="lookUpEmail(event)" type="submit">Enter</button>
-            </form>
-            <h2>Change Password:</h2>
-            <form id="updatePassword">
-                <input type="text" id="newPassword" required placeholder="New Password" disabled>
-                <input type="text" id="confirmNewPassword" required placeholder="Confirm New Password" disabled>
-                <button id="updatePasswordBtn" onclick="update(event)" type="submit" disabled>Update Password</button>
-            </form>
-        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
@@ -442,77 +428,6 @@
     <script src="js/adminPanel/createAccount.js"></script>
     <!-- <script src="js/adminPanel/console.js"></script> -->
     <script src="js/adminPanel/userLogs.js"></script>
-
-
-    <!-- new change password feasture???? -->
-
-    <script>
-        function lookUpEmail(event, accountUUID) {
-            event.preventDefault();
-            let acctEmail = document.getElementById('acctEmail').value;
-
-            $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (member_details) {
-                // looks through news database displaying each one
-                for (let i = 0; i < member_details.length; i++) {
-                    // creates new news post
-                    if (member_details[i].email == acctEmail) {
-                        let accountUUID = member_details[i].uuid;
-                        setupPasswordChange(accountUUID);
-                    } else {
-                        console.log('Account not found :/')
-                    }
-                }
-            });
-        }
-
-        function setupPasswordChange(accountUUID) {
-            let newPasswordInput = document.getElementById('newPassword');
-            let confirmNewPasswordInput = document.getElementById('confirmNewPassword');
-            let updatePasswordBtn = document.getElementById('updatePasswordBtn');
-
-            newPasswordInput.disabled = false;
-            confirmNewPasswordInput.disabled = false;
-            updatePasswordBtn.disabled = false;
-
-            let accountUUIDContainer = document.createElement('span');
-            accountUUIDContainer.innerText = accountUUID;
-            accountUUIDContainer.style.display = 'none';
-            accountUUIDContainer.id = 'accountUUIDContainer';
-            let updatePassword = document.getElementById('updatePassword')
-            updatePassword.appendChild(accountUUIDContainer);
-        }
-
-        function update(event) {
-            event.preventDefault();
-            let newPassword = document.getElementById('newPassword').value;
-            let confirmNewPassword = document.getElementById('confirmNewPassword').value;
-
-            let accountUUID = document.getElementById('accountUUIDContainer').innerText;
-
-            if (newPassword == confirmNewPassword) {
-                fetch('https://sheetdb.io/api/v1/z5dg5djr188l8/batch_update', {
-                    method: 'PATCH',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        data: [
-                            {
-                                "query": "uuid=" + accountUUID,
-                                "password": newPassword
-                            }
-                        ]
-                    })
-                })
-                    .then((response) => response.json())
-                    .then((data) => window.location = 'adminPanel.html', '_blank');
-            } else {
-                alert('password does not match.');
-            }
-        }
-
-    </script>
 </body>
 
 </html>

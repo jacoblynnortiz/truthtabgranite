@@ -7,12 +7,10 @@ let adminTab = document.getElementById('adminTab');
 let username1 = document.getElementById('username1');
 let password1 = document.getElementById('password1');
 let viewPasswordBtn1 = document.getElementById('viewPassword1');
-let forgotPasswordBtn1 = document.getElementById('forgotPassword1');
 
 let username2 = document.getElementById('username2');
 let password2 = document.getElementById('password2');
 let viewPasswordBtn2 = document.getElementById('viewPassword2');
-let forgotPasswordBtn2 = document.getElementById('forgotPassword2');
 
 let loginBtn1 = document.getElementById('loginBtn1');
 let loginBtn2 = document.getElementById('loginBtn2');
@@ -26,6 +24,8 @@ let rememberMe2 = document.getElementById('rememberMe2');
 let ls = localStorage;
 
 let memberLoginFocused = true, adminLoginFocused = false;
+
+let resetPasswordFocused1 = false, resetPasswordFocused2 = false;
 
 let usernameSuccess1 = null, passwordSuccess1 = null;
 let usernameSuccess2 = null, passwordSuccess2 = null;
@@ -53,6 +53,10 @@ window.addEventListener('keypress', function (e) {
         loginMember();
     } else if (e.key === 'Enter' && adminLoginFocused == true) {
         loginAdmin();
+    } else if (e.key === 'Enter' && resetPasswordFocused1 == true) {
+        lookUpEmail();
+    } else if (e.key === 'Enter' && resetPasswordFocused2 == true) {
+        update();
     }
 });
 
@@ -77,9 +81,6 @@ let PasswordToggled2 = false;
 
 viewPasswordBtn1.addEventListener('click', viewPassword1);
 viewPasswordBtn2.addEventListener('click', viewPassword2);
-
-forgotPasswordBtn1.addEventListener('click', forgotPassword1);
-forgotPasswordBtn2.addEventListener('click', forgotPassword2);
 
 function viewPassword1() {
     password1.type = 'text';
@@ -113,14 +114,6 @@ function viewPassword2() {
 
 }
 
-function forgotPassword1() {
-    alert('this feature is coming soon...')
-}
-
-function forgotPassword2() {
-    alert('this feature is coming soon...')
-}
-
 function memberForm() {
     loginPanel1.style.display = 'flex';
     loginPanel2.style.display = 'none';
@@ -130,6 +123,8 @@ function memberForm() {
     adminTab.style.color = '#b3b3b3';
     memberLoginFocused = true;
     adminLoginFocused = false;
+    resetPasswordFocused1 = false;
+    resetPasswordFocused2 = false;
 }
 
 function adminForm() {
@@ -141,6 +136,8 @@ function adminForm() {
     adminTab.style.color = '#fff';
     memberLoginFocused = false;
     adminLoginFocused = true;
+    resetPasswordFocused1 = false;
+    resetPasswordFocused2 = false;
 }
 
 function loginMember() {

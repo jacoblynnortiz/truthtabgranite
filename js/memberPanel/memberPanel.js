@@ -63,7 +63,7 @@ if (ls.getItem("truthTabMember") == null) {
 
 // checks if username and password that they're logged in with still matches account they're logged in with for
 // security, if it doesnt match it will say session expired and give one option to go to login page to re login
-$.getJSON('https://api.npoint.io/75b2953ec730e3b4fdfb', function (member_details) {
+$.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (member_details) {
     // looks through accounts database looking for match
     for (let i = 0; i < member_details.length; i++) {
         let locateAccount = member_details[i].username;

@@ -7,10 +7,12 @@ let adminTab = document.getElementById('adminTab');
 let username1 = document.getElementById('username1');
 let password1 = document.getElementById('password1');
 let viewPasswordBtn1 = document.getElementById('viewPassword1');
+let forgotPasswordBtn1 = document.getElementById('forgotPassword1');
 
 let username2 = document.getElementById('username2');
 let password2 = document.getElementById('password2');
 let viewPasswordBtn2 = document.getElementById('viewPassword2');
+let forgotPasswordBtn2 = document.getElementById('forgotPassword2');
 
 let loginBtn1 = document.getElementById('loginBtn1');
 let loginBtn2 = document.getElementById('loginBtn2');
@@ -76,6 +78,9 @@ let PasswordToggled2 = false;
 viewPasswordBtn1.addEventListener('click', viewPassword1);
 viewPasswordBtn2.addEventListener('click', viewPassword2);
 
+forgotPasswordBtn1.addEventListener('click', forgotPassword1);
+forgotPasswordBtn2.addEventListener('click', forgotPassword2);
+
 function viewPassword1() {
     password1.type = 'text';
     if(PasswordToggled1) {
@@ -108,6 +113,14 @@ function viewPassword2() {
 
 }
 
+function forgotPassword1() {
+    alert('this feature is coming soon...')
+}
+
+function forgotPassword2() {
+    alert('this feature is coming soon...')
+}
+
 function memberForm() {
     loginPanel1.style.display = 'flex';
     loginPanel2.style.display = 'none';
@@ -132,7 +145,7 @@ function adminForm() {
 
 function loginMember() {
     // fetches JSON from account database
-    $.getJSON('https://api.npoint.io/75b2953ec730e3b4fdfb', function (member_details) {
+    $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (member_details) {
         // looks through accounts database looking for match
         for (let i = 0; i < member_details.length; i++) {
             let locateAccount = member_details[i].username;
@@ -188,37 +201,46 @@ function loginMember() {
 
 function loginAdmin() {
     // fetches JSON from account database
-    $.getJSON('https://api.npoint.io/1619ae187ef7402b3aa6', function (admin_details) {
+    $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (member_details) {
         // looks through accounts database looking for match
-        for (let i = 0; i < admin_details.length; i++) {
-            let locateAccount = admin_details[i].username;
-            let getAccountPassword = admin_details[i].password;
+        for (let i = 0; i < member_details.length; i++) {
+            let locateAccount = member_details[i].username;
+            let getAccountPassword = member_details[i].password;
             // checkes if username matches
             if (username2.value == locateAccount) {
                 usernameSuccess2 = true;
                 // if username matches it will then check if that password also matches
                 if (password2.value == getAccountPassword) {
                     passwordSuccess2 = true;
+                    if (member_details[i].adminStatus == 0) {
+                        ls.setItem("truthTabGraniteAdmin", 0);
+                        window.location = "403.html";
+                    } else if (member_details[i].adminStatus == 1) {
+                        ls.setItem("truthTabGraniteAdmin", 1);
+                    } else {
+                        ls.setItem("truthTabGraniteAdmin", 0);
+                        window.location = "403.html";
+                    }
                     /* once account login is successfull it checks if user checked
                     remember me and saves it to local storage */
                     if (rememberMe2.checked) {
                         // saves info to local storage
                         ls.setItem('autoTruthTabAdminUsername', username2.value);
                         ls.setItem('autoTruthTabAdminPassword', password2.value);
-                        ls.setItem('autoTruthTabAdminName', admin_details[i].name);
+                        ls.setItem('autoTruthTabAdminName', member_details[i].name);
 
                         ls.setItem('truthTabAdminUsername', username2.value);
                         ls.setItem('truthTabAdminPassword', password2.value);
-                        ls.setItem('truthTabAdminName', admin_details[i].name);
-                        ls.setItem('truthTabAdminProfilePicture', admin_details[i].profilePicture);
+                        ls.setItem('truthTabAdminName', member_details[i].name);
+                        ls.setItem('truthTabAdminProfilePicture', member_details[i].profilePicture);
 
                         window.location = "adminPanel.html";
                     }
 
                     ls.setItem('truthTabAdminUsername', username2.value);
                     ls.setItem('truthTabAdminPassword', password2.value);
-                    ls.setItem('truthTabAdminProfilePicture', admin_details[i].profilePicture);
-                    ls.setItem('truthTabAdminName', admin_details[i].name);
+                    ls.setItem('truthTabAdminProfilePicture', member_details[i].profilePicture);
+                    ls.setItem('truthTabAdminName', member_details[i].name);
                     ls.setItem('truthTabAdmin', username2.value);
 
                     window.location = "adminPanel.html";

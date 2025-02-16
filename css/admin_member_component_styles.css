@@ -120,7 +120,7 @@ table {
     border-collapse: collapse;
 }
 
-.schedule-heading {
+.schedule-heading, .create-account-heading, .console-heading {
     width: 100%;
     padding: 10px 10px 15px 0;
     border-bottom: 1px solid #000;

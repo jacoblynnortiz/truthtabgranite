@@ -8,7 +8,9 @@
     <link rel="icon" href="res/images/admin_icon.png">
     <link rel='stylesheet' type='text/css' href='css/global.css'>
     <link rel='stylesheet' type='text/css' href='css/admin_member_component_styles.css'>
-    <link rel='stylesheet' type='text/css' href='css/admin_panel_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/adminPanel/admin_panel_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/adminPanel/create_account_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/adminPanel/console_styles.css'>
     <link rel='stylesheet' type='text/css' href='css/panel_navigation_styles.css'>
 </head>
 
@@ -58,7 +60,8 @@
                                 class="fa-solid fa-flag"></i></a>
                         <div style="display: flex; position: relative;">
                             <img id="profilePicture" src="#">
-                            <img id="adminBadge" src="res/images/admin-badge.png" style="display: none; position: absolute; bottom: 5px; right: 5px; width: 35px; height: 35px;">
+                            <img id="adminBadge" src="res/images/admin-badge.png"
+                                style="display: none; position: absolute; bottom: 5px; right: 5px; width: 35px; height: 35px;">
                         </div>
                         <h2 id="name">name undefined</h2>
                         <h2 id="username">.username_undefined</h2>
@@ -69,15 +72,16 @@
         </nav>
     </div>
     <div id="adminPanel" class="admin-panel">
-        <div style="background-color: var(--accent-color); padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
+        <div
+            style="background-color: var(--accent-color); padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
             <h2>Note from development team:</h2>
             <p>
-                The UI update for the website is pretty much complete now, the new features for the admin panel is the sermon upload feature now includes a field to add the speakers name, and sermon discription, also the date can now be added properly I finally fixed that bug.
+                The UI update for the website is pretty much complete now, new features for the sermon upload feature having the input field for a discription and the speakers name.<br><br>Create Account Feature: You can now create accounts on your own (admins help needed, create account feature is on the admin panel)<br>Forgot Password: this feature will allow a user to enter their email asociated with their account and change their password on there own, if you want an email setup with your account, contact me at (314) 330-9388<br>Console: The console is a brand new feature that will allow an admin to update permissions of users, see all members/other admins, etc.<br>More coming soon!
             </p>
         </div>
         <div class="add-post-row">
             <div class="add-post-container">
-                <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Create News Posts:</h2>
+                <div style="width: 100%; height: 25px;"></div>
                 <div class="add-post" style="max-height: 1600px;">
                     <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px">
                         <h2 style="font-size: 1.6rem;">Create Post</h2>
@@ -85,13 +89,16 @@
                         <div class="help-info-container">
                             <ul>
                                 <li>
-                                    <p><strong>Post Title:</strong> for the post title, please keep it under 15-20 characters long</p>
+                                    <p><strong>Post Title:</strong> for the post title, please keep it under 15-20
+                                        characters long</p>
                                 </li>
                                 <li>
-                                    <p><strong>Image URL:</strong> for the posts picture, please keep it 16:9 or 4:3 ratio only</p>
+                                    <p><strong>Image URL:</strong> for the posts picture, please keep it 16:9 or 4:3
+                                        ratio only</p>
                                 </li>
                                 <li>
-                                    <p><strong>Message:</strong> for the posts message, no limit on how many words you can have</p>
+                                    <p><strong>Message:</strong> for the posts message, no limit on how many words you
+                                        can have</p>
                                 </li>
                             </ul>
                         </div>
@@ -121,10 +128,10 @@
             </div>
             <div class="add-post-container">
                 <div class="add-post-container">
-                    <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Upload Sermons:</h2>
+                    <div style="width: 100%; height: 25px;"></div>
                     <div class="add-post">
                         <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px"">
-                            <h2 style="font-size: 1.6rem;">Upload Sermon</h2>
+                            <h2 style=" font-size: 1.6rem;">Upload Sermon</h2>
                             <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
                             <div class="help-info-container">
                                 <ul>
@@ -135,13 +142,16 @@
                                         <p><strong>Sermon Speaker:</strong> for the speaker of the sermon</p>
                                     </li>
                                     <li>
-                                        <p><strong>Sermon Date:</strong> for the sermon date, it is auto generated but can be changed if needed.</p>
+                                        <p><strong>Sermon Date:</strong> for the sermon date, it is auto generated but
+                                            can be changed if needed.</p>
                                     </li>
                                     <li>
-                                        <p><strong>Sermon iframe:</strong> embed link to add live stream from facebook or youtube</p>
+                                        <p><strong>Sermon iframe:</strong> embed link to add live stream from facebook
+                                            or youtube</p>
                                     </li>
                                     <li>
-                                        <p><strong>Sermon Discription:</strong> for a short discription of the sermon, if you dont know what to write or nothing is available that is fine</p>
+                                        <p><strong>Sermon Discription:</strong> for a short discription of the sermon,
+                                            if you dont know what to write or nothing is available that is fine</p>
                                     </li>
                                 </ul>
                             </div>
@@ -173,7 +183,8 @@
                                 <textarea required maxlength="400" name="data[sermon_discription]"></textarea>
                                 <span>Type Discription...</span>
                             </div>
-                            <input required type="text" style="width: 0; height: 0; opacity: 0;" value="https://www.facebook.com/TruthTabGranite" name="data[sermon_link]">
+                            <input required type="text" style="width: 0; height: 0; opacity: 0;"
+                                value="https://www.facebook.com/TruthTabGranite" name="data[sermon_link]">
                             <input type="submit" name="Post" value="Upload">
                         </form>
 
@@ -181,7 +192,7 @@
                 </div>
             </div>
             <div class="change-schedule-max">
-                <h2 style="font-size: 2rem; margin: 25px 0; color: #fff;">Change Schedules:</h2>
+                <div style="width: 100%; height: 25px;"></div>
                 <div class="change-schedules-box">
                     <div class="tabs">
                         <button class="tab-btn" id="doorTab">Door & Usher</button>
@@ -189,19 +200,24 @@
                     </div>
                     <div class="change-schedule" id="doorSchedule">
                         <form action="https://sheetdb.io/api/v1/9xbs0d16nkjhc" method="delete" id="sheetdb-form-3">
-                            <div class="schedule-heading" style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
+                            <div class="schedule-heading"
+                                style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
                                 <h2 style="font-size: 1.6rem;">Create Schedule</h2>
                                 <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
                                 <div class="help-info-container">
                                     <ul>
                                         <li>
-                                            <p><strong>Date:</strong> allows people to see what the schedules date is</p>
+                                            <p><strong>Date:</strong> allows people to see what the schedules date is
+                                            </p>
                                         </li>
                                         <li>
-                                            <p><strong>Morning & Evening Service Schedule:</strong> have morning greeter and evening greeter in text box seperated with a | symbol</p>
+                                            <p><strong>Morning & Evening Service Schedule:</strong> have morning greeter
+                                                and evening greeter in text box seperated with a | symbol</p>
                                         </li>
                                         <li>
-                                            <p><strong>Delete Button:</strong> This button opens a confirm popup to delete all the schedules, please do not delete them unless it is the end of the quarter</p>
+                                            <p><strong>Delete Button:</strong> This button opens a confirm popup to
+                                                delete all the schedules, please do not delete them unless it is the end
+                                                of the quarter</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -240,19 +256,24 @@
                     </div>
                     <div class="change-schedule" id="cleaningSchedule">
                         <form action="https://sheetdb.io/api/v1/r30p0zrj31ui1" method="delete" id="sheetdb-form-5">
-                            <div class="schedule-heading" style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
+                            <div class="schedule-heading"
+                                style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
                                 <h2 style="font-size: 1.6rem;">Create Schedule</h2>
                                 <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
                                 <div class="help-info-container">
                                     <ul>
                                         <li>
-                                            <p><strong>Date:</strong> allows people to see what the schedules date is</p>
+                                            <p><strong>Date:</strong> allows people to see what the schedules date is
+                                            </p>
                                         </li>
                                         <li>
-                                            <p><strong>Cleaner Boxes:</strong> positions for cleaner names or family names, you do not have to fill in all boxes if not needed</p>
+                                            <p><strong>Cleaner Boxes:</strong> positions for cleaner names or family
+                                                names, you do not have to fill in all boxes if not needed</p>
                                         </li>
                                         <li>
-                                            <p><strong>Delete Button:</strong> This button opens a confirm popup to delete all the schedules, please do not delete them unless it is the end of the quarter</p>
+                                            <p><strong>Delete Button:</strong> This button opens a confirm popup to
+                                                delete all the schedules, please do not delete them unless it is the end
+                                                of the quarter</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -286,6 +307,90 @@
                 </div>
             </div>
         </div>
+        <div class="create-acct-console">
+            <div class="create-account-container">
+                <div class="create-account-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px"">
+                    <h2 style=" font-size: 1.6rem;">Create Account <span style="font-weight: 500; font-size: 1.2rem; margin-left: 5px; color: #fff; background-color: var(--accent-color); padding: 7.5px; border-radius: 8px;">BETA</span></h2>
+                    <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                    <div class="help-info-container">
+                        <ul>
+                            <li>
+                                <p><strong>Profile Picture URL:</strong> for the user profile picture, only use image
+                                    URLs</p>
+                            </li>
+                            <li>
+                                <p><strong>Full Name:</strong> for first and last name of user</p>
+                            </li>
+                            <li>
+                                <p><strong>Email:</strong> for the user's email they want asociated with the account</p>
+                            </li>
+                            <li>
+                                <p><strong>Username:</strong> for the user's username</p>
+                            </li>
+                            <li>
+                                <p><strong>Password:</strong> for the users password</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <form action="https://sheetdb.io/api/v1/la8vm18y8v16z" method="post" id="sheetdb-form-7">
+                    <div class="create-account-row">
+                        <img id="createAcctProfile"
+                            src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
+                            class="create-profile-pic">
+                        <div class="inputBox">
+                            <input type="text" name="data[profilePicture]" id="createAcctProfileInput" required>
+                            <span>Profile Picture URL</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="data[name]" required>
+                            <span>Full name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" name="data[email]" required>
+                            <span>Email</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="data[username]" required>
+                            <span>Username</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" name="data[password]" min="8" required>
+                            <span>Password</span>
+                        </div>
+                        <input type="text" name="data[adminStatus]" required value="0"
+                            style="width: 0; height: 0; opacity: 0;">
+                        <input type="text" name="data[uuid]" required value="INCREMENT"
+                            style="width: 0; height: 0; opacity: 0;">
+                    </div>
+                    <input name="Post" type="submit" value="Create Account">
+                </form>
+            </div>
+            <div class="console">
+                <div class="console-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px"">
+                    <h2 style=" font-size: 1.6rem;">Console <span style="font-weight: 500; font-size: 1.2rem; margin-left: 5px; color: #fff; background-color: var(--accent-color); padding: 7.5px; border-radius: 8px;">Coming Soon!</span></h2>
+                    <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                    <div class="help-info-container">
+                        <ul>
+                            <h3 style="padding: 7.5px;">Commands:</h3>
+                            <li>
+                                <p><strong>/op:</strong> Makes user an admin</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="console-window">
+                    <ul id="consoleWindow"></ul>
+                </div>
+                <form>
+                    <div class="inputBox">
+                        <input disabled id="consoleInput" style="height: 45px; width: 100%;" type="text" required>
+                        <span>Type Commands! (ex. "/op {username}")</span>
+                    </div>
+                    <button disabled id="consoleEnter" type="submit">Send</button>
+                </form>
+            </div>
+        </div>
         <div class="users-enrolled-container-max">
             <div class="schedule-heading" style="margin-bottom: 15px;">
                 <h2 style="font-size: 1.6rem;">User Logs:</h2>
@@ -311,15 +416,103 @@
                 <table id="userLogsTable"></table>
             </div>
         </div>
+        <div class="update-database-practice"
+            style="background-color: rgb(206, 91, 91); color: white; padding: 15px; margin-top: 15px;">
+            <h2>To change password enter your email asociated with your account:</h2>
+            <form>
+                <input type="email" id="acctEmail" required placeholder="Email">
+                <button onclick="lookUpEmail(event)" type="submit">Enter</button>
+            </form>
+            <h2>Change Password:</h2>
+            <form id="updatePassword">
+                <input type="text" id="newPassword" required placeholder="New Password" disabled>
+                <input type="text" id="confirmNewPassword" required placeholder="Confirm New Password" disabled>
+                <button id="updatePasswordBtn" onclick="update(event)" type="submit" disabled>Update Password</button>
+            </form>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
     <script src="js/adminPanel/adminPanel.js"></script>
+    <script src="js/adminPanel/adminPanelForms.js"></script>
     <script src="js/adminPanel/createPosts.js"></script>
     <script src="js/adminPanel/uploadSermons.js"></script>
     <script src="js/adminPanel/scheduleChanger.js"></script>
+    <script src="js/adminPanel/createAccount.js"></script>
+    <!-- <script src="js/adminPanel/console.js"></script> -->
     <script src="js/adminPanel/userLogs.js"></script>
+
+
+    <!-- new change password feasture???? -->
+
+    <script>
+        function lookUpEmail(event, accountUUID) {
+            event.preventDefault();
+            let acctEmail = document.getElementById('acctEmail').value;
+
+            $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (member_details) {
+                // looks through news database displaying each one
+                for (let i = 0; i < member_details.length; i++) {
+                    // creates new news post
+                    if (member_details[i].email == acctEmail) {
+                        let accountUUID = member_details[i].uuid;
+                        setupPasswordChange(accountUUID);
+                    } else {
+                        console.log('Account not found :/')
+                    }
+                }
+            });
+        }
+
+        function setupPasswordChange(accountUUID) {
+            let newPasswordInput = document.getElementById('newPassword');
+            let confirmNewPasswordInput = document.getElementById('confirmNewPassword');
+            let updatePasswordBtn = document.getElementById('updatePasswordBtn');
+
+            newPasswordInput.disabled = false;
+            confirmNewPasswordInput.disabled = false;
+            updatePasswordBtn.disabled = false;
+
+            let accountUUIDContainer = document.createElement('span');
+            accountUUIDContainer.innerText = accountUUID;
+            accountUUIDContainer.style.display = 'none';
+            accountUUIDContainer.id = 'accountUUIDContainer';
+            let updatePassword = document.getElementById('updatePassword')
+            updatePassword.appendChild(accountUUIDContainer);
+        }
+
+        function update(event) {
+            event.preventDefault();
+            let newPassword = document.getElementById('newPassword').value;
+            let confirmNewPassword = document.getElementById('confirmNewPassword').value;
+
+            let accountUUID = document.getElementById('accountUUIDContainer').innerText;
+
+            if (newPassword == confirmNewPassword) {
+                fetch('https://sheetdb.io/api/v1/z5dg5djr188l8/batch_update', {
+                    method: 'PATCH',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        data: [
+                            {
+                                "query": "uuid=" + accountUUID,
+                                "password": newPassword
+                            }
+                        ]
+                    })
+                })
+                    .then((response) => response.json())
+                    .then((data) => window.location = 'adminPanel.html', '_blank');
+            } else {
+                alert('password does not match.');
+            }
+        }
+
+    </script>
 </body>
 
 </html>

@@ -66,25 +66,6 @@
     margin: 0 15px;
 }
 
-#resetPasswordBtn {
-    width: 100%;
-    padding: 15px;
-    background-color: var(--accent-color);
-    outline: none;
-    color: var(--light);;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    border-radius: 32px;
-    border: 3px solid var(--accent-color);
-    transition: .3s;
-}
-
-#resetPasswordBtn:hover {
-    background-color: transparent;
-    color: var(--accent-color);
-}
-
 .tabs {
     width: 100%;
     height: 60px;
@@ -222,31 +203,6 @@
     z-index: 5;
 }
 
-.eye-slash::after {
-    content: '';
-    position: absolute;
-    top: 22px;
-    left: 10px;
-    width: 30px;
-    height: 3px;
-    background-color: #ffffff;
-    transform: rotate(45deg);
-    border-radius: 8px;
-    animation: eye-slash ease .3s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-
-@keyframes eye-slash {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
-	}
-}
-
 .login-panel div {
     display: flex;
     justify-content: space-between;
@@ -286,7 +242,8 @@
     margin-bottom: 25px;
 }
 
-.login-panel h4 #rememberMe1, .login-panel h4 #rememberMe2 {
+.login-panel h4 #rememberMe1,
+.login-panel h4 #rememberMe2 {
     width: 13px;
     display: flex;
     justify-content: center;
@@ -296,12 +253,14 @@
     margin-right: 15px;
 }
 
-#loginBtn1, #loginBtn2 {
+#loginBtn1,
+#loginBtn2,
+#resetPasswordBtn {
     width: 100%;
     padding: 15px;
     background-color: var(--accent-color);
     outline: none;
-    color: var(--light);;
+    color: var(--light);
     border: none;
     font-size: 1.4rem;
     cursor: pointer;
@@ -310,12 +269,17 @@
     transition: .3s;
 }
 
-#loginBtn1:hover, #loginBtn2:hover {
+#loginBtn1:hover,
+#loginBtn2:hover,
+#resetPasswordBtn:hover {
     background-color: transparent;
     color: var(--accent-color);
 }
 
-#errorLogin1, #errorLogin2, #errorResetPassword1, #errorResetPassword2 {
+#errorLogin1,
+#errorLogin2,
+#errorResetPassword1,
+#errorResetPassword2 {
     background-color: rgba(255, 0, 0, .4);
     border-radius: 12px;
     color: #fff;

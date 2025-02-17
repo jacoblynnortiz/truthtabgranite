@@ -9,6 +9,7 @@
     <link rel='stylesheet' type='text/css' href='css/global.css'>
     <link rel='stylesheet' type='text/css' href='css/admin_member_component_styles.css'>
     <link rel='stylesheet' type='text/css' href='css/member_panel_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/adminPanel/settings_styles.css'>
     <link rel='stylesheet' type='text/css' href='css/panel_navigation_styles.css'>
 </head>
 
@@ -32,6 +33,44 @@
 
     <!-- navigation menu -->
 
+    <div class="settings-overlay" id="settingsMenu">
+        <div class="settings-container">
+            <button class="backup" id="backupSettingsBtn"><i class="fa-solid fa-arrow-left"></i></button>
+            <h2>Settings</h2>
+            <div class="settings-options">
+                <div class="update-profile-info">
+                    <h3>Update Profile Information</h3>
+                    <form style="width: 100%;">
+                        <div class="profile-pic-preview">
+                            <img src="#" id="settingsUpdateProfilePicture">
+                            <div class="inputBox">
+                                <input required type="text" name="data[img_src]" id="settingsUpdateProfilePic">
+                                <span id="settingsUpdateProfilePicPreview">Profile Picture URL (.jpg)</span>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <input required type="text" name="data[img_src]" id="settingsUpdateName">
+                            <span id="settingsUpdateNamePreview">Full Name (name undefined)</span>
+                        </div>
+                        <div class="inputBox">
+                            <input required type="text" name="data[img_src]" id="settingsUpdateUsername">
+                            <span id="settingsUpdateUsernamePreview">Username (user.123456789)</span>
+                        </div>
+                        <div class="inputBox">
+                            <input required type="text" name="data[img_src]" id="settingsUpdateEmail">
+                            <span id="settingsUpdateEmailPreview">Email (info@truthtabgranite.site)</span>
+                        </div>
+                        <div class="inputBox">
+                            <input required type="text" name="data[img_src]" id="settingsUpdatePassword">
+                            <span id="settingsUpdatePasswordPreview">Password (********)</span>
+                        </div>
+                        <button type="submit" onclick="update(event);">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="header">
         <nav>
             <input type="checkbox" id="show-menu" checked>
@@ -42,6 +81,8 @@
                     <div class="side-nav">
                         <a title="Logout" class="logout" href="login"><i
                                 class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i></a>
+                        <button title="Settings" class="settings" id="settingsBtn"><i
+                                class="fa-solid fa-gear"></i></button>
                         <a title="Report an issue" class="report" href="tel:3143309388"><i
                                 class="fa-solid fa-flag"></i></a>
                         <div style="display: flex; position: relative;">
@@ -54,6 +95,7 @@
                         <div class="nav-btns">
                             <button id="doorScheduleContainerToggle">Door & Usher</button>
                             <button id="cleaningScheduleContainerToggle">Cleaning</button>
+                            <!-- for future tab :) <button id="newTabContainerToggle">New Tab!</button> -->
                         </div>
                     </div>
                 </ul>
@@ -68,18 +110,24 @@
 
         <!-- Note from development team  -->
 
-        <div style="background-color: var(--accent-color); padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
+        <div
+            style="background-color: var(--accent-color); padding: 15px; color: #fff; font-size: 1.2rem; border-radius: 12px;">
             <h2>Note from development team:</h2>
             <p>No new features at this time. there has been a major UI reveamp</p>
         </div>
-        <div class="schedule-container" id="doorScheduleContainer">
+        <div class="tab-container" id="doorScheduleContainer">
             <div class="schedule-heading">
                 <h2 id="quaterHeader" style="font-size: 1.8rem;">QT null - Door & Usher Schedule:</h2>
                 <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
                 <div class="help-info-container">
                     <ul>
-                        <li><p><strong>Yellow Highlight:</strong> indicates todays or the next schedule</p></li>
-                        <li><p><strong>John Smith | John Smith:</strong> 2 names on 1 position means the 1st name is for morning and 2nd name is for evening</p></li>
+                        <li>
+                            <p><strong>Yellow Highlight:</strong> indicates todays or the next schedule</p>
+                        </li>
+                        <li>
+                            <p><strong>John Smith | John Smith:</strong> 2 names on 1 position means the 1st name is for
+                                morning and 2nd name is for evening</p>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -91,13 +139,15 @@
             <table id="monthTable3"></table>
             <a href="images/usherdoorguide.pdf" class="ushersdoorguide">Ushers and Door Greeting Guide</a>
         </div>
-        <div class="schedule-container" id="cleaningScheduleContainer">
+        <div class="tab-container" id="cleaningScheduleContainer">
             <div class="schedule-heading">
                 <h2 id="quaterHeaderClean" style="font-size: 1.8rem;">QT null - Cleaning Schedule:</h2>
                 <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
                 <div class="help-info-container">
                     <ul>
-                        <li><p><strong>Yellow Highlight:</strong> indicates todays or the next schedule</p></li>
+                        <li>
+                            <p><strong>Yellow Highlight:</strong> indicates todays or the next schedule</p>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -109,11 +159,13 @@
             <table id="monthTable3Clean"></table>
             <a href="res/images/cleaningCalender.jpg" class="ushersdoorguide">Cleaning Schedule Calender</a>
         </div>
+        <div id="newTabContainer" class="tab-container"><h1>bsfm,bksfmb</h1></div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 
     <script src="js/memberPanel/memberPanel.js"></script>
+    <script src="js/adminPanel/settings.js"></script>
     <script src="js/memberPanel/doorSchedule.js"></script>
     <script src="js/memberPanel/cleaningSchedule.js"></script>
 </body>

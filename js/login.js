@@ -32,18 +32,18 @@ let usernameSuccess2 = null, passwordSuccess2 = null;
 
 // looks for if user has checked remember me before to auto input their info
 
-if (ls.getItem("truthTabMember") == 'undefined') {
+if (ls.getItem("truthTabGraniteUsername") == 'undefined') {
     console.log('you are not saved as an member');
 } else {
-    username1.value = ls.getItem('autoTruthTabMemberUsername', username1.value);
-    password1.value = ls.getItem('autoTruthTabMemberPassword', password1.value);
+    username1.value = ls.getItem('autoTruthTabGraniteUsername', username1.value);
+    password1.value = ls.getItem('autoTruthTabGranitePassword', password1.value);
 }
 
-if (ls.getItem("truthTabAdmin") == 'undefined') {
+if (ls.getItem("truthTabGraniteUsername") == 'undefined') {
     console.log('you are not saved as an admin');
 } else {
-    username2.value = ls.getItem('autoTruthTabAdminUsername', username2.value);
-    password2.value = ls.getItem('autoTruthTabAdminPassword', password2.value);
+    username2.value = ls.getItem('autoTruthTabGraniteUsername', username2.value);
+    password2.value = ls.getItem('autoTruthTabGranitePassword', password2.value);
 }
 
 // listens for enter key being pressed and trys login determining on which tab user is on
@@ -157,24 +157,24 @@ function loginMember() {
                     remember me and saves it to local storage */
                     if (rememberMe1.checked) {
                         // saves info to local storage
-                        ls.setItem('autoTruthTabMemberUsername', username1.value);
-                        ls.setItem('autoTruthTabMemberPassword', password1.value);
-                        ls.setItem('autoTruthTabMemberName', member_details[i].name);
+                        ls.setItem('autoTruthTabGraniteUsername', username1.value);
+                        ls.setItem('autoTruthTabGranitePassword', password1.value);
+                        ls.setItem('autoTruthTabGraniteName', member_details[i].name);
 
-                        ls.setItem('truthTabMemberUsername', username1.value);
-                        ls.setItem('truthTabMemberPassword', password1.value);
-                        ls.setItem('truthTabMemberProfilePicture', member_details[i].profilePicture);
-                        ls.setItem('truthTabMemberName', member_details[i].name);
-                        ls.setItem('truthTabMember', username1.value);
+                        ls.setItem('truthTabGraniteUsername', username1.value);
+                        ls.setItem('truthTabGranitePassword', password1.value);
+                        ls.setItem('truthTabGraniteProfilePicture', member_details[i].profilePicture);
+                        ls.setItem('truthTabGraniteName', member_details[i].name);
+                        ls.setItem('truthTabGraniteEmail', member_details[i].email);
 
                         window.location = "memberPanel.html";
                     }
 
-                    ls.setItem('truthTabMemberUsername', username1.value);
-                    ls.setItem('truthTabMemberPassword', password1.value);
-                    ls.setItem('truthTabMemberProfilePicture', member_details[i].profilePicture);
-                    ls.setItem('truthTabMemberName', member_details[i].name);
-                    ls.setItem('truthTabMember', username1.value);
+                    ls.setItem('truthTabGraniteUsername', username1.value);
+                    ls.setItem('truthTabGranitePassword', password1.value);
+                    ls.setItem('truthTabGraniteProfilePicture', member_details[i].profilePicture);
+                    ls.setItem('truthTabGraniteName', member_details[i].name);
+                    ls.setItem('truthTabGraniteEmail', member_details[i].email);
 
                     window.location = "memberPanel.html";
                 }
@@ -222,23 +222,24 @@ function loginAdmin() {
                     remember me and saves it to local storage */
                     if (rememberMe2.checked) {
                         // saves info to local storage
-                        ls.setItem('autoTruthTabAdminUsername', username2.value);
-                        ls.setItem('autoTruthTabAdminPassword', password2.value);
-                        ls.setItem('autoTruthTabAdminName', member_details[i].name);
+                        ls.setItem('autoTruthTabGraniteUsername', username2.value);
+                        ls.setItem('autoTruthTabGranitePassword', password2.value);
+                        ls.setItem('autoTruthTabGraniteName', member_details[i].name);
 
-                        ls.setItem('truthTabAdminUsername', username2.value);
-                        ls.setItem('truthTabAdminPassword', password2.value);
-                        ls.setItem('truthTabAdminName', member_details[i].name);
-                        ls.setItem('truthTabAdminProfilePicture', member_details[i].profilePicture);
+                        ls.setItem('truthTabGraniteUsername', username2.value);
+                        ls.setItem('truthTabGranitePassword', password2.value);
+                        ls.setItem('truthTabGraniteName', member_details[i].name);
+                        ls.setItem('truthTabGraniteEmail', member_details[i].email);
+                        ls.setItem('truthTabGraniteProfilePicture', member_details[i].profilePicture);
 
                         window.location = "adminPanel.html";
                     }
 
-                    ls.setItem('truthTabAdminUsername', username2.value);
-                    ls.setItem('truthTabAdminPassword', password2.value);
-                    ls.setItem('truthTabAdminProfilePicture', member_details[i].profilePicture);
-                    ls.setItem('truthTabAdminName', member_details[i].name);
-                    ls.setItem('truthTabAdmin', username2.value);
+                    ls.setItem('truthTabGraniteUsername', username2.value);
+                    ls.setItem('truthTabGranitePassword', password2.value);
+                    ls.setItem('truthTabGraniteProfilePicture', member_details[i].profilePicture);
+                    ls.setItem('truthTabGraniteName', member_details[i].name);
+                    ls.setItem('truthTabGraniteEmail', member_details[i].email);
 
                     window.location = "adminPanel.html";
                 }

@@ -7,6 +7,12 @@ let showMenu = document.getElementById('show-menu');
 let menuClosed = false;
 let ls = localStorage;
 
+let dashboardContainer = document.getElementById('dashboardContainer');
+let userLogsContainer = document.getElementById('userLogsContainer');
+
+let dashboardContainerToggle = document.getElementById('dashboardContainerToggle');
+let userLogsContainerToggle = document.getElementById('userLogsContainerToggle');
+
 let usernameSuccess1 = null, passwordSuccess1 = null;
 
 // function to make sidebar push content over on bigger devices when open or go over it on smaller devices
@@ -50,11 +56,11 @@ if (ls.getItem("truthTabGraniteAdmin") == null) {
     window.location = '403.html';
 } else if (ls.getItem("truthTabGraniteAdmin") == 1) {
     ls.setItem("truthTabGraniteAdmin", 1);
-    name.innerText = ls.truthTabAdminName;
-    username.innerText = "." + ls.truthTabAdminUsername;
-    profilePicture.src = ls.truthTabAdminProfilePicture;
+    name.innerText = ls.truthTabGraniteName;
+    username.innerText = "." + ls.truthTabGraniteUsername;
+    profilePicture.src = ls.truthTabGraniteProfilePicture;
 
-    welcomeUser.innerText = ls.truthTabAdminName + "!";
+    welcomeUser.innerText = ls.truthTabGraniteName + "!";
 } else {
     ls.setItem("truthTabGraniteAdmin", 0);
     window.location = '403.html';
@@ -68,7 +74,7 @@ $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (admin_details) {
         let locateAccount = admin_details[i].username;
         let getAccountPassword = admin_details[i].password;
         // checkes if username still matches
-        if (ls.getItem("truthTabAdminUsername") == locateAccount) {
+        if (ls.getItem("truthTabGraniteUsername") == locateAccount) {
             usernameSuccess1 = true;
 
             let adminStatus = admin_details[i].adminStatus;
@@ -79,7 +85,7 @@ $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (admin_details) {
                 adminBadge.style.display = 'flex';
             }
             // if username matches it will then check if that password also still matches
-            if (ls.getItem("truthTabAdminPassword") == getAccountPassword) {
+            if (ls.getItem("truthTabGranitePassword") == getAccountPassword) {
                 passwordSuccess1 = true;
 
                 let adminStatus = admin_details[i].adminStatus;
@@ -103,3 +109,41 @@ $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (admin_details) {
         sessionExpired.style.display = 'flex';
     }
 });
+
+dashboardContainerToggler();
+
+dashboardContainerToggle.addEventListener('click', dashboardContainerToggler);
+
+userLogsContainerToggle.addEventListener('click', userLogsContainerToggler);
+
+function dashboardContainerToggler() {
+    dashboardContainer.classList.add('tab-container-active');
+    userLogsContainer.classList.remove('tab-container-active');
+
+    dashboardContainerToggle.classList.add('tab-active');
+    userLogsContainerToggle.classList.remove('tab-active');
+
+    dashboardContainerToggle.classList.remove('tab-inactive');
+    userLogsContainerToggle.classList.add('tab-inactive');
+
+    if (window.matchMedia('screen and (max-width: 750px)').matches) {
+        showMenu.checked = false;
+        memberPanel.style.paddingLeft = '25px';
+    }
+}
+
+function userLogsContainerToggler() {
+    dashboardContainer.classList.remove('tab-container-active');
+    userLogsContainer.classList.add('tab-container-active');
+
+    dashboardContainerToggle.classList.remove('tab-active');
+    userLogsContainerToggle.classList.add('tab-active');
+
+    dashboardContainerToggle.classList.add('tab-inactive');
+    userLogsContainerToggle.classList.remove('tab-inactive');
+
+    if (window.matchMedia('screen and (max-width: 750px)').matches) {
+        showMenu.checked = false;
+        memberPanel.style.paddingLeft = '25px';
+    }
+}

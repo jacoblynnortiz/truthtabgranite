@@ -9,9 +9,11 @@ let ls = localStorage;
 
 let doorScheduleContainer = document.getElementById('doorScheduleContainer');
 let cleaningScheduleContainer = document.getElementById('cleaningScheduleContainer');
+// let newTabContainer = document.getElementById('newTabContainer');
 
 let doorScheduleContainerToggle = document.getElementById('doorScheduleContainerToggle');
 let cleaningScheduleContainerToggle = document.getElementById('cleaningScheduleContainerToggle');
+// let newTabContainerToggle = document.getElementById('newTabContainerToggle');
 
 let sessionExpired = document.getElementById('sessionExpired');
 
@@ -51,14 +53,14 @@ if (window.matchMedia('screen and (max-width: 750px)').matches) {
 }
 
 // if user is not logged in properly, makes it go back to login page
-if (ls.getItem("truthTabMember") == null) {
+if (ls.getItem("truthTabGraniteUsername") == null) {
     window.location = 'login';
 } else {
-    name.innerText = ls.truthTabMemberName;
-    username.innerText = "." + ls.truthTabMemberUsername;
-    profilePicture.src = ls.truthTabMemberProfilePicture;
+    name.innerText = ls.truthTabGraniteName;
+    username.innerText = "." + ls.truthTabGraniteUsername;
+    profilePicture.src = ls.truthTabGraniteProfilePicture;
 
-    welcomeUser.innerText = ls.truthTabMemberName + "!";
+    welcomeUser.innerText = ls.truthTabGraniteName + "!";
 }
 
 // checks if username and password that they're logged in with still matches account they're logged in with for
@@ -69,7 +71,7 @@ $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (member_details) {
         let locateAccount = member_details[i].username;
         let getAccountPassword = member_details[i].password;
         // checkes if username still matches
-        if (ls.getItem("truthTabMemberUsername") == locateAccount) {
+        if (ls.getItem("truthTabGraniteUsername") == locateAccount) {
             usernameSuccess1 = true;
 
             let adminStatus = member_details[i].adminStatus;
@@ -80,7 +82,7 @@ $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (member_details) {
                 adminBadge.style.display = 'flex';
             }
             // if username matches it will then check if that password also still matches
-            if (ls.getItem("truthTabMemberPassword") == getAccountPassword) {
+            if (ls.getItem("truthTabGranitePassword") == getAccountPassword) {
                 passwordSuccess1 = true;
 
                 let adminStatus = member_details[i].adminStatus;
@@ -107,11 +109,18 @@ doorScheduleContainerToggle.addEventListener('click', doorScheduleContainerToggl
 
 cleaningScheduleContainerToggle.addEventListener('click', cleaningScheduleContainerToggler);
 
+// newTabContainerToggle.addEventListener('click', newTabContainerToggler);
+
 function doorScheduleContainerToggler() {
-    doorScheduleContainer.style.display = 'block';
-    cleaningScheduleContainer.style.display = 'none';
-    doorScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
-    cleaningScheduleContainerToggle.style.backgroundColor = 'transparent';
+    doorScheduleContainer.classList.add('tab-container-active');
+    cleaningScheduleContainer.classList.remove('tab-container-active');
+
+    doorScheduleContainerToggle.classList.add('tab-active');
+    cleaningScheduleContainerToggle.classList.remove('tab-active');
+
+    doorScheduleContainerToggle.classList.remove('tab-inactive');
+    cleaningScheduleContainerToggle.classList.add('tab-inactive');
+
     if (window.matchMedia('screen and (max-width: 750px)').matches) {
         showMenu.checked = false;
         memberPanel.style.paddingLeft = '25px';
@@ -120,13 +129,38 @@ function doorScheduleContainerToggler() {
 }
 
 function cleaningScheduleContainerToggler() {
-    cleaningScheduleContainer.style.display = 'block';
-    doorScheduleContainer.style.display = 'none';
-    cleaningScheduleContainerToggle.style.backgroundColor = '#3c7cb960';
-    doorScheduleContainerToggle.style.backgroundColor = 'transparent';
+    doorScheduleContainer.classList.remove('tab-container-active');
+    cleaningScheduleContainer.classList.add('tab-container-active');
+
+    doorScheduleContainerToggle.classList.remove('tab-active');
+    cleaningScheduleContainerToggle.classList.add('tab-active');
+
+    doorScheduleContainerToggle.classList.add('tab-inactive');
+    cleaningScheduleContainerToggle.classList.remove('tab-inactive');
+
     if (window.matchMedia('screen and (max-width: 750px)').matches) {
         showMenu.checked = false;
         memberPanel.style.paddingLeft = '25px';
     }
     doorScheduleFocused = false;
 }
+
+// function newTabContainerToggler() {
+//     doorScheduleContainer.classList.remove('tab-container-active');
+//     cleaningScheduleContainer.classList.remove('tab-container-active');
+//     newTabContainer.classList.add('tab-container-active');
+
+//     doorScheduleContainerToggle.classList.remove('tab-active');
+//     cleaningScheduleContainerToggle.classList.remove('tab-active');
+//     newTabContainerToggle.classList.add('tab-active');
+
+//     doorScheduleContainerToggle.classList.add('tab-inactive');
+//     cleaningScheduleContainerToggle.classList.add('tab-inactive');
+//     newTabContainerToggle.classList.remove('tab-inactive');
+
+//     if (window.matchMedia('screen and (max-width: 750px)').matches) {
+//         showMenu.checked = false;
+//         memberPanel.style.paddingLeft = '25px';
+//     }
+//     doorScheduleFocused = false;
+// }

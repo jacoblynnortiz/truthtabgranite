@@ -22,7 +22,7 @@ document.getElementById("postLangChanger").onchange = function () {
     if (this.value == 'english') {
         sheetdbForm1.action = 'https://sheetdb.io/api/v1/sn4bwy4h5v3t1';
     } else {
-        sheetdbForm1.action = 'https://sheetdb.io/api/v1/p15xdj6p5l8fi';
+        alert('This feature is currently unavailable')
     }
 };
 

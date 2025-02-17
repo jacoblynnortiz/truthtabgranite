@@ -128,7 +128,7 @@ function dashboardContainerToggler() {
 
     if (window.matchMedia('screen and (max-width: 750px)').matches) {
         showMenu.checked = false;
-        memberPanel.style.paddingLeft = '25px';
+        adminPanel.style.paddingLeft = '25px';
     }
 }
 
@@ -144,6 +144,6 @@ function userLogsContainerToggler() {
 
     if (window.matchMedia('screen and (max-width: 750px)').matches) {
         showMenu.checked = false;
-        memberPanel.style.paddingLeft = '25px';
+        adminPanel.style.paddingLeft = '25px';
     }
 }

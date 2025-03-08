@@ -134,28 +134,41 @@
             <span class="version-tag">BETA</span>
         </div>
         <div class="tab-links-section">
-            <button class="tab-active" data-navBtnCell="Home" id="tabHome">
-                <i class="fa-solid fa-house"></i>
-                <div style="width: 20px;" class="spacer"></div>
-            </button>
-            <div class="seperator"></div>
-            <button class="tab-inactive" data-navBtnCell="Dashboard" id="tabDashboard">
-                <i class="fa-solid fa-shield-halved"></i>
-                <div style="width: 20px;" class="spacer"></div>
-            </button>
-            <button class="tab-inactive" data-navBtnCell="User Logs" id="tabUserLogs">
-                <i class="fa-solid fa-server"></i>
-                <div style="width: 20px;" class="spacer"></div>
-            </button>
-            <div id="adminOnlyTab" class="seperator"></div>
-            <button class="tab-inactive" data-navBtnCell="Door & Usher" id="tabDoorandUsher">
-                <i class="fa-solid fa-door-open"></i>
-                <div style="width: 20px;" class="spacer"></div>
-            </button>
-            <button class="tab-inactive" data-navBtnCell="Cleaning" id="tabCleaning">
-                <i class="fa-solid fa-broom"></i>
-                <div style="width: 20px;" class="spacer"></div>
-            </button>
+            <ul>
+                <li>
+                    <a href="sectionHome" class="tab-active" data-navBtnCell="Home">
+                        <i class="fa-solid fa-house"></i>
+                        <div style="width: 20px;" class="spacer"></div>
+                    </a>
+                </li>
+                <div class="seperator"></div>
+                <li>
+                    <a id="adminOnlyTab1" href="sectionDashboard" class="tab-inactive" data-navBtnCell="Dashboard">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div style="width: 20px;" class="spacer"></div>
+                    </a>
+                </li>
+                <li>
+                    <a id="adminOnlyTab2" href="sectionUserLogs" class="tab-inactive" data-navBtnCell="User Logs">
+                        <i class="fa-solid fa-server"></i>
+                        <div style="width: 20px;" class="spacer"></div>
+                    </a>
+                </li>
+                <div id="adminOnlyTab3" class="seperator"></div>
+                <li>
+                    <a href="sectionDoorandUsher" class="tab-inactive" data-navBtnCell="Door & Usher">
+                        <i class="fa-solid fa-door-open"></i>
+                        <div style="width: 20px;" class="spacer"></div>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="sectionCleaning" class="tab-inactive" data-navBtnCell="Cleaning">
+                        <i class="fa-solid fa-broom"></i>
+                        <div style="width: 20px;" class="spacer"></div>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 

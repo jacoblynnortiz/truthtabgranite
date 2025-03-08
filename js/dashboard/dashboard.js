@@ -3,9 +3,9 @@ let email = document.getElementById('userEmail');
 let profilePicture = document.getElementById('profilePicture');
 let profilePictureMenu = document.getElementById('profilePictureMenu');
 let adminBadge = document.getElementById('adminBadge');
-let tabDashboard = document.getElementById('tabDashboard');
-let tabUserLogs = document.getElementById('tabUserLogs');
-let adminOnlyTab = document.getElementById('adminOnlyTab');
+let adminOnlyTab1 = document.getElementById('adminOnlyTab1');
+let adminOnlyTab2 = document.getElementById('adminOnlyTab2');
+let adminOnlyTab3 = document.getElementById('adminOnlyTab3');
 let showMenu = document.getElementById('show-menu');
 let menuClosed = false;
 let ls = localStorage;
@@ -52,14 +52,14 @@ $.getJSON('https://sheetdb.io/api/v1/la8vm18y8v16z', function (member_details) {
 
                 if (adminStatus == 0) {
                     adminBadge.style.display = 'none';
-                    tabDashboard.style.display = 'none';
-                    tabUserLogs.style.display = 'none';
-                    adminOnlyTab.style.display = 'none';
+                    adminOnlyTab1.style.display = 'none';
+                    adminOnlyTab2.style.display = 'none';
+                    adminOnlyTab3.style.display = 'none';
                 } else if (adminStatus == 1) {
                     adminBadge.style.display = 'flex';
-                    tabDashboard.style.display = 'flex';
-                    tabUserLogs.style.display = 'flex';
-                    adminOnlyTab.style.display = 'flex';
+                    adminOnlyTab1.style.display = 'flex';
+                    adminOnlyTab2.style.display = 'flex';
+                    adminOnlyTab3.style.display = 'flex';
                 }
             }
         }

@@ -223,8 +223,8 @@
   overflow-x: hidden;
 }
 
-#adminOnlyTabs {
-  width: 100%;
+#adminOnlyTab3 {
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,11 +234,16 @@
 .seperator {
   width: 60%;
   height: 1px;
-  margin: 15px 0;
+  margin: 15px auto;
   background-color: #333;
 }
 
-.tab-links-section button {
+.tab-links-section ul {
+  width: 100%;
+  max-width: 220px;
+}
+
+.tab-links-section a {
   width: 100%;
   max-width: 220px;
   height: 60px;
@@ -246,7 +251,7 @@
   cursor: pointer;
   border: none;
   outline: none;
-  margin: 2px 0;
+  margin: 4px 0;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: left;
@@ -258,11 +263,11 @@
   position: relative;
 }
 
-.tab-links-section button::after {
+.tab-links-section a::after {
   content: attr(data-navBtnCell);
 }
 
-.tab-links-section button:hover {
+.tab-links-section a:hover {
   background-color: #3c7cb970;
 }
 
@@ -302,7 +307,14 @@
     max-width: 80px;
   }
 
-  .tab-links-section button {
+  .tab-links-section ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+  .tab-links-section a {
     width: 50px;
     height: 50px;
     justify-content: center;
@@ -310,7 +322,7 @@
     position: relative;
   }
 
-  .tab-links-section button::after {
+  .tab-links-section a::after {
     display: none;
   }
 }
@@ -350,11 +362,23 @@
     flex-direction: row;
   }
 
-  #adminOnlyTabs {
+  #adminOnlyTab3 {
     flex-direction: row;
   }
 
-  .tab-links-section button {
+  .tab-links-section ul {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.tab-links-section ul li {
+    width: 100%;
+}
+
+  .tab-links-section a {
     width: 100%;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -366,7 +390,7 @@
     color: var(--accent-color) !important;
   }
 
-  .tab-links-section button:hover {
+  .tab-links-section a:hover {
     background-color: transparent;
     color: #ccc;
   }
@@ -375,7 +399,7 @@
     display: none;
   }
 
-  .seperator, .spacer {
+  .seperator, .spacer, #adminOnlyTab3 {
     display: none;
     opacity: 0;
     width: 0;

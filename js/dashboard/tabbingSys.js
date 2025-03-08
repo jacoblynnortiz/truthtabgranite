@@ -1,157 +1,75 @@
 let sectionTitle = document.getElementById('sectionTitle');
 
-let tabHome = document.getElementById('tabHome');
+const tabSectionsContainer = document.querySelector('.content');
 
-// let tabDashboard = document.getElementById('tabDashboard');
-// let tabUserLogs = document.getElementById('tabUserLogs');
+const tabsContainer = document.querySelector('.tab-links-section');
+const tabsList = tabsContainer.querySelector('ul');
+const tabButtons = tabsList.querySelectorAll('a');
+const tabSections = tabSectionsContainer.querySelectorAll('.tab-section');
 
-let tabDoorandUsher = document.getElementById('tabDoorandUsher');
-let tabCleaning = document.getElementById('tabCleaning');
+sectionTitle.innerText = 'Home';
 
-let sectionHome = document.getElementById('sectionHome');
+tabButtons.forEach((tab, index) => {
+    if (index === 0) {
+        tabSections[index].classList.add('tab-section-active');
+        tabSections[index].classList.remove('tab-section-inactive');
+    } else {
+        tabSections[index].classList.add('tab-section-inactive');
+        tabSections[index].classList.remove('tab-section-active');
+    }
+});
 
-let sectionDashboard = document.getElementById('sectionDashboard');
-let sectionUserLogs = document.getElementById('sectionUserLogs');
+tabsContainer.addEventListener('click', (e) => {
+    const clickedTab = e.target.closest("a");
 
-let sectionDoorandUser = document.getElementById('sectionDoorandUsher');
-let sectionCleaning = document.getElementById('sectionCleaning');
+    if (!clickedTab) return;
 
-tabHome.addEventListener('click', activeTabHome);
+    e.preventDefault();
 
-tabDashboard.addEventListener('click', activeTabDashboard);
-tabUserLogs.addEventListener('click', activeTabUserLogs);
+    // determins which tab you clicked to reveal said tab and hide the others
 
-tabDoorandUsher.addEventListener('click', activeTabDoorandUsher);
-tabCleaning.addEventListener('click', activeTabCleaning);
+    const activeSectionId = clickedTab.getAttribute("href");
+    const activeSection = document.getElementById(activeSectionId);
+    tabSections.forEach((section) => {
+        section.classList.add('tab-section-inactive');
+        section.classList.remove('tab-section-active');
+    });
+    activeSection.classList.remove('tab-section-inactive');
+    activeSection.classList.add('tab-section-active');
 
-activeTabHome();
+    // changes the name of the tab to the active tab
 
-function activeTabHome() {
-    sectionTitle.innerText = 'Home';
+    switch (activeSectionId) {
+        case "sectionHome":
+            sectionTitle.innerText = 'Home';
+            break;
+        case "sectionDashboard":
+            sectionTitle.innerText = 'Dashboard';
+            break;
+        case "sectionUserLogs":
+            sectionTitle.innerText = 'User Logs';
+            break;
+        case "sectionDoorandUsher":
+            sectionTitle.innerText = 'Door & Usher';
+            break;
+        case "sectionCleaning":
+            sectionTitle.innerText = 'Cleaning';
+            break;
+    }
 
-    tabHome.classList.remove('tab-inactive');
-    tabHome.classList.add('tab-active');
-    tabDashboard.classList.remove('tab-active');
-    tabDashboard.classList.add('tab-inactive');
-    tabUserLogs.classList.remove('tab-active');
-    tabUserLogs.classList.add('tab-inactive');
-    tabDoorandUsher.classList.remove('tab-active');
-    tabDoorandUsher.classList.add('tab-inactive');
-    tabCleaning.classList.remove('tab-active');
-    tabCleaning.classList.add('tab-inactive');
-    
-    sectionHome.classList.remove('tab-section-inactive');
-    sectionHome.classList.add('tab-section-active');
-    sectionDashboard.classList.add('tab-section-inactive');
-    sectionDashboard.classList.remove('tab-section-active');
-    sectionUserLogs.classList.remove('tab-section-active');
-    sectionUserLogs.classList.add('tab-section-inactive');
-    sectionDoorandUser.classList.add('tab-section-inactive');
-    sectionDoorandUser.classList.remove('tab-section-active');
-    sectionCleaning.classList.remove('tab-section-active');
-    sectionCleaning.classList.add('tab-section-inactive');
-}
+    // note
 
-function activeTabDashboard() {
-    sectionTitle.innerText = 'Dashboard';
+    let allTabs = tabsList.querySelectorAll("a");
 
-    tabHome.classList.remove('tab-active');
-    tabHome.classList.add('tab-inactive');
-    tabDashboard.classList.remove('tab-inactive');
-    tabDashboard.classList.add('tab-active');
-    tabUserLogs.classList.remove('tab-active');
-    tabUserLogs.classList.add('tab-inactive');
-    tabDoorandUsher.classList.remove('tab-active');
-    tabDoorandUsher.classList.add('tab-inactive');
-    tabCleaning.classList.remove('tab-active');
-    tabCleaning.classList.add('tab-inactive');
-    
-    sectionHome.classList.remove('tab-section-active');
-    sectionHome.classList.add('tab-section-inactive');
-    sectionDashboard.classList.add('tab-section-active');
-    sectionDashboard.classList.remove('tab-section-inactive');
-    sectionUserLogs.classList.remove('tab-section-active');
-    sectionUserLogs.classList.add('tab-section-inactive');
-    sectionDoorandUser.classList.add('tab-section-inactive');
-    sectionDoorandUser.classList.remove('tab-section-active');
-    sectionCleaning.classList.remove('tab-section-active');
-    sectionCleaning.classList.add('tab-section-inactive');
-}
+    for (let tab = 0; tab < allTabs.length; tab++) {
+        allTabs[tab].classList.remove('tab-active');;
+        allTabs[tab].classList.add('tab-inactive');;
+    }
 
-function activeTabUserLogs() {
-    sectionTitle.innerText = 'User Logs';
+    clickedTab.classList.remove('tab-inactive');
+    clickedTab.classList.add('tab-active');
+});
 
-    tabHome.classList.remove('tab-active');
-    tabHome.classList.add('tab-inactive');
-    tabDashboard.classList.remove('tab-active');
-    tabDashboard.classList.add('tab-inactive');
-    tabUserLogs.classList.remove('tab-inactive');
-    tabUserLogs.classList.add('tab-active');
-    tabDoorandUsher.classList.remove('tab-active');
-    tabDoorandUsher.classList.add('tab-inactive');
-    tabCleaning.classList.remove('tab-active');
-    tabCleaning.classList.add('tab-inactive');
-    
-    sectionHome.classList.remove('tab-section-active');
-    sectionHome.classList.add('tab-section-inactive');
-    sectionDashboard.classList.add('tab-section-inactive');
-    sectionDashboard.classList.remove('tab-section-active');
-    sectionUserLogs.classList.remove('tab-section-inactive');
-    sectionUserLogs.classList.add('tab-section-active');
-    sectionDoorandUser.classList.add('tab-section-inactive');
-    sectionDoorandUser.classList.remove('tab-section-active');
-    sectionCleaning.classList.remove('tab-section-active');
-    sectionCleaning.classList.add('tab-section-inactive');
-}
-
-function activeTabDoorandUsher() {
-    sectionTitle.innerText = 'Door & Usher';
-
-    tabHome.classList.remove('tab-active');
-    tabHome.classList.add('tab-inactive');
-    tabDashboard.classList.remove('tab-active');
-    tabDashboard.classList.add('tab-inactive');
-    tabUserLogs.classList.remove('tab-active');
-    tabUserLogs.classList.add('tab-inactive');
-    tabDoorandUsher.classList.remove('tab-inactive');
-    tabDoorandUsher.classList.add('tab-active');
-    tabCleaning.classList.remove('tab-active');
-    tabCleaning.classList.add('tab-inactive');
-    
-    sectionHome.classList.remove('tab-section-active');
-    sectionHome.classList.add('tab-section-inactive');
-    sectionDashboard.classList.add('tab-section-inactive');
-    sectionDashboard.classList.remove('tab-section-active');
-    sectionUserLogs.classList.remove('tab-section-active');
-    sectionUserLogs.classList.add('tab-section-inactive');
-    sectionDoorandUser.classList.add('tab-section-active');
-    sectionDoorandUser.classList.remove('tab-section-inactive');
-    sectionCleaning.classList.remove('tab-section-active');
-    sectionCleaning.classList.add('tab-section-inactive');
-}
-
-function activeTabCleaning() {
-    sectionTitle.innerText = 'Cleaning';
-
-    tabHome.classList.remove('tab-active');
-    tabHome.classList.add('tab-inactive');
-    tabDashboard.classList.remove('tab-active');
-    tabDashboard.classList.add('tab-inactive');
-    tabUserLogs.classList.remove('tab-active');
-    tabUserLogs.classList.add('tab-inactive');
-    tabDoorandUsher.classList.remove('tab-active');
-    tabDoorandUsher.classList.add('tab-inactive');
-    tabCleaning.classList.remove('tab-inactive');
-    tabCleaning.classList.add('tab-active');
-    
-    sectionHome.classList.remove('tab-section-active');
-    sectionHome.classList.add('tab-section-inactive');
-    sectionDashboard.classList.add('tab-section-inactive');
-    sectionDashboard.classList.remove('tab-section-active');
-    sectionUserLogs.classList.remove('tab-section-active');
-    sectionUserLogs.classList.add('tab-section-inactive');
-    sectionDoorandUser.classList.add('tab-section-inactive');
-    sectionDoorandUser.classList.remove('tab-section-active');
-    sectionCleaning.classList.remove('tab-section-inactive');
-    sectionCleaning.classList.add('tab-section-active');
-}
+tabsContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+});

@@ -1,0 +1,381 @@
+.header {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #131313;
+  border-bottom: 1px solid #333;
+  padding-left: calc(250px + 30px);
+  padding-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+}
+
+.header-section {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-section h1 {
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.header-section:nth-child(2) {
+  justify-content: flex-end;
+}
+
+.header-section .profile-picture {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.menu {
+  width: 100%;
+  max-width: 350px;
+  min-height: 100px;
+  border-radius: 18px;
+  background-color: #131313;
+  border: 1px solid #333;
+  position: absolute;
+  top: 60px;
+  right: -350px;
+  transition: .3s;
+  opacity: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.header-section .profile-picture:hover~.menu {
+  animation: openMenu .15s forwards linear;
+}
+
+.menu:hover {
+  opacity: 1;
+  right: 30px;
+}
+
+@keyframes openMenu {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    right: 30px;
+  }
+}
+
+.manage-account {
+  width: 100%;
+  min-height: 100px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+.manage-account .profile-picture-menu {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid var(--accent-color);
+  margin-right: 15px;
+}
+
+.account-info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #fff;
+}
+
+.account-info #userFullName {
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+
+.account-info #userEmail {
+  font-size: .9rem;
+}
+
+.account-info h3 {
+  padding-top: 10px;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+}
+
+.menu-actions {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.menu a {
+  width: 100%;
+  display: block;
+}
+
+.menu button {
+  width: 100%;
+  height: 45px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin: 2px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 15px;
+  transition: .3s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.menu button:hover {
+  background-color: #33333370;
+}
+
+.signout-btn {
+  color: rgb(240, 97, 109) !important;
+}
+
+.side-nav {
+  width: 100%;
+  max-width: 250px;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #131313;
+  border-right: 1px solid #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.logo-section {
+  width: 100%;
+  height: 80px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+}
+
+.version-tag {
+  min-width: 45px;
+  height: 45px;
+  border: 1px solid #333;
+  position: absolute;
+  top: calc(50% - 22.5px);
+  left: 75px;
+  border-radius: 18px;
+  background-color: #131313;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 15px;
+  color: #fff;
+}
+
+.tab-links-section {
+  width: 100%;
+  min-height: 500px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#adminOnlyTabs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.seperator {
+  width: 60%;
+  height: 1px;
+  margin: 15px 0;
+  background-color: #333;
+}
+
+.tab-links-section button {
+  width: 100%;
+  max-width: 220px;
+  height: 60px;
+  border-radius: 28px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin: 2px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 15px;
+  transition: .3s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.tab-links-section button::after {
+  content: attr(data-navBtnCell);
+}
+
+.tab-links-section button:hover {
+  background-color: #3c7cb970;
+}
+
+.tab-active {
+  background-color: #3c7cb970;
+  color: var(--accent-color);
+}
+
+.tab-inactive {
+  background-color: transparent;
+  color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+
+  .header {
+    padding-left: calc(80px + 30px);
+  }
+
+  .header-section:nth-child(2) {
+    width: 100px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo-section {
+    justify-content: center;
+  }
+
+  .version-tag {
+    display: none;
+  }
+
+  .side-nav {
+    max-width: 80px;
+  }
+
+  .tab-links-section button {
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    padding: 15px;
+    position: relative;
+  }
+
+  .tab-links-section button::after {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content {
+    padding-left: 15px;
+  }
+
+  .header {
+    padding: 0 30px;
+  }
+
+  .side-nav {
+    max-width: 100%;
+    height: 70px;
+    top: unset;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    border: none;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tab-links-section {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  #adminOnlyTabs {
+    flex-direction: row;
+  }
+
+  .tab-links-section button {
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin: 0 2.5px;
+  }
+
+  .tab-active:hover {
+    background-color: #3c7cb970 !important;
+    color: var(--accent-color) !important;
+  }
+
+  .tab-links-section button:hover {
+    background-color: transparent;
+    color: #ccc;
+  }
+
+  .logo-section {
+    display: none;
+  }
+
+  .seperator, .spacer {
+    display: none;
+    opacity: 0;
+    width: 0;
+    margin: 0;
+  }
+  
+}

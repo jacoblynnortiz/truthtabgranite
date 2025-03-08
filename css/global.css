@@ -1,0 +1,81 @@
+/* Global Variables */
+
+:root {
+
+    /* Website Color Scheme */
+	
+	--primary-color: #333;
+    --secondary-color: #171c24;
+    --accent-color: #3c7cb9;
+    --light: #fff;
+    --dark: #000;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	line-height: 1.4;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	overflow-x: hidden;
+	animation: fadeInAnimation ease 1s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	overflow-x: hidden;
+	/* off white background shows on sides of content if screen is over 1080p */
+    background-color: #FAF9F6;
+}
+
+/* main container for content of page */
+
+.content {
+    padding: 15px;
+    padding-top: 100px;
+    width: 100%;
+    max-width: 1920px;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    margin: 0 auto;
+}
+
+/* fade in animation for page */
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #2c2f33;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #171515;
+	border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #171515;
+}

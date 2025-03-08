@@ -1,0 +1,11 @@
+[
+    {
+        "commandName": "/op"
+    },
+    {
+        "commandName": "/deop"
+    },
+    {
+        "commandName": "/list"
+    }
+]

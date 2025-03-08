@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="res/images/dashboard-logo.png">
+    <link rel='stylesheet' type='text/css' href='css/global.css'>
+    <link rel='stylesheet' type='text/css' href='css/dashboard/dashboard_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/dashboard/settings_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/dashboard/dashboard_navigation_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/dashboard/settings_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/dashboard/change_schedule_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/dashboard/create_account_styles.css'>
+    <link rel='stylesheet' type='text/css' href='css/dashboard/console_styles.css'>
+</head>
+
+<body>
+
+    <!-- Session Expired -->
+
+    <div id="sessionExpired">
+        <div class="session-expired-box">
+            <h3>Session Expired</h3>
+            <p>Please login again.</p>
+            <a href="login">OK</a>
+        </div>
+    </div>
+
+    <!-- delete door greeter and cleaning schedules -->
+
+    <div id="deleteDoorConfirmation">
+        <h2>Are you sure you want to delete all door & usher schedules?</h2>
+        <div class="confirmation-buttons">
+            <button id="cancelDoorScheduleDelete">Cancel</i></button>
+            <form style="width: 100%" action="https://sheetdb.io/api/v1/9xbs0d16nkjhc/all" method="Delete"
+                id="sheetdb-form-4">
+                <button id="deleteDoorConfirm" name="Post">Confirm</i></button>
+            </form>
+        </div>
+    </div>
+    <div id="deleteCleaningConfirmation">
+        <h2>Are you sure you want to delete all cleaning schedules?</h2>
+        <div class="confirmation-buttons">
+            <button id="cancelCleaningScheduleDelete">Cancel</i></button>
+            <form style="width: 100%" action="https://sheetdb.io/api/v1/r30p0zrj31ui1/all" method="Delete"
+                id="sheetdb-form-6">
+                <button id="deleteCleaningConfirm" name="Post">Confirm</i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Welcome back message -->
+
+    <div class="welcome-back">
+        <h2>Welcome back, <span id="welcomeUser">undefined user</span></h2>
+    </div>
+
+    <div class="settings-overlay" id="settingsMenu">
+        <div class="settings-container">
+            <button class="backup" id="backupSettingsBtn"><i class="fa-solid fa-arrow-left"></i></button>
+            <h2>Settings</h2>
+            <div class="settings-options">
+                <div class="update-profile-info">
+                    <h3>Update Profile Information</h3>
+                    <form style="width: 100%;">
+                        <div class="profile-pic-preview">
+                            <img src="#" id="settingsUpdateProfilePicture">
+                            <div class="inputBox">
+                                <input required type="text" name="data[img_src]" id="settingsUpdateProfilePic">
+                                <span id="settingsUpdateProfilePicPreview">Profile Picture URL (.jpg)</span>
+                            </div>
+                        </div>
+                        <div class="inputBox">
+                            <input required type="text" name="data[img_src]" id="settingsUpdateName">
+                            <span id="settingsUpdateNamePreview">Full Name (name undefined)</span>
+                        </div>
+                        <div class="inputBox">
+                            <input required type="text" name="data[img_src]" id="settingsUpdateUsername">
+                            <span id="settingsUpdateUsernamePreview">Username (user.123456789)</span>
+                        </div>
+                        <div class="inputBox">
+                            <input required type="text" name="data[img_src]" id="settingsUpdateEmail">
+                            <span id="settingsUpdateEmailPreview">Email (info@truthtabgranite.site)</span>
+                        </div>
+                        <div class="inputBox">
+                            <input required type="text" name="data[img_src]" id="settingsUpdatePassword">
+                            <span id="settingsUpdatePasswordPreview">Password (********)</span>
+                        </div>
+                        <button type="submit" onclick="update(event);">Save</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header-section">
+            <h1 id="sectionTitle">Home</h1>
+        </div>
+        <div class="header-section">
+            <div id="profilePicture" class="profile-picture">
+                <img id="adminBadge" src="res/images/admin-badge.png"
+                    style="display: none; position: absolute; bottom: 10px; right: 20px; width: 20px; height: 20px;">
+            </div>
+            <div class="menu">
+                <a href="tel:3143309388">
+                    <div class="manage-account">
+                        <div id="profilePictureMenu" class="profile-picture-menu"></div>
+                        <div class="account-info">
+                            <span id="userFullName">Full Name</span>
+                            <span id="userEmail">username@gmail.com</span>
+                            <h3>Manage Account</h3>
+                        </div>
+                    </div>
+                </a>
+                <div class="menu-actions">
+                    <button id="settingsBtn" title="Settings"><i class="fa-solid fa-gear"></i>
+                        <div style="width: 20px;"></div>Settings
+                    </button>
+                    <a href="login.html">
+                        <button title="Signout" class="signout-btn"><i class="fa-solid fa-right-from-bracket"></i>
+                            <div style="width: 20px;"></div>Sign out
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="side-nav">
+        <div class="logo-section">
+            <a href="#"><img class="logo" src="res/images/dashboard-logo.png"></a>
+            <span class="version-tag">BETA</span>
+        </div>
+        <div class="tab-links-section">
+            <button class="tab-active" data-navBtnCell="Home" id="tabHome">
+                <i class="fa-solid fa-house"></i>
+                <div style="width: 20px;" class="spacer"></div>
+            </button>
+            <div class="seperator"></div>
+            <button class="tab-inactive" data-navBtnCell="Dashboard" id="tabDashboard">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div style="width: 20px;" class="spacer"></div>
+            </button>
+            <button class="tab-inactive" data-navBtnCell="User Logs" id="tabUserLogs">
+                <i class="fa-solid fa-server"></i>
+                <div style="width: 20px;" class="spacer"></div>
+            </button>
+            <div id="adminOnlyTab" class="seperator"></div>
+            <button class="tab-inactive" data-navBtnCell="Door & Usher" id="tabDoorandUsher">
+                <i class="fa-solid fa-door-open"></i>
+                <div style="width: 20px;" class="spacer"></div>
+            </button>
+            <button class="tab-inactive" data-navBtnCell="Cleaning" id="tabCleaning">
+                <i class="fa-solid fa-broom"></i>
+                <div style="width: 20px;" class="spacer"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- dashboard -->
+
+    <div class="content">
+
+        <!-- Note from development team  -->
+
+        <div class="tab-section" id="sectionHome">
+            <div class="note priority-low">
+                <h2><i class="fa-regular fa-face-smile"></i>
+                    <div style="width: 15px;"></div>Note from development team:
+                </h2>
+                <p>
+                    UI Revamp finished for the new and improved admin panel/member panel. Also both panels have
+                    officially been merged into one dashboard for simplicity, also if you account is set to admiin you
+                    will see more tabs you can go to.
+                    <br>
+                    <br>
+                    The UI update for the website is pretty much complete now, new features for the sermon upload
+                    feature
+                    having the input field for a discription and the speakers name.<br><br>Create Account Feature: You
+                    can
+                    now create accounts on your own (admins help needed, create account feature is on the admin
+                    panel)<br>Forgot Password: this feature will allow a user to enter their email asociated with their
+                    account and change their password on there own, if you want an email setup with your account,
+                    contact me
+                    at (314) 330-9388<br>Settings: A brand new menu to edit any information with your
+                    profile!<br>Tabbing System: New Tab System for different sperate sections of the Admin/Member
+                    Panel<br>Console: The console is a brand new feature that will allow an admin to update
+                    permissions of users, see all members/other admins, etc.<br>More coming soon!
+                </p>
+            </div>
+        </div>
+        <div class="tab-section" id="sectionDashboard">
+            <div class="add-post-row">
+                <div class="add-post-container">
+                    <div class="add-post" style="max-height: 1600px;">
+                        <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px">
+                            <h2 style="font-size: 1.6rem;">Create Post</h2>
+                            <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                            <div class="help-info-container">
+                                <ul>
+                                    <li>
+                                        <p><strong>Post Title:</strong> for the post title, please keep it under 15-20
+                                            characters long</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Image URL:</strong> for the posts picture, please keep it 16:9 or 4:3
+                                            ratio only</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Message:</strong> for the posts message, no limit on how many words
+                                            you
+                                            can have</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form action="https://sheetdb.io/api/v1/sn4bwy4h5v3t1" method="post" id="sheetdb-form-1">
+                            <select id="postLangChanger">
+                                <option value="english">English</option>
+                                <option value="español">Español</option>
+                            </select>
+                            <div class="inputBox">
+                                <input required type="text" name="data[post_title]">
+                                <span>Post Title</span>
+                            </div>
+                            <div class="inputBox">
+                                <input required id="imgSrcInput" type="text" name="data[img_src]">
+                                <span>Image URL</span>
+                            </div>
+                            <img id="previewPostImage" src="">
+                            <input id="datePostedContainer" style="opacity: 0; width: 0; height: 0;"
+                                name="data[post_date]">
+                            <div class="inputBox">
+                                <textarea required name="data[post_txt]"></textarea>
+                                <span>Type your Message...</span>
+                            </div>
+                            <input type="submit" name="Post" value="Post">
+                        </form>
+                    </div>
+                </div>
+                <div class="add-post-container">
+                    <div class="add-post-container">
+                        <div class="add-post">
+                            <div class="schedule-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px"">
+                                <h2 style=" font-size: 1.6rem;">Upload Sermon</h2>
+                                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                                <div class="help-info-container">
+                                    <ul>
+                                        <li>
+                                            <p><strong>Sermon Title:</strong> for the sermons title</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Sermon Speaker:</strong> for the speaker of the sermon</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Sermon Date:</strong> for the sermon date, it is auto generated
+                                                but
+                                                can be changed if needed.</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Sermon iframe:</strong> embed link to add live stream from
+                                                facebook
+                                                or youtube</p>
+                                        </li>
+                                        <li>
+                                            <p><strong>Sermon Discription:</strong> for a short discription of the
+                                                sermon,
+                                                if you dont know what to write or nothing is available that is fine</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <form action="https://sheetdb.io/api/v1/1f0b8g95rfrlf" method="post" id="sheetdb-form-2">
+                                <select id="sermonLangChanger">
+                                    <option value="english">English</option>
+                                    <option value="español">Español</option>
+                                </select>
+                                <div class="inputBox">
+                                    <input required type="text" name="data[sermon_title]">
+                                    <span>Sermon Title</span>
+                                </div>
+                                <div class="sermon-input-row">
+                                    <div class="inputBox" style="margin-right: 15px;">
+                                        <input required type="text" name="data[sermon_speaker]">
+                                        <span>Speaker</span>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input required type="text" name="data[sermon_date]"
+                                            id="datePostedSermonContainer">
+                                        <span>Date</span>
+                                    </div>
+                                </div>
+                                <div class="inputBox">
+                                    <input required type="text" name="data[sermon_src]">
+                                    <span>iframe goes here...</span>
+                                </div>
+                                <div class="inputBox">
+                                    <textarea required maxlength="400" name="data[sermon_discription]"></textarea>
+                                    <span>Type Discription...</span>
+                                </div>
+                                <input required type="text" style="width: 0; height: 0; opacity: 0;"
+                                    value="https://www.facebook.com/TruthTabGranite" name="data[sermon_link]">
+                                <input type="submit" name="Post" value="Upload">
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="change-schedule-max">
+                    <div class="change-schedules-box">
+                        <div class="tabs">
+                            <button class="tab-btn" id="doorTab">Door & Usher</button>
+                            <button class="tab-btn" id="cleanTab">Cleaning</button>
+                        </div>
+                        <div class="change-schedule" id="doorSchedule">
+                            <form action="https://sheetdb.io/api/v1/9xbs0d16nkjhc" method="delete" id="sheetdb-form-3">
+                                <div class="schedule-heading"
+                                    style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
+                                    <h2 style="font-size: 1.6rem;">Create Schedule</h2>
+                                    <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                                    <div class="help-info-container">
+                                        <ul>
+                                            <li>
+                                                <p><strong>Date:</strong> allows people to see what the schedules date
+                                                    is
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><strong>Morning & Evening Service Schedule:</strong> have morning
+                                                    greeter
+                                                    and evening greeter in text box seperated with a | symbol</p>
+                                            </li>
+                                            <li>
+                                                <p><strong>Delete Button:</strong> This button opens a confirm popup to
+                                                    delete all the schedules, please do not delete them unless it is the
+                                                    end
+                                                    of the quarter</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="schedule-row1">
+                                    <div class="inputBox">
+                                        <input type="text" name="data[date]" required>
+                                        <span>Date</span>
+                                    </div>
+                                </div>
+                                <div class="schedule-row2">
+                                    <div class="inputBox" style="margin-right: 15px;">
+                                        <input type="text" name="data[door1]" required>
+                                        <span>Door #1</span>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" name="data[door2]" required>
+                                        <span>Door #2</span>
+                                    </div>
+                                </div>
+                                <div class="schedule-row3">
+                                    <div class="inputBox" style="margin-right: 15px;">
+                                        <input type="text" name="data[door3]" required>
+                                        <span>Door #3</span>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" name="data[usher]" required>
+                                        <span>Usher</span>
+                                    </div>
+                                </div>
+                                <input name="Post" type="submit" value="Create Schedule">
+                            </form>
+                            <div class="delete-all">
+                                <button id="requestDoorDelete"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="change-schedule" id="cleaningSchedule">
+                            <form action="https://sheetdb.io/api/v1/r30p0zrj31ui1" method="delete" id="sheetdb-form-5">
+                                <div class="schedule-heading"
+                                    style="margin: 0 auto; margin-bottom: 7.5px; padding-top: 0; padding-bottom: 15px">
+                                    <h2 style="font-size: 1.6rem;">Create Schedule</h2>
+                                    <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                                    <div class="help-info-container">
+                                        <ul>
+                                            <li>
+                                                <p><strong>Date:</strong> allows people to see what the schedules date
+                                                    is
+                                                </p>
+                                            </li>
+                                            <li>
+                                                <p><strong>Cleaner Boxes:</strong> positions for cleaner names or family
+                                                    names, you do not have to fill in all boxes if not needed</p>
+                                            </li>
+                                            <li>
+                                                <p><strong>Delete Button:</strong> This button opens a confirm popup to
+                                                    delete all the schedules, please do not delete them unless it is the
+                                                    end
+                                                    of the quarter</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="schedule-row1">
+                                    <div class="inputBox" style="margin-right: 15px;">
+                                        <input type="text" name="data[date]" required>
+                                        <span>Date</span>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" name="data[cleaner1]" required>
+                                        <span>Cleaner #1</span>
+                                    </div>
+                                </div>
+                                <div class="schedule-row2">
+                                    <div class="inputBox" style="margin-right: 15px;">
+                                        <input type="text" name="data[cleaner3]" required>
+                                        <span>Cleaner #3</span>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" name="data[cleaner4]" required>
+                                        <span>Cleaner #4</span>
+                                    </div>
+                                </div>
+                                <input name="Post" type="submit" value="Create Schedule">
+                            </form>
+                            <div class="delete-all">
+                                <button id="requestCleaningDelete"><i class="fa-solid fa-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="create-acct-console">
+                <div class="create-account-container">
+                    <div class="create-account-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px">
+                        <h2 style=" font-size: 1.6rem; display: flex; justify-content: center; align-items: center;">
+                            Create Account
+                        </h2>
+                        <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                        <div class="help-info-container">
+                            <ul>
+                                <li>
+                                    <p><strong>Profile Picture URL:</strong> for the user profile picture, only use
+                                        image
+                                        URLs</p>
+                                </li>
+                                <li>
+                                    <p><strong>Full Name:</strong> for first and last name of user</p>
+                                </li>
+                                <li>
+                                    <p><strong>Email:</strong> for the user's email they want asociated with the account
+                                    </p>
+                                </li>
+                                <li>
+                                    <p><strong>Username:</strong> for the user's username</p>
+                                </li>
+                                <li>
+                                    <p><strong>Password:</strong> for the users password</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <form action="https://sheetdb.io/api/v1/la8vm18y8v16z" method="post" id="sheetdb-form-7">
+                        <div class="create-account-row">
+                            <img id="createAcctProfile"
+                                src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
+                                class="create-profile-pic">
+                            <div class="inputBox">
+                                <input type="text" name="data[profilePicture]" id="createAcctProfileInput" required>
+                                <span>Profile Picture URL</span>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="data[name]" required>
+                                <span>Full name</span>
+                            </div>
+                            <div class="inputBox">
+                                <input type="email" name="data[email]" required>
+                                <span>Email</span>
+                            </div>
+                            <div class="inputBox">
+                                <input type="text" name="data[username]" required>
+                                <span>Username</span>
+                            </div>
+                            <div class="inputBox">
+                                <input type="password" name="data[password]" min="8" required>
+                                <span>Password</span>
+                            </div>
+                            <input type="text" name="data[adminStatus]" required value="0"
+                                style="width: 0; height: 0; opacity: 0;">
+                            <input type="text" name="data[uuid]" required value="INCREMENT"
+                                style="width: 0; height: 0; opacity: 0;">
+                        </div>
+                        <input name="Post" type="submit" value="Create Account">
+                    </form>
+                </div>
+                <div class="console">
+                    <div class="console-heading" style="margin-bottom: 0; padding: 0; padding-bottom: 15px">
+                        <h2 style=" font-size: 1.6rem; display: flex; justify-content: center; align-items: center;">
+                            Console <span class="version-tag"
+                                style="font-weight: 500; font-size: 1.2rem; margin-left: 10px; position: unset;">Coming
+                                soon</span></h2>
+                        <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                        <div class="help-info-container">
+                            <ul>
+                                <h3 style="padding: 7.5px;">Commands:</h3>
+                                <li>
+                                    <p><strong>/op:</strong> Makes user an admin</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="console-window">
+                        <ul id="consoleWindow"></ul>
+                    </div>
+                    <div class="inputBox">
+                        <input disabled id="consoleInput" style="height: 45px; width: 100%;" type="text" required>
+                        <span>Type Commands! (ex. "/op {username}")</span>
+                    </div>
+                    <button id="consoleEnter" disabled type="submit">Send</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab-section" id="sectionUserLogs">
+            <table class="userlogs" id="userLogsTable"></table>
+        </div>
+        <div class="tab-section" id="sectionDoorandUsher">
+            <div class="schedule-heading">
+                <h2 id="quaterHeader" style="font-size: 1.8rem;">QT null - Door & Usher Schedule:</h2>
+                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                <div class="help-info-container">
+                    <ul>
+                        <li>
+                            <p><strong>Yellow Highlight:</strong> indicates todays or the next schedule</p>
+                        </li>
+                        <li>
+                            <p><strong>John Smith | John Smith:</strong> 2 names on 1 position means the 1st name is for
+                                morning and 2nd name is for evening</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 id="monthHeader1" style="font-size: 1.5rem; padding: 5px 0;">Month 1:</h2>
+            <table id="monthTable1"></table>
+            <h2 id="monthHeader2" style="font-size: 1.5rem; padding: 5px 0;">Month 2:</h2>
+            <table id="monthTable2"></table>
+            <h2 id="monthHeader3" style="font-size: 1.5rem; padding: 5px 0;">Month 3:</h2>
+            <table id="monthTable3"></table>
+            <a href="images/usherdoorguide.pdf" class="ushersdoorguide">Ushers and Door Greeting Guide</a>
+        </div>
+        <div class="tab-section" id="sectionCleaning">
+            <div class="schedule-heading">
+                <h2 id="quaterHeaderClean" style="font-size: 1.8rem;">QT null - Cleaning Schedule:</h2>
+                <button class="help-info-btn"><i class="fa-solid fa-circle-question"></i></button>
+                <div class="help-info-container">
+                    <ul>
+                        <li>
+                            <p><strong>Yellow Highlight:</strong> indicates todays or the next schedule</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 id="monthHeader1Clean" style="font-size: 1.5rem; padding: 5px 0;">Month 1:</h2>
+            <table id="monthTable1Clean"></table>
+            <h2 id="monthHeader2Clean" style="font-size: 1.5rem; padding: 5px 0;">Month 2:</h2>
+            <table id="monthTable2Clean"></table>
+            <h2 id="monthHeader3Clean" style="font-size: 1.5rem; padding: 5px 0;">Month 3:</h2>
+            <table id="monthTable3Clean"></table>
+            <a href="res/images/cleaningCalender.jpg" class="ushersdoorguide">Cleaning Schedule Calender</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+
+    <!-- main scripts -->
+
+    <script src="js/dashboard/dashboard.js"></script>
+    <script src="js/dashboard/tabbingSys.js"></script>
+    <script src="js/dashboard/settings.js"></script>
+
+    <!-- normal tabs scripts -->
+
+    <script src="js/dashboard/doorSchedule.js"></script>
+    <script src="js/dashboard/cleaningSchedule.js"></script>
+
+    <!-- admin dashboard scripts -->
+
+    <script src="js/dashboard/dashboardForms.js"></script>
+    <script src="js/dashboard/createPosts.js"></script>
+    <script src="js/dashboard/uploadSermons.js"></script>
+    <script src="js/dashboard/scheduleChanger.js"></script>
+    <script src="js/dashboard/createAccount.js"></script>
+    <!-- <script src="js/dashboard/console.js"></script> -->
+    <script src="js/dashboard/userLogs.js"></script>
+</body>
+
+</html>

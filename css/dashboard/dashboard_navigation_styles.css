@@ -333,7 +333,7 @@
     height: 70px;
     top: unset;
     bottom: 0;
-    background-color: var(--secondary-color);
+    background-color: #131313;
     border: none;
     border-top: 1px solid #333;
     display: flex;

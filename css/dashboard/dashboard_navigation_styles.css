@@ -318,6 +318,9 @@
 @media screen and (max-width: 500px) {
   .content {
     padding-left: 15px;
+  }
+
+  .tab-section {
     padding-bottom: calc(70px + 15px);
   }
 
